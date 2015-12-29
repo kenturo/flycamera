@@ -1,0 +1,74 @@
+﻿@model IEnumerable<FlyEntity.Fly_Banner>
+
+@{
+    ViewBag.Title = "List Banner";
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
+}
+<div class="titlePage">
+    <div class="wrapper">
+        <h1>List Banner</h1>
+    </div>
+</div>
+@section bodyContent{
+
+    <div class="control-action">
+
+        @Html.ActionLink("New Item", "Create", null, new { @class = "button newItem" })
+    </div>
+    <table width="100%" cellspacing="0" cellpadding="0" class="responstable">
+        <thead>
+            <tr>
+                <th>BannerTitle</th>
+                <th>BannerType</th>
+                <th>Picture</th>
+                <th>CreatedBy</th>
+                <th>CreatedOn</th>
+                <th width="5%">Published</th>
+                <th width="5%">Deleted</th>
+                <th colspan="2">Control</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null)
+            {
+                foreach (var item in Model)
+                {
+                    <tr class="row-@item.BannerTypeID">
+                        <td>@item.BannerTitle</td>
+                        <td>@item.Fly_BannerType.BannerTypeTitle</td>
+                        <td>
+                            @if (item.PictureID != null)
+                            {
+                                <img src="@item.Fly_Picture.OriginalURL" class="" width="150" height="80"/>
+                            }
+                            else
+                            {
+                                <img src="@Url.Content("/Content/images/sprite/no-image.png")" class="" width="150" height="80"/>
+                            }
+                        </td>
+                        <td>
+                            @if (item.Fly_Customer != null)
+                            {
+                                @item.Fly_Customer.Username
+                            }
+                            else
+                            {
+                                <p>Unknow</p>
+                            }
+                        </td>
+                        <td title="@item.CreatedOn">@item.CreatedOn.GetValueOrDefault().ToString("dd/MM/yyyy")</td>
+                        <td width="5%">
+                            <input type="checkbox" name="Published" class="disable" value="Published" checked="@item.Published" /></td>
+                        <td width="5%">
+                            <input type="checkbox" name="Deleted" class="disable" value="Deleted" checked="@item.Deleted" /></td>
+                        <td width="5%">@Html.ActionLink("Edit", "Edit", new { id = item.BannerID }, new { @class = "editIcon", @title = "Edit" })</td>
+                        <td width="5%">@Html.ActionLink("Delete", null, null, new { @class = "removeItem", @rel = item.BannerID })</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+    @Html.Hidden("controllerServices", this.ViewContext.RouteData.Values["controller"].ToString(), new { @id = "controllerServices" })
+}
+@section Scripts {
+}

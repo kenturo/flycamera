@@ -1,0 +1,64 @@
+﻿@model Flycamera.ViewModel.ProductsVM
+
+@if (@Model.Products != null)
+{
+    <div class="wrapper ">
+        <div class="box__reviewAccessories--left">
+            <div class="box__reviewAccessories--bigReview">
+                @if (@Model.Products.Fly_ProductPicture != null && @Model.Products.Fly_ProductPicture.FirstOrDefault().Fly_Picture != null)
+                {
+                    <img alt="review accessories" width="720" height="480" src="@Model.Products.Fly_ProductPicture.FirstOrDefault().Fly_Picture.OriginalURL">
+                }
+                else
+                {
+                    <img alt="review accessories" width="720" height="480" src="http://www.placehold.it/720x480">
+                }
+            </div>
+
+            <div class="box__reviewAccessories--listImg">
+                <ul>
+                    @if (@Model.SectionGalleries != null && @Model.SectionGalleries.CollectionImage.Split(',').Length > 0)
+                    {
+                        for (int i = 0; i < @Model.SectionGalleries.CollectionImage.Split(',').Length; i++)
+                        {
+                            var objItem = @Model.SectionGalleries.CollectionImage.Split(',')[i];
+                            <li>
+                                <a href="javascript:;" title="">
+                                    <img width="95" height="64" src="@objItem" alt="small images review">
+                                </a>
+                            </li>
+                        }
+                    }
+                </ul>
+            </div>
+        </div>
+
+        <div class="box__reviewAccessories--right">
+            <h2 class="shorter ng-binding">@Model.Products.Name</h2>
+
+            <div class="box__reviewAccessories--price currency-data">@Model.ProductVariant.Price</div>
+
+            <div class="product-tip">
+                <p>@Model.Products.ShortDescription</p>
+            </div>
+
+            <div class="box__reviewAccessories--addcart">
+@*                <span class="qtt">Qty:</span>*@
+@*                <div class="quantity">*@
+@*                    <input type="text" class="input-text qty text ng-pristine ng-valid" value="1">*@
+@*                </div>*@
+@*                <a class="btn btn-primary btn-lg">&nbsp;&nbsp;Add to Cart</a>*@
+                @Html.ActionLink("Buy Now", "Index", "Payment", new { cusId = Session["idxu"] ?? 10, productId = @Model.Products.ProductId }, new { @class = "btn-paynew btn btn-default btn-lg ng-scope", @id = "buy-now" })
+            </div>
+        </div>
+
+        <hr class="light">
+
+        <div class="box__reviewAccessories--overview">
+            <div id="content-dynamic">
+                @Html.Raw(@Model.Products.FullDescription);
+            </div>
+        </div>
+    </div>
+
+}

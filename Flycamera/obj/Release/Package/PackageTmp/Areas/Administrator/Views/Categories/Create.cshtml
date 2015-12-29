@@ -1,0 +1,87 @@
+﻿@using Flycamera.App_Start
+@model Flycamera.Areas.Administrator.ViewModel.CategoriesVM
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
+}
+
+<div class="titlePage">
+    <div class="wrapper">
+        <h1>Create Categories</h1>
+    </div>
+</div>
+
+@section bodyContent{
+   
+    @using (Html.BeginForm())
+    {
+         <div class="control-action">
+            <input type="submit" value="Submit" class="button" />
+            @Html.ActionLink("Back to List", "Index", null, new {@class = "button"})
+        </div>
+        @Html.ValidationSummary(true)
+        <div class="left-form">
+            <div class="editor-field">
+                <label>Discount</label>
+                @Html.DropDownListFor(m => m.SelectValues, Model.SelectItemDiscount, "Select")
+            </div>
+
+            <div class="editor-field">
+                <label>Name</label>
+                @Html.TextBoxFor(model => model.Categories.Name, new { @placeholder = PlaceHolder.CateName_ph })
+                @Html.ValidationMessageFor(model => model.Categories.Name)
+            </div>
+
+            <div class="editor-field">
+                <label>Name English</label>
+                @Html.TextBoxFor(model => model.CategoriesLocalized.Name, new { @placeholder = PlaceHolder.CateNameEN_ph })
+                @Html.ValidationMessageFor(model => model.CategoriesLocalized.Name)
+            </div>
+
+            <div class="editor-field">
+                <label>Description</label>
+                @Html.TextAreaFor(model => model.Categories.Description, new { @placeholder = PlaceHolder.CateDescription_ph })
+                @Html.ValidationMessageFor(model => model.Categories.Description)
+            </div>
+
+
+            <div class="editor-field">
+                <label>Description English</label>
+                @Html.TextAreaFor(model => model.CategoriesLocalized.Description, new { @placeholder = PlaceHolder.CateDescriptionEN_ph })
+                @Html.ValidationMessageFor(model => model.CategoriesLocalized.Description)
+            </div>
+
+            <div class="editor-field">
+                <label>Order</label>
+                @Html.TextBoxFor(model => model.Categories.DisplayOrder, new { @placeholder = PlaceHolder.Order_ph })
+                @Html.ValidationMessageFor(model => model.Categories.DisplayOrder)
+            </div>
+
+            <div class="editor-field">
+                <label class="boolean-label">Published</label>
+                @Html.CheckBoxFor(m => m.isPublish, Model.Categories.Published)
+                @Html.ValidationMessageFor(model => model.Categories.Published)
+            </div>
+
+            <div class="editor-field">
+                <label class="boolean-label">Show Hompage</label>
+                @Html.CheckBoxFor(m => m.isHome, Model.Categories.ShowOnHomePage)
+                @Html.ValidationMessageFor(model => model.Categories.ShowOnHomePage)
+            </div>
+
+            <div class="editor-field">
+                <label class="boolean-label">Delete</label>
+                @Html.CheckBoxFor(m => m.isDelete, Model.Categories.Deleted)
+                @Html.ValidationMessageFor(model => model.Categories.Deleted)
+            </div>
+
+            <br />
+            <br />
+            <br />
+        </div>
+       
+    }
+}
+
+@section Scripts {
+}

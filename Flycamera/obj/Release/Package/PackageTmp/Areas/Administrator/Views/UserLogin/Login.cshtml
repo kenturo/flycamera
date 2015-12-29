@@ -1,0 +1,25 @@
+﻿@using Flycamera.App_Start
+@{
+    ViewBag.Title = "Login";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    @Html.Partial("_MetaSEO")
+    <title>Login</title>
+    @Styles.Render("~/Content/AdminCSS")
+
+</head>
+<body class="administrator">
+    <div id="body-content">
+            @{Html.RenderPartial(@StaticVariableAdministrator._popupUserLogin);}
+    </div>
+
+    @Scripts.Render("~/Scripts/jquery-1.11.2.js")
+    @Scripts.Render("~/Scripts/AdminJS")
+    <script>
+        // handle login
+        handleClick.Login(true);
+    </script>
+</body>
+</html>

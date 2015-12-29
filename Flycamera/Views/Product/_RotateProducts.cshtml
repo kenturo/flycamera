@@ -1,0 +1,35 @@
+﻿@using FlyEntity.Utilities
+@using Flycamera.App_Start
+@model Flycamera.ViewModel.ProductsVM
+
+
+<div class="action-cam show-preloader">
+    <img id="img-rotate" alt="vr list" class="reel" data-footage="4" data-frames="72" data-images="" data-revolution="800" width="100%" src="#">
+</div>
+<div class="left-title">
+    <h1>@Model.Products.Name</h1>
+    <h2>@Model.Products.Name</h2>
+</div>
+<div class="right-image">
+    <ul>
+        @if (Model.Products.Fly_SectionGallery != null)
+        {
+            foreach (var item in Model.Products.Fly_SectionGallery)
+            {
+                if (item.Fly_PositionGallery != null && item.Fly_PositionGallery.PositionName_EN.Equals(PositionTab.Feature))
+                {
+                    var itemImageFirst = @item.CollectionImage.Split(',')[0];
+            <li>
+                <a class="item-feature" href="#" data-target="#img-rotate" data-images="@item.CollectionImage">
+                    <img src="@itemImageFirst" alt="img-rotate"></a>
+            </li>
+                }
+            }
+        }
+        else
+        {
+            @Html.Raw("<p>" + StaticVariable.Msg_Update + "</p>");
+        }
+    </ul>
+    <span class="icon-rotate">click and drag</span>
+</div>

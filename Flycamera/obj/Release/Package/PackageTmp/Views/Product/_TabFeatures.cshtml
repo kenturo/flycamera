@@ -1,0 +1,36 @@
+﻿@using Flycamera.App_Start
+@model dynamic
+@{
+    var idProduct = ViewData["ProductId"].ToString();
+    var productName = ViewData["productName"].ToString();
+}
+<div class="frm-right-sp">
+    <ul class="breadcrum-feature">
+        <li>
+            <a href="@Url.RouteUrl("newProduct", new { action = "overview", product_name = Url.SeoUrl(productName), id = idProduct })">Overview</a>
+            |
+        </li>
+        <li>
+            <a href="@Url.RouteUrl("newProduct", new { action = "feature", product_name = Url.SeoUrl(productName), id = idProduct })">Feature</a>
+            
+            |
+        </li>
+        <li>
+            <a href="@Url.RouteUrl("newProduct", new { action = "spec", product_name = Url.SeoUrl(productName), id = idProduct })">Spec</a>
+            
+            |
+        </li>
+        <li>
+            <a href="@Url.RouteUrl("newProduct", new { action = "videos", product_name = Url.SeoUrl(productName), id = idProduct })">Videos</a>
+            
+            |
+        </li>
+@*        <li>*@
+@*            <a href="@Url.RouteUrl("newProduct", new { action = "technical", product_name = Url.SeoUrl(productName), id = idProduct })">Technical</a>*@
+@*            *@
+@*        </li>*@
+        <li>
+            @Html.ActionLink("Buy Now", "Index", "Payment", new { cusId = Session["idxu"] ?? 10, productId = idProduct }, new { @class = "btn-paynew" })
+        </li>
+    </ul>
+</div>

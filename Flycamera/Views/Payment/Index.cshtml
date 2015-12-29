@@ -1,0 +1,44 @@
+﻿@using Flycamera.App_Start
+@model Flycamera.ViewModel.ShopCartVm
+@{
+    ViewBag.Title = "Shopping Cart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section styleSheet
+{
+@*    <link rel="stylesheet" href="/Content/css/tables.css">*@
+}
+
+@section bodyContent{
+    <div id="body-content" class="wrapper__ShoppingCart">
+        <div class="wrapper wrapper__ShoppingCart--form">
+            @using (Html.BeginForm())
+            {
+                Html.EnableClientValidation();
+                @Html.ValidationSummary(true)
+                Html.RenderPartial(@StaticVariable._FormInfomationUser, Model);
+                Html.RenderPartial(@StaticVariable._ListCart, Model);
+                <input type="submit" value="Checkout" class="button btn_confirm--checkout" />
+            }
+            <p class="message-show"></p>
+        </div>
+    </div>
+}
+
+
+@section Scripts {
+@*<script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.js")"></script>*@
+    <script>
+    $(document).ready(function () {
+        // create DateTimePicker from input HTML element
+        $(".datetimepicker").kendoDateTimePicker({
+            format: "dd/MM/yyyy",
+            value: new Date(),
+            start: "2014",
+            parseFormats : ["dd/MM/yyyy"]
+        });
+    });
+</script>
+
+}

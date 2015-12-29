@@ -1,0 +1,90 @@
+﻿@{
+    ViewBag.Title = "Teams";
+    Layout = "~/Views/Shared/_LayoutAngular.cshtml";
+}
+
+@section bodyContent
+{
+<section class="wrapper__Team--bg"></section>
+    <section class="wrapper__Introduce--container" ng-controller="teamController">
+    <div class="wrapper">
+        <div class="wrapper__Introduce--preview">
+            <img alt="" src="images/bg-body-man.png">
+        </div>
+        <div class="wrapper__Introduce--team">
+            <div class="wrapper__Introduce--jcarousel">
+                <div class="wrapper__Introduce--listFace" data-jcarousel="true">
+                    <ul style="left: 0px; top: 0px;">
+                        <li ng-repeat="item in resultTeam">
+                            <a title="{{item.fullname}}" href="#team{{item.id}}">
+                                <img alt="{{item.fullname}}" src="{{item.avatar}}">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <a class="jcarousel-control jcarousel-control-prev" href="#" data-jcarouselcontrol="true"></a>
+                <a class="jcarousel-control jcarousel-control-next" href="#" data-jcarouselcontrol="true"></a>
+            </div>
+
+            <div class="wrapper__Introduce--detail">
+                <div id="team{{item.id}}" ng-repeat="item in resultTeam" ng-repeat-end-watch="initListFace">
+                    <div class="wrapper__Introduce--content">
+                        <h1 class="wrapper__Introduce--title">{{item.fullname}}</h1>
+                        <h2 class="wrapper__Introduce--tagline">{{item.tagline}}</h2>
+
+                        <p class="wrapper__Introduce--description">
+                            {{item.description}}
+                        </p>
+                    </div>
+
+                    <div class="wrapper__Introduce--social">
+                        <a class="social-ytb" ng-if="item.google.length > 0" title="Youtube" href="{{item.google}}"></a>
+                        <a class="social-fb" ng-if="item.facebook.length > 0" title="Facebook" href="{{item.facebook}}"></a>
+                        <a class="social-twt" ng-if="item.twitter.length > 0" title="Twitter" href="{{item.twitter}}"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="wrapper__clients">
+    <div class="wrapper">
+        <p class="wrapper__clients--title"></p>
+
+        <ul class="wrapper__clients--list" ng-controller="partner-controller">
+            <li ng-repeat="item in resultPartnerShip">
+                <a title="{{item.title}}" href="{{item.link}}">
+                    <img alt="{{item.title}}" src="{{item.imglink}}">
+                </a>
+            </li>
+
+        </ul>
+
+
+    </div>
+</section>
+
+<section class="wrapper__poster">
+    <div class="wrapper">
+        <ul class="wrapper__poster--list" ng-controller="eventClip-controller">
+            <li ng-repeat="item in resultEventClip" ng-repeat-end-watch="initFancybox">
+                <a title="{{item.title}}" href="{{item.link}}" class="fancybox">
+                    <img alt="{{item.title}}" src="{{item.imglink}}">
+                    <p class="wrapper__poster--title">{{item.title}}</p>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+</section>
+}
+
+
+@section scripts
+{
+<script src="@Scripts.Url("/Scripts/fancybox/jquery.fancybox.js")" type="text/javascript"></script>
+<script src="@Scripts.Url("/Scripts/fancybox/jquery.fancybox.pack.js")" type="text/javascript"></script>
+<script src="@Scripts.Url("/Scripts/fancybox/jquery.fancybox-media.js")" type="text/javascript"></script>
+    
+}

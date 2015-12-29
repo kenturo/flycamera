@@ -1,0 +1,57 @@
+﻿@using Flycamera.App_Start
+@model Flycamera.Areas.Administrator.ViewModel.ProductGalleryVM
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
+}
+
+<div class="titlePage">
+    <div class="wrapper">
+        <h1>Edit Spec</h1>
+    </div>
+</div>
+@section bodyContent{
+    
+    @using (Html.BeginForm())
+    {
+         <div class="control-action">
+            <input type="submit" value="Submit" class="button" />
+            @Html.ActionLink("Back to List", "Index", null, new {@class = "button"})
+        </div>
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(m => m.SectionContents.PositionGalleryID)
+        @Html.HiddenFor(m => m.SectionContents.SectionContentID)
+
+        <div class="left-form">
+            <div class="editor-field">
+                <label>Products</label>
+                @Html.HiddenFor(m => m.SectionContents.ProductID, new { @class = "valueID" })
+                @Html.TextBoxFor(model => model.SectionContents.ProductID, new { @class = "reviewProduct", @readonly = true,@Value = Model.SectionContents.ProductID + " - " + Model.SectionContents.Fly_Product.Name   })
+                <a href="javascript:;" title="choose product" data-popup=".popup-product" class="button choseProduct">Choose Product</a>
+                @Html.ValidationMessageFor(model => model.SectionContents.ProductID)
+            </div>
+        </div>
+        <div class="editor-field">
+            <label>Description</label>
+            <ul class="frame-tabheader">
+                <li><a href="#frame-tab--vi" class="button active" title="Tiếng Việt">Tiếng Việt</a></li>
+                <li><a href="#frame-tab--en" class="button" title="English">English</a></li>
+            </ul>
+            <div class="frame-tab--content">
+                <div id="frame-tab--vi" class="frame-tab active">
+                    @Html.TextAreaFor(model => model.SectionContents.FullDescription, new { @id = "editor" })
+                </div>
+                <div id="frame-tab--en" class="frame-tab">
+                    @Html.TextAreaFor(model => model.SectionContents.FullDescription_EN, new { @id = "editor1" })
+                </div>
+            </div>
+        </div>
+        
+    }
+
+
+}
+@section Scripts {
+    @{Html.RenderPartial(@StaticVariableAdministrator._popupChooseProducts);}
+}

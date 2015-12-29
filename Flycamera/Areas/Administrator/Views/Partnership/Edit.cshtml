@@ -1,0 +1,98 @@
+﻿@using Flycamera.App_Start
+@model Flycamera.Areas.Administrator.ViewModel.PartnershipVM
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
+}
+
+<div class="titlePage">
+    <div class="wrapper">
+        <h1>Edit Partnership</h1>
+    </div>
+</div>
+
+@section bodyContent{
+     
+    @using (Html.BeginForm())
+    {
+         <div class="control-action">
+            <input type="submit" value="Submit" class="button" />
+            @Html.ActionLink("Back to List", "Index", null, new {@class = "button"})
+        </div>
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.Partnership.PartnershipID)
+        <div class="left-form">
+            <div class="editor-field">
+                <label>Title</label>
+                @Html.TextBoxFor(model => model.Partnership.PartnershipTitle, new { @placeholder = PlaceHolder.PartnershipTitle_ph, @class="k-textbox" ,@required = true,@validationMessage = "Enter {0}" })
+                @Html.ValidationMessageFor(model => model.Partnership.PartnershipTitle)
+            </div>
+
+            <div class="editor-field">
+                <label>AddressLink</label>
+                @Html.TextBoxFor(model => model.Partnership.PartnershipLink, new { @placeholder = PlaceHolder.Link_ph, @class="k-textbox" ,@required = true,@validationMessage = "Enter {0}" })
+                @Html.ValidationMessageFor(model => model.Partnership.PartnershipLink)
+            </div>
+
+            <div class="editor-field">
+                <label>Order</label>
+                @Html.TextBoxFor(model => model.Partnership.DisplayOrder, new { @placeholder = PlaceHolder.Order_ph })
+                @Html.ValidationMessageFor(model => model.Partnership.DisplayOrder)
+            </div>
+
+            <div class="editor-field frm-upload--backgroundIMG">
+                <label>Upload Image :</label>
+                <ul class="frame-tabheader">
+                    <li>
+                        <a href="#frame-tab--url" class="button active" title="URL">URL</a>
+                    </li>
+                    @*<li>
+                        <a href="#frame-tab--pc" class="button" title="Computer">Computer</a>
+                    </li>*@
+                </ul>
+                <div class="frame-tab--content frame-tab--upload">
+                    <div id="frame-tab--url" class="frame-tab active">
+                        @Html.TextBoxFor(model => model.Partnership.PictureID, new { @class = "imgLink SyncURLImageLink k-textbox", @oninput = "onChangeTextboxImage(this,1)", @required = true,@validationMessage = "Enter {0}" })
+                        <input type="button" class="btn-chose button btn-upload-img" value="Upload" onclick="BrowseServer();" />
+                        @Html.ValidationMessageFor(model => model.Partnership.PictureID)
+                    </div>
+
+                    @*<div id="frame-tab--pc" class="frame-tab">
+                        @Html.TextBoxFor(model => model.Partnership.PictureID, new { @class = "imgLink", @readonly = "readonly" })
+                        <input type="button" class="btn-chose button" value="Choose Image" onclick="BrowseServer();" />
+                        @Html.ValidationMessageFor(model => model.Partnership.PictureID)
+                    </div>*@
+                </div>
+            </div>
+        </div>
+        <div class="right-form">
+            <div class="editor-field">
+                <label>Review</label>
+                @if (Model.Partnership.Fly_Picture != null)
+                {
+                    <img src="@Model.Partnership.Fly_Picture.OriginalURL" class="preview" width="350" height="200" />
+                }
+                else
+                {
+                    <img src="http://www.placehold.it/102x84" class="preview" width="350" height="200" />
+                }       
+            </div>
+            <div class="editor-field">
+                <label class="boolean-label">Published</label>
+                @Html.CheckBoxFor(m => m.isPublish, Model.Partnership.Published)
+                @Html.ValidationMessageFor(model => model.Partnership.Published)
+            </div>
+
+            <div class="editor-field">
+                <label class="boolean-label">Delete</label>
+                @Html.CheckBoxFor(m => m.isDelete, Model.Partnership.Deleted)
+                @Html.ValidationMessageFor(model => model.Partnership.Deleted)
+            </div>
+
+        </div>
+       
+    }
+}
+
+@section Scripts {
+}

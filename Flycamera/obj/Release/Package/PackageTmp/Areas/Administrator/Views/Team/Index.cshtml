@@ -1,0 +1,76 @@
+﻿@using Flycamera.App_Start
+@model IEnumerable<FlyEntity.Fly_Team>
+
+@{
+    ViewBag.Title = "List Team";
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
+}
+<div class="titlePage">
+    <div class="wrapper">
+        <h1>List Team</h1>
+    </div>
+</div>
+@section bodyContent{
+
+    <div class="control-action">
+
+        @Html.ActionLink("New Item", "Create", null, new { @class = "button newItem" })
+    </div>
+    <table width="100%" cellspacing="0" cellpadding="0" class="responstable">
+        <thead>
+            <tr>
+                <th>FullName</th>
+                <th>TagLine</th>
+                <th>Avatar</th>
+                <th>Facebook</th>
+                <th>Google</th>
+                <th>Twitter</th>
+                <th>CreatedOn</th>
+                <th width="5%">Published</th>
+                <th width="5%">Deleted</th>
+                <th colspan="2">Control</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null)
+            {
+                foreach (var item in Model)
+                {
+                    <tr class="row-@item.TeamID">
+                        <td>@item.FullName</td>
+                        <td>@item.TagLine</td>
+                        <td>
+                            @if (item.AvatarURL != null)
+                            {
+                                <img src="@item.AvatarURL" class="" width="150" height="80" />
+                            }
+                            else
+                            {
+                                <img src="@Url.Content("/Content/images/sprite/no-image.png")" class="" width="150" height="80" />
+                            }
+                        </td>
+                        <td>@item.Facebook</td>
+                        <td>@item.Google</td>
+                        <td>@item.Twitter</td>
+                        <td title="@item.CreatedOn">@item.CreatedOn.GetValueOrDefault().ToString("dd/MM/yyyy")</td>
+                        <td width="5%">
+                            <input type="checkbox" name="Published" class="disable" value="Published" checked="@item.Published" />
+                        </td>
+                        <td width="5%">
+                            <input type="checkbox" name="Deleted" class="disable" value="Deleted" checked="@item.Deleted" />
+                        </td>
+                        <td width="5%">@Html.ActionLink("Edit", "Edit", new { id = item.TeamID }, new { @class = "editIcon", @title = "Edit" })</td>
+                        <td width="5%">@Html.ActionLink("Delete", null, null, new { @class = "removeItem", @rel = item.TeamID })</td>
+                    </tr>
+                }
+            }
+            else
+            {
+                @Html.Raw("<p>" + StaticVariable.Msg_Update + "</p>");
+            }
+        </tbody>
+    </table>
+    @Html.Hidden("controllerServices", this.ViewContext.RouteData.Values["controller"].ToString(), new { @id = "controllerServices" })
+}
+@section Scripts {
+}

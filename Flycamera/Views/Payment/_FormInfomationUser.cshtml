@@ -1,0 +1,60 @@
+﻿@using Flycamera.App_Start
+@model Flycamera.ViewModel.ShopCartVm
+
+<div class="box-infomatio-user">
+    <h1 class="name-sp">Shopping Cart</h1>
+    <div class="editor-field">
+        @Html.HiddenFor(m=>m.Customer.CustomerID)
+        <label>First Name</label>
+        @Html.TextBoxFor(model => model.CustomerAttr.FirstName, new {@placeholder = PlaceHolder.UserFname_ph, @class = "k-textbox", @required = true, @validationMessage = "Enter {0}"})
+        @Html.ValidationMessageFor(model => model.CustomerAttr.FirstName)
+    </div>
+
+    <div class="editor-field">
+        <label>Last Name</label>
+        @Html.TextBoxFor(model => model.CustomerAttr.LastName, new {@placeholder = PlaceHolder.UserLname_ph, @class = "k-textbox", @required = true})
+        @Html.ValidationMessageFor(model => model.CustomerAttr.LastName)
+    </div>
+    <div class="editor-field">
+        <label>Mobile Phone</label>
+        @Html.TextBoxFor(model => model.CustomerAttr.MobilePhone, new { @type = "tel", @placeholder = PlaceHolder.UserMobile_ph, @class = "k-textbox", @required = true,pattern= @"\d{5,10}" })
+        @Html.ValidationMessageFor(model => model.CustomerAttr.LastName)
+    </div>
+
+    <div class="editor-field">
+        <label>Email</label>
+        @Html.TextBoxFor(model => model.Customer.Email, new { @type = "email", @placeholder = PlaceHolder.UserEmail_ph, @class = "k-textbox", @required = true })
+        @Html.ValidationMessageFor(model => model.Customer.Email)
+    </div>
+    <div class="editor-field">
+        <label>City</label>
+        @Html.TextBoxFor(model => model.Order.BillingCity, new { @placeholder = PlaceHolder.City_ph, @class = "k-textbox"})
+        @Html.ValidationMessageFor(model => model.Order.BillingCity)
+    </div>
+    <div class="editor-field">
+        <label>Country</label>
+        @Html.DropDownListFor(model => model.SelectIndexCountry, Model.ListCountryItems, "Select Country", new { @class = "f-select", @required = true })
+    </div>
+    <div class="editor-field">
+        <label>Shipping</label>
+        @Html.DropDownListFor(model => model.SelectIndexShipping, Model.ListShippingItems, "Select Shipping", new { @class = "f-select", @required = true })
+    </div>
+    <div class="editor-field">
+        <label>Payment Method</label>
+        @Html.DropDownListFor(model => model.SelectNamePaymentMethod, Model.ListPaymentMethodItems, "Select Payment", new { @class = "f-select", @required = true })
+        @Html.ValidationMessageFor(model => model.SelectNamePaymentMethod)
+
+    </div>
+    <div class="editor-field">
+        <label>Delivery Date</label>
+        @Html.TextBoxFor(model => model.DeliveryDate, new { @placeholder = PlaceHolder.DeliveryDate_ph, @class = "datetimepicker k-textbox", @required = true })
+        @Html.ValidationMessageFor(model => model.DeliveryDate)
+    </div>
+    <div class="editor-field clearfix">
+        <label>Address Receive</label>
+        @Html.TextAreaFor(model => model.CustomerAttr.StreetAddress, new {@placeholder = PlaceHolder.UserAddress_ph, @class = "k-textbox"})
+        @Html.ValidationMessageFor(model => model.CustomerAttr.StreetAddress)
+    </div>
+
+
+</div>

@@ -1,0 +1,49 @@
+﻿@using Flycamera.App_Start
+@using FlyEntity.Utilities
+@model Flycamera.ViewModel.TechnicalVm
+
+@section bodyContent{
+    <div id="body-content">
+        <div class="frm-breadcrum detail-sps">
+            <div class="feature-sp">
+                <div class="frm-left-sp">
+                    <h1 class="name-sp">@Model.Videos.VideosTitle</h1>
+                    <div class="frm-share">
+                        @*                        <a href="#" class="gplus" title="Google Plus">Google Plus</a>*@
+                        <a href="#" class="fb btn__FB--share" title="Facebook">Facebook</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div id="guide-clip">
+                <!-- Show Video -->
+                    <div class="item-guide">
+@*                            <div class="top-note">*@
+@*                                <h1>@item.VideosTitle</h1>*@
+@*                                <div class="frm-share">*@
+@*                                    <a title="Youtube" class="ytb" href="@item.VideosLink">Youtube</a>*@
+@*                                    <a title="Google Plus" class="gplus" href="#">Google Plus</a>*@
+@*                                    <a title="Facebook" class="fb" href="#">Facebook</a>*@
+@*                                </div>*@
+@*                            </div>*@
+                            <div class="frm-ytm-guide">
+                                <iframe width="560" height="315" class="ifrm-clip-home" src="@Model.Videos.VideosLink"></iframe>
+                            </div>
+                    </div>
+            </div>
+            <!-- Show Full Content -->
+            <div class="box__reviewAccessories--overview">
+                <div id="content-dynamic">
+                    @Html.Raw(Model.Videos.Fly_SectionContent.FullDescription)
+                </div>
+            </div>
+        </div>
+        @{Html.RenderPartial(@StaticVariable._PartnerShipHome, Model.ListPartnerships);}
+    </div>
+}
+
+
+
+
+

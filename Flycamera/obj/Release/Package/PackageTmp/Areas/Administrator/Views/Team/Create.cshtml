@@ -1,0 +1,113 @@
+﻿@using Flycamera.App_Start
+@model Flycamera.Areas.Administrator.ViewModel.TeamVm
+
+
+@{
+    ViewBag.Title = "Create Team";
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="titlePage">
+    <div class="wrapper">
+        <h1>Create Team</h1>
+    </div>
+</div>
+@section bodyContent{
+    @using (Html.BeginForm())
+    {
+        <div class="control-action">
+            <input type="submit" value="Submit" class="button" />
+            @Html.ActionLink("Back to List", "Index", null, new { @class = "button" })
+        </div>
+        @Html.ValidationSummary(true)
+
+        <div class="left-form">
+
+            <div class="editor-field">
+                <label>FullName</label>
+                @Html.TextBoxFor(model => model.Team.FullName, new { @placeholder = "FullName", @class = "k-textbox", @required = true, @validationMessage = "Enter {0}" })
+                @Html.ValidationMessageFor(model => model.Team.FullName)
+            </div>
+
+            <div class="editor-field">
+                <label>Tagline</label>
+                @Html.TextAreaFor(model => model.Team.TagLine, new { @placeholder = "short tagline", @maxLenght = "200", @class = "k-textbox" })
+                @Html.ValidationMessageFor(model => model.Team.TagLine)
+            </div>
+
+            <div class="editor-field">
+                <label>Facebook</label>
+                @Html.TextBoxFor(model => model.Team.Facebook, new { @placeholder = "Link Facebook Individual", @class = "k-textbox", @validationMessage = "Enter {0}" })
+                @Html.ValidationMessageFor(model => model.Team.Facebook)
+            </div>
+
+
+
+            <div class="editor-field">
+                <label>Google</label>
+                @Html.TextBoxFor(model => model.Team.Google, new { @placeholder = "Link Google Plus Individual", @class = "k-textbox", @validationMessage = "Enter {0}" })
+                @Html.ValidationMessageFor(model => model.Team.Google)
+            </div>
+
+            <div class="editor-field">
+                <label>Twitter</label>
+                @Html.TextBoxFor(model => model.Team.Twitter, new { @placeholder = "Link Twitter Individual", @class = "k-textbox", @validationMessage = "Enter {0}" })
+                @Html.ValidationMessageFor(model => model.Team.Twitter)
+            </div>
+
+            <div class="editor-field frm-upload--backgroundIMG">
+                <label>Upload Image :</label>
+                <ul class="frame-tabheader">
+                    <li>
+                        <a href="#frame-tab--url" class="button active" title="URL">URL</a>
+                    </li>
+                </ul>
+                <div class="frame-tab--content frame-tab--upload">
+                    <div id="frame-tab--url" class="frame-tab active">
+                        @Html.TextBoxFor(model => model.Team.AvatarURL, new { @class = "imgLink SyncURLImageLink k-textbox", @oninput = "onChangeTextboxImage(this,1)", @required = true, @validationMessage = "Enter {0}" })
+                        @Html.ValidationMessageFor(model => model.Team.AvatarURL)
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right-form">
+            <div class="editor-field">
+                <label>Review</label>
+                <img src="http://www.placehold.it/200x200" class="preview" width="350" height="200"/>
+            </div>
+
+            <div class="editor-field">
+                <label class="boolean-label">Published</label>
+                @Html.CheckBoxFor(m => m.IsPublish, Model.Team.Published)
+                @Html.ValidationMessageFor(model => model.Team.Published)
+            </div>
+
+            <div class="editor-field">
+                <label class="boolean-label">Deleted</label>
+                @Html.CheckBoxFor(m => m.IsDelete, Model.Team.Deleted)
+                @Html.ValidationMessageFor(model => model.Team.Deleted)
+            </div>
+
+
+
+        </div>
+        <div class="editor-field">
+                <label>Description</label>
+                <ul class="frame-tabheader">
+                    <li><a href="#frame-tab--vi" class="button active" title="Tiếng Việt">Tiếng Việt</a></li>
+@*                    <li><a href="#frame-tab--en" class="button" title="English">English</a></li>*@
+                </ul>
+                <div class="frame-tab--content">
+                    <div id="frame-tab--vi" class="frame-tab active">
+                        @Html.TextAreaFor(model => model.Team.Description, new { @id = "editor" })
+                    </div>
+@*                    <div id="frame-tab--en" class="frame-tab">*@
+@*                        @Html.TextAreaFor(model => model.SectionContents.FullDescription_EN, new { @id = "editor1" })*@
+@*                    </div>*@
+                </div>
+            </div>
+    }
+}
+@section Scripts {
+}

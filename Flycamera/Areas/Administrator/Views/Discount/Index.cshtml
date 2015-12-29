@@ -1,0 +1,61 @@
+﻿@using Flycamera.App_Start
+@model Flycamera.Areas.Administrator.ViewModel.DiscountVm
+
+@{
+    ViewBag.Title = "List Discount";
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
+}
+<div class="titlePage">
+    <div class="wrapper">
+        <h1>List Discount</h1>
+    </div>
+</div>
+@section bodyContent{
+
+    <div class="control-action">
+
+        @Html.ActionLink("New Item", "Create", null, new { @class = "button newItem" })
+    </div>
+    <table width="100%" cellspacing="0" cellpadding="0" class="responstable">
+        <thead>
+            <tr>
+                <th width="5%">DiscountID</th>
+                <th width="5%">LimitationTimes</th>
+                <th>Name</th>
+                <th width="5%">Percentage</th>
+                <th width="5%">CreadedOn</th>
+                <th width="5%">Deleted</th>
+                <th colspan="2">Control</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.ListDiscount.Count > 0)
+            {
+                foreach (var item in Model.ListDiscount)
+                {
+                    <tr class="row-@item.DiscountID">
+                        <td>@item.DiscountID</td>
+                        <td>@item.LimitationTimes</td>
+                        <td>@item.Name</td>
+                        <td>
+                            @item.Percentage%
+                        </td>
+                        <td title="@item.StartDate">@item.StartDate.GetValueOrDefault().ToString("dd/MM/yyyy")</td>
+                        <td width="5%">
+                            <input type="checkbox" name="Deleted" class="disable" value="Deleted" checked="@item.Deleted" />
+                        </td>
+                        <td width="5%">@Html.ActionLink("Edit", "Edit", new { id = item.DiscountID }, new { @class = "editIcon", @title = "Edit" })</td>
+                        <td width="5%">@Html.ActionLink("Delete", null, null, new { @class = "removeItem", @rel = item.DiscountID })</td>
+                    </tr>
+                }
+            }
+            else
+            {
+                @Html.Raw("<p>" + StaticVariable.Msg_Update + "</p>");
+            }
+        </tbody>
+    </table>
+    @Html.Hidden("controllerServices", this.ViewContext.RouteData.Values["controller"].ToString(), new { @id = "controllerServices" })
+}
+@section Scripts {
+}

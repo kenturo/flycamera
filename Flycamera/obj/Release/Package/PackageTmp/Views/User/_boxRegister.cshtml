@@ -1,0 +1,84 @@
+﻿@using Flycamera.App_Start
+@model Flycamera.ViewModel.UserVM
+
+<div class="boxRegister">
+    @using (Html.BeginForm("Register", "User"))
+    {
+        @Html.ValidationSummary(true)
+        <div class="left-form">
+
+            <div class="cell-inline">
+                <div class="editor-field">
+                    @*<label>Tài khoản</label>*@
+                    @Html.TextBoxFor(model => model.Customer.Username, new { @placeholder = PlaceHolder.UserName_ph, @class = "k-textbox f-tbx-user", @required = true, @validationMessage = "Enter {0}" })
+                    @Html.ValidationMessageFor(model => model.Customer.Username, "(*) Tài khoản này đã tồn tại", new { @class = "msg-validation--user" })
+                </div>
+
+                <div class="editor-field">
+                    @*<label>Mật khẩu</label>*@
+                    @Html.TextBoxFor(model => model.Customer.PasswordHash, new { @placeholder = PlaceHolder.Password_ph, @type = "password", @class = "k-textbox", @required = true, @validationMessage = "Enter {0}" })
+                    @Html.ValidationMessageFor(model => model.Customer.PasswordHash)
+                </div>
+            </div>
+
+            <div class="cell-inline">
+                <div class="editor-field">
+                    @*<label>Email</label>*@
+                    @Html.TextBoxFor(model => model.Customer.Email, new { @placeholder = PlaceHolder.UserEmail_ph, @type = "email", @class = "f-tbx-email k-textbox", @required = true, @validationMessage = "Enter {0}" })
+                    @Html.ValidationMessageFor(model => model.Customer.Email, "", new { @class = "msg-validation--email" })
+                </div>
+                <div class="editor-field">
+                    @*<label>Mobile Phone</label>*@
+                    @Html.TextBoxFor(model => model.CustomerAttribute.MobilePhone, new { @placeholder = PlaceHolder.UserMobile_ph, @class = " k-textbox", @required = true, @validationMessage = "Enter {0}" })
+                    @Html.ValidationMessageFor(model => model.CustomerAttribute.MobilePhone)
+                </div>
+            </div>
+
+            <div class="cell-inline">
+                <div class="editor-field">
+                    @*<label>Tên</label>*@
+                    @Html.TextBoxFor(model => model.CustomerAttribute.FirstName, new { @placeholder = PlaceHolder.UserFname_ph, @class = "k-textbox", @required = true, @validationMessage = "Enter {0}" })
+                    @Html.ValidationMessageFor(model => model.CustomerAttribute.FirstName)
+                </div>
+                <div class="editor-field">
+                    @*<label>Họ</label>*@
+                    @Html.TextBoxFor(model => model.CustomerAttribute.LastName, new { @placeholder = PlaceHolder.UserLname_ph, @class = " k-textbox", @required = true, @validationMessage = "Enter {0}" })
+                    @Html.ValidationMessageFor(model => model.CustomerAttribute.LastName)
+                </div>
+            </div>
+
+
+           @* <div class="cell-inline">
+                <div class="editor-field">
+                    <label>Địa chỉ</label>
+                    @Html.TextBoxFor(model => model.CustomerAttribute.StreetAddress, new { @placeholder = PlaceHolder.UserAddress_ph, @class = " k-textbox", @required = true, @validationMessage = "Enter {0}" })
+                    @Html.ValidationMessageFor(model => model.CustomerAttribute.StreetAddress)
+                </div>
+
+                <div class="editor-field">
+                    <label>Thành phố</label>
+                    @Html.TextBoxFor(model => model.CustomerAttribute.City, new { @placeholder = PlaceHolder.UserCity_ph, @class = " k-textbox", @required = true, @validationMessage = "Enter {0}" })
+                    @Html.ValidationMessageFor(model => model.CustomerAttribute.City)
+                </div>
+            </div>*@
+
+
+            <div class="cell-inline">
+               @* <div class="editor-field">
+                    <label>Quốc gia</label>
+                    @Html.DropDownListFor(model => model.countrySelected, Model.CountryList, "Select Country")
+                </div>*@
+
+                <div class="editor-field">
+                    @*<label>Captcha</label>*@
+                    <img src="/user/ShowCaptchaImage" alt="" />
+                    @Html.TextBoxFor(model => model.captchaText, new { @placeholder = PlaceHolder.UserCaptcha_ph, @class = " k-textbox f-txtb-captcha", @required = true, @validationMessage = "Enter {0}" })
+                    @Html.ValidationMessageFor(model => model.captchaText, "", new { @class = "msg-validation--captcha" })
+                </div>
+            </div>
+        </div>
+        <div class="control-action">
+            <input type="submit" value="Đăng ký" class="button form-submit" />
+        </div>
+    }
+</div>

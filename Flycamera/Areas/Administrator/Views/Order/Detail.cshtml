@@ -1,0 +1,71 @@
+﻿@using Flycamera.App_Start
+@model Flycamera.Areas.Administrator.ViewModel.OrderVm
+
+@{
+    ViewBag.Title = "Detail Order";
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
+}
+<div class="titlePage">
+    <div class="wrapper">
+        <h1>Detail Order</h1>
+    </div>
+</div>
+@section bodyContent{
+    <div class="control-action">
+        @if (Model.Order.ApproveID.GetValueOrDefault(-1) == -1)
+        {
+            <input type="submit" value="Approve Order" class="button" onclick="handleClick.UpdateInformationOrder(@Model.Order.OrderID,@Model.Order.CustomerID,1)" />
+        }
+        else
+        {
+            <input type="submit" value="Complete Order" class="button" onclick="handleClick.UpdateInformationOrder(@Model.Order.OrderID,@Model.Order.CustomerID,2)" />
+        }
+        <input type="submit" value="Cancel Order" class="button" onclick="handleClick.UpdateInformationOrder(@Model.Order.OrderID,@Model.Order.CustomerID,3)" />
+    </div>
+@*    <div id="body-content" class="wrapper__ShoppingCart">*@
+        <div class="wrapper wrapper__ShoppingCart--form">
+            @if (Model != null)
+            {
+                <ul class="frame-tabheader frame-tab border-inline">
+                    <li>
+                        <a href="#" rel="order__info--tab" class="button active no-href" title="Product Info">Order Info</a>
+                    </li>
+                    <li>
+                        <a href="#" rel="product__info--tab" class="button no-href" title="Relate Product">Products</a>
+                    </li>
+                    <li>
+                        <a href="#" rel="order__note--tab" class="button no-href" title="Relate Product">Order Note</a>
+                    </li>
+                </ul>
+                <div class="wrapper__OrderTab">
+                    <div class="order__info--tab frame-tab--cust active">
+                        @{
+                            Html.RenderPartial(StaticVariableAdministrator._OrderInfo, Model.Order);
+                        }
+                    </div>
+                    <div class="product__info--tab frame-tab--cust ">
+                        @{
+                            Html.RenderPartial(StaticVariableAdministrator._ListProductOrder, Model);
+                        }
+                    </div>
+                    <div class="order__note--tab frame-tab--cust ">
+                        @{
+                            Html.RenderPartial(StaticVariableAdministrator._OrderNote, Model);
+                        }
+                    </div>
+
+
+
+
+
+
+
+                </div>
+                <input type="hidden" value="@Model.Order.ApproveID.GetValueOrDefault(-1)"/>
+            }
+</div>
+@*    </div>*@
+    @*@Html.Hidden("controllerServices", this.ViewContext.RouteData.Values["controller"].ToString(), new { @id = "controllerServices" })*@
+}
+@section Scripts {
+}

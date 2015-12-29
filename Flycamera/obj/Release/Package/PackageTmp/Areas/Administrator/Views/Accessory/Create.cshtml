@@ -1,0 +1,237 @@
+﻿@using Flycamera.App_Start
+@model Flycamera.Areas.Administrator.ViewModel.ProductVM
+@{
+    ViewBag.Title = "Create Accessories";
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="titlePage">
+    <div class="wrapper">
+        <h1>Create Accessories</h1>
+    </div>
+</div>
+@section bodyContent{
+
+
+    @using (Html.BeginForm())
+    {
+        <div class="control-action">
+             @Html.ActionLink("Back to List", "Index", null, new { @class = "button" }) 
+            <input type="submit" value="Submit" class="button btn-submit" />
+        </div>
+        @Html.ValidationSummary(true)
+
+        <ul class="frame-tabheader frame-tab border-inline">
+            <li>
+                <a title="Product Info" class="button active no-href" rel="product-info--tab" href="#">Product Info</a>
+            </li>
+            <li>
+                <a title="Relate Product" class="button no-href" rel="relate-product--tab" href="#">Relate Product</a>
+            </li>
+
+            <li>
+                <a title="More Image" class="button no-href" rel="more-image--tab" href="#">More Image</a>
+            </li>
+        </ul>
+        <div class="">
+            <div class="product-info--tab frame-tab--cust active">
+                <div class="left-form">
+
+                    <div class="editor-field">
+                        <label>Categories</label>
+                        @Html.DropDownListFor(model => model.indexCate, Model.CategoriesItemList, "Select Categories")
+                    </div>
+
+                    <div class="editor-field">
+                        <label>Manufacturer</label>
+                        @Html.DropDownListFor(model => model.indexManufacturer, Model.ManufacturerItemList, "Select Manufacturer")
+                    </div>
+
+                    <div class="editor-field">
+                        <label>Discount</label>
+                        @Html.DropDownListFor(model => model.indexDiscount, Model.DiscountItemList, "Select Discount")
+                    </div>
+
+                    <div class="editor-field">
+                        <label>SKU</label>
+                        @Html.TextBoxFor(model => model.ProductVariant.SKU, new { @placeholder = PlaceHolder.Sku_ph, @class = "k-textbox", @required = true, @validationMessage = "Enter {0}" })
+                    </div>
+
+                    <div class="editor-field">
+                        <label>Product Name</label>
+                        @Html.TextBoxFor(model => model.Product.Name, new { @placeholder = PlaceHolder.ProductName_ph, @class = "k-textbox", @required = true, @validationMessage = "Enter {0}" })
+                    </div>
+
+                    <div class="editor-field">
+                        <label>Product Name English</label>
+                        @Html.TextBoxFor(model => model.ProductLocalized.Name, new { @placeholder = PlaceHolder.ProductNameEng_ph })
+                    </div>
+
+                    <div class="editor-field">
+                        <label>Short Description</label>
+                        @Html.TextAreaFor(model => model.Product.ShortDescription, new { @placeholder = PlaceHolder.ShortContent_ph, @class = "k-textbox", @id = "editorShort", @required = true, @validationMessage = "Enter {0}" })
+                    </div>
+                    <div class="editor-field">
+                        <label>Price</label>
+                        @Html.TextBoxFor(model => model.ProductVariant.Price, new { @placeholder = PlaceHolder.Price_ph, @class = "k-textbox currency-data", @required = true, @validationMessage = "Enter {0}" })
+                        @Html.ValidationMessageFor(model => model.ProductVariant.Price)
+                    </div>
+
+                    <div class="editor-field">
+                        <label>Admin Price</label>
+                        @Html.TextBoxFor(model => model.ProductVariant.AdminPrice, new { @placeholder = PlaceHolder.AdminPrice_ph, @class = "k-textbox currency-data", @required = true, @validationMessage = "Enter {0}" })
+                        @Html.ValidationMessageFor(model => model.ProductVariant.AdminPrice)
+                    </div>
+
+                    <div class="editor-field frm-upload--backgroundIMG">
+                        <label>Upload Image :</label>
+                        <ul class="frame-tabheader">
+                            <li>
+                                <a href="#frame-tab--url" class="button active" title="URL">URL</a>
+                            </li>
+                        </ul>
+                        <div class="frame-tab--content frame-tab--upload">
+                            <div id="frame-tab--url" class="frame-tab active">
+                                @Html.TextBoxFor(model => model.ProductPictures.PictureID, new { @class = "imgLink SyncURLImageLink k-textbox", @oninput = "onChangeTextboxImage(this,1)", @required = true, @validationMessage = "Enter {0}" })
+                                <input type="button" class="btn-chose button btn-upload-img" value="Upload" onclick="BrowseServer();" />
+                                @Html.ValidationMessageFor(model => model.ProductPictures.PictureID)
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="right-form">
+                    <div class="editor-field">
+                        <label>Review</label>
+                        <img src="http://www.placehold.it/720x480" class="preview" width="350" height="200" />
+                    </div>
+
+                    <div class="editor-field  ">
+                        <label class="boolean-label">Show Hompage</label>
+                        @Html.CheckBoxFor(model => model.isHome, Model.Product.ShowOnHomePage)
+                        @Html.ValidationMessageFor(model => model.Product.ShowOnHomePage)
+                    </div>
+
+                    <div class="editor-field  ">
+                        <label class="boolean-label">Publish</label>
+                        @Html.CheckBoxFor(m => m.isPublish, Model.Product.Published)
+                        @Html.ValidationMessageFor(model => model.Product.Published)
+                    </div>
+
+                    <div class="editor-field  ">
+                        <label class="boolean-label">Deleted</label>
+                        @Html.CheckBoxFor(m => m.isDelete, Model.Product.Deleted)
+                        @Html.ValidationMessageFor(model => model.Product.Deleted)
+                    </div>
+
+                    <div class="editor-field  ">
+                        <label class="boolean-label">Shipping Enabled</label>
+                        @Html.CheckBoxFor(m => m.isShipEnabled, Model.ProductVariant.IsShipEnabled)
+                        @Html.ValidationMessageFor(model => model.ProductVariant.IsShipEnabled)
+                    </div>
+
+                    <div class="editor-field  ">
+                        <label class="boolean-label">Free shipping</label>
+                        @Html.CheckBoxFor(m => m.isFreeShipping, Model.ProductVariant.IsFreeShipping)
+                        @Html.ValidationMessageFor(model => model.ProductVariant.IsFreeShipping)
+                    </div>
+
+                    <div class="editor-field  ">
+                        <label class="boolean-label">Call For Price</label>
+                        @Html.CheckBoxFor(m => m.isCallForPrice, Model.ProductVariant.CallForPrice)
+                        @Html.ValidationMessageFor(model => model.ProductVariant.CallForPrice)
+                    </div>
+
+                    <div class="editor-field  ">
+                        <label class="boolean-label">isHot</label>
+                        @Html.CheckBoxFor(m => m.isHot, Model.ProductVariant.isHot)
+                        @Html.ValidationMessageFor(model => model.ProductVariant.isHot)
+                    </div>
+                    <div class="editor-field  ">
+                        <label class="boolean-label">isNew</label>
+                        @Html.CheckBoxFor(m => m.isNew, Model.ProductVariant.isNew)
+                        @Html.ValidationMessageFor(model => model.ProductVariant.isNew)
+                    </div>
+                    <div class="editor-field  ">
+                        <label class="boolean-label">isGift</label>
+                        @Html.CheckBoxFor(m => m.isGift, Model.ProductVariant.isGift)
+                        @Html.ValidationMessageFor(model => model.ProductVariant.isGift)
+                    </div>
+                </div>
+
+                <div class="editor-field">
+                    <ul class="frame-tabheader">
+                        <li><a href="#frame-tab--vi" class="button active" title="Description">Description</a></li>
+                        <li><a href="#frame-tab--en" class="button" title="Description English">Description English</a></li>
+                    </ul>
+                    <div class="frame-tab--content">
+                        <div id="frame-tab--vi" class="frame-tab active">
+                            @Html.TextAreaFor(model => model.Product.FullDescription, new { @id = "editor" })
+                        </div>
+                        <div id="frame-tab--en" class="frame-tab">
+                            @Html.TextAreaFor(model => model.ProductLocalized.ShortDescription, new { @id = "editor1" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relate-product--tab frame-tab--cust">
+                <table width="100%" cellspacing="0" cellpadding="0" class="responstable relate-product--table">
+                    <thead>
+                    <tr>
+                        <th width="10%">id</th>
+                        <th>Name</th>
+                        <th width="20%">Image</th>
+                        <th width="15%">Control</th>
+                    </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+
+
+                <div class="control-action">
+                    <a class="button relate-product--button" data-popup=".popup-product" title="Add new related product" href="javascript:;">Add new related product</a>
+                </div>
+                @Html.HiddenFor(m => m.arrRelationProduct, new {@class = "arrRelationProduct"})
+            </div>
+
+            <div class="more-image--tab frame-tab--cust">
+                <div class="left-form">
+                    @Html.HiddenFor(m => m.SectionGalleries.CollectionImage, new { id = "image_url" })
+                    <div class="editor-field">
+                        <label>Upload More Image :</label>
+                        <div class="frame-tab--content">
+
+                            <div id="frame-tab--url" class="frame-tab active">
+                                <div class="frame-tab--listURL">
+                                    <input type="text" class="" placeholder="Enter URL Image Here" oninput="onChangeTextboxImage(this,2)" value=""/>
+                                    <input type="text" class="" placeholder="Enter URL Image Here" oninput="onChangeTextboxImage(this,2)" value=""/>
+                                    <input type="text" class="" placeholder="Enter URL Image Here" oninput="onChangeTextboxImage(this,2)" value=""/>
+                                    <input type="text" class="" placeholder="Enter URL Image Here" oninput="onChangeTextboxImage(this,2)" value=""/>
+                                    <input type="text" class="" placeholder="Enter URL Image Here" oninput="onChangeTextboxImage(this,2)" value=""/>
+                                    <input type="text" class="" placeholder="Enter URL Image Here" oninput="onChangeTextboxImage(this,2)" value=""/>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="right-form">
+                    <div class="editor-field">
+                        <label>Review Image</label>
+                        <img src="@Url.Content("/Content/images/sprite/no-image.png")" class="preview-rotate" width="350" height="200" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="control-action">
+        </div>
+    }
+}
+
+
+@section Scripts {
+    @{Html.RenderPartial(@StaticVariableAdministrator._popupChooseProducts);}
+}

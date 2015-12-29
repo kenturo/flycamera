@@ -1,0 +1,72 @@
+﻿@using Flycamera.App_Start
+@using FlyEntity.Utilities
+@model Flycamera.ViewModel.ProductsVM
+@{
+    ViewBag.Title = "Feature";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@section bodyContent{
+    <div class="feature-page">
+        <div id="body-content">
+            <div class="frm-breadcrum detail-sps">
+                <div class="feature-sp">
+                    <div class="frm-left-sp">
+                        <h1 class="name-sp">@Model.Products.Name</h1>
+                        <div class="frm-share">
+@*                            <a href="#" class="gplus" title="Google Plus">Google Plus</a>*@
+                            <a href="#" class="fb btn__FB--share" title="Facebook">Facebook</a>
+                        </div>
+                    </div>
+
+                    @{Html.RenderPartial(@StaticVariable._TabFeature, new ViewDataDictionary(this.ViewData) { { "ProductId", @Model.Products.ProductId.ToString() }, { "productName", @Model.Products.Name } });}
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="frm-rotate360">
+
+                    <!-- Show Product and rotate 360 deg on this product -->
+                    @if (Model != null)
+                    {
+                        Html.RenderPartial(@StaticVariable._RotateProducts, Model);
+                    }
+                    else
+                    {
+                        @Html.Raw("<p>" + StaticVariable.Msg_Update + "</p>");
+                    }
+                </div>
+
+            </div>
+            <!-- Show Full Content -->
+            @if (Model != null && Model.Products != null && Model.Products.Fly_SectionContent != null)
+            {
+                foreach (var itemC in Model.Products.Fly_SectionContent)
+                {
+                    if (itemC.Fly_PositionGallery != null && itemC.Fly_PositionGallery.PositionName_EN.Equals(PositionTab.Feature))
+                    {
+                        Html.RenderPartial(@StaticVariable._ContentProducts, itemC);
+                    }
+                }
+            }
+            @if (Model != null)
+            {
+                Html.RenderPartial(@StaticVariable._PartnerShipHome, Model.listPartnerships);
+            }
+            else
+            {
+                @Html.Raw("<p>" + StaticVariable.Msg_Update + "</p>");
+            }
+        </div>
+    </div>
+}
+@section Scripts {
+    <script src="/Scripts/parallax-bg.js" type="text/javascript"></script>
+    <script src="/Scripts/jquery.reel.js" type="text/javascript"></script>
+}
+
+
+
+
+
+

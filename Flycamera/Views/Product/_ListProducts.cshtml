@@ -1,0 +1,63 @@
+﻿@using Flycamera.App_Start
+@using FlyEntity.Utilities
+@model IEnumerable<FlyEntity.Fly_Product>
+
+@if (Model.Any())
+{
+    
+    <ul id="list-products" class="">
+        @foreach (var item in Model)
+        {
+            var objVaraint = item.Fly_ProductVariant.FirstOrDefault();
+            var objpic = item.Fly_ProductPicture.FirstOrDefault();
+            var title = (item.Name.Length > 20) ? item.Name.Substring(0, 20) + "..." : item.Name;
+            var stick = objVaraint != null && (objVaraint.isNew.GetValueOrDefault()) ? "stick-news" : "stick-gift";
+            var href = !item.isAccessories.GetValueOrDefault() ? Url.RouteUrl("newProduct", new {action = "overview", product_name = Url.SeoUrl(@item.Name), id = @item.ProductId}) : Url.RouteUrl("newAccessories", new { product_name = Url.SeoUrl(@item.Name), id = @item.ProductId });
+            <li>
+                <span class="@stick"></span>
+                <a class="image-link" title="@item.Name" href="@href">
+                    @if (@objpic != null && @objpic.Fly_Picture != null)
+                    {
+                        @Html.Image(@objpic.Fly_Picture.OriginalURL, "img-product")
+                    }
+                </a>
+
+                    <div class="detail-product" style="bottom: -150px;">
+                        <div class="subject">
+                            <a href="@href" title="@item.Name">@title</a>
+                        </div>
+                        <ul class="infomation-product">
+                            <li class="title-tbl">SKU:
+                                <span>@objVaraint.SKU</span>
+                            </li>
+                            @if (!@objVaraint.CallForPrice.GetValueOrDefault())
+                            {
+                                <li class="title-tbl">Price:
+                                    <span class="title-phone currency-data">@objVaraint.Price</span></li>
+                            }
+                            else
+                            {
+                                <li class="title-tbl">Call:
+                                    <span class="title-phone">0908 . 444 . 485</span></li>
+                            }
+                        </ul>
+                        <div class="frm-btn-cotnrol">
+                            <a title="See Now" class="btn-more" href="@href">
+                                See Now
+                            </a>
+                            @if (@User.IsInRole(RoleUser.ADMIN))
+                            {
+
+                                <p class="serect-price currency-data">@objVaraint.AdminPrice</p>
+                            }
+                        </div>
+                    </div>
+            </li>
+        }
+    </ul>
+}
+else
+{
+    <p>@StaticVariable.Msg_Update</p>
+}
+

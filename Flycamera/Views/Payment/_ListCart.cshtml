@@ -1,0 +1,46 @@
+﻿@using Flycamera.App_Start
+@using FlyEntity.Utilities
+@model Flycamera.ViewModel.ShopCartVm
+
+<table width="100%" cellspacing="0" cellpadding="0" class="responstable">
+    <thead>
+    <tr>
+        <th width="10%">SKU</th>
+        <th width="15%">Products</th>
+        <th width="15%">Image</th>
+        <th width="10%">Price</th>
+        <th width="5%">Quantity</th>
+        <th width="10%">Total</th>
+        <th width="5%">Control</th>
+    </tr>
+    </thead>
+    <tbody>
+    @if (Model != null)
+        {
+            <tr>
+                @Html.HiddenFor(m => m.ProductVariant.ProductVariantId)
+                <td>
+                    @Html.DisplayFor(m => m.ProductVariant.SKU)
+            </td>
+            <td>@Html.DisplayFor(m => m.Products.Name)</td>
+            <td><img src="@Model.Products.Fly_ProductPicture.Single(x => x.ProductID.Equals(@Model.Products.ProductId)).Fly_Picture.OriginalURL" class="preview" width="150" height="80" /></td>
+            <td>
+                <p class="currency-data checkout-price" rel="@Html.DisplayFor(m => m.ProductVariant.Price)">
+                    @Html.DisplayFor(m => m.ProductVariant.Price)
+                </p>
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.OrderProductVariant.Quantity, new { @class = "checkout-quantity", @style = "width: 30px; text-align: center;", @Value = "1" })
+            </td>
+            <td>
+                <p class=" checkout-totalItem">
+                    @Html.DisplayFor(m => m.Order.OrderTotal)
+                </p>
+                @Html.HiddenFor(m => m.OrderProductVariant.Price)
+            </td>
+            <td><input type="button" name="Remove" value="Remove" class="button" /></td>
+        </tr>
+        }
+    </tbody>
+</table>
+<p class="frm-totalshoppingcart">Total : <span class="currency-data checkout-totalOrder">0</span>@Html.HiddenFor(m => m.Order.OrderTotal)</p>

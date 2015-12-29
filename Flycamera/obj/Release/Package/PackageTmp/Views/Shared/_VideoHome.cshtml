@@ -1,0 +1,32 @@
+﻿@using Flycamera.App_Start
+@model IEnumerable<FlyEntity.Fly_Videos>
+
+<div id="frm-video-ytb">
+    @if(Model != null && Model.Any()){
+    <div id="navigation-clip">
+        <div class="frm-nav">
+            <span class="title">@Model.First().VideosTitle</span>
+            <div class="jcarousel-wrapper">
+                <div class="jcarousel">
+                    <a class="jcarousel-control-prev btn-prev-clip" href="#" data-jcarouselcontrol="true">‹</a>
+                    <ul class="list-clip">
+                        @foreach (var item in Model)
+                        {
+                            <li class="">
+                                <a href="@item.VideosLink" title="@item.VideosTitle">
+                                    <img src="@item.Fly_Picture.OriginalURL" width="112" height="70" alt="112"></a>
+                            </li>
+                        }
+                    </ul>
+
+                    <a class="jcarousel-control-next btn-next-clip" href="#" data-jcarouselcontrol="true">›</a>
+                </div>
+            </div>
+            @Html.Partial(@StaticVariable._shareSocial)
+        </div>
+    </div>
+    <iframe width="560" class="ifrm-clip-home" height="315" src="@Model.First().VideosLink?showinfo=0" frameborder="0" allowfullscreen></iframe>
+    }else{
+        <p>@StaticVariable.Msg_Update</p>   
+    }
+</div>

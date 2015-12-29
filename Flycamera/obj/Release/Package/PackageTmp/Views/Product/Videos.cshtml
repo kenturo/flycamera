@@ -1,0 +1,64 @@
+﻿@using Flycamera.App_Start
+@using FlyEntity.Utilities
+@model Flycamera.ViewModel.ProductsVM
+@{
+    ViewBag.Title = "Video";
+}
+
+
+@section bodyContent{
+    <div id="body-content">
+        <div class="frm-breadcrum detail-sps">
+            <div class="feature-sp">
+                <div class="frm-left-sp">
+                    <h1 class="name-sp">@Model.Products.Name</h1>
+                    <div class="frm-share">
+@*                        <a href="#" class="gplus" title="Google Plus">Google Plus</a>*@
+                        <a href="#" class="fb btn__FB--share" title="Facebook">Facebook</a>
+                    </div>
+                </div>
+
+                @{Html.RenderPartial(@StaticVariable._TabFeature, new ViewDataDictionary(this.ViewData) { { "ProductId", @Model.Products.ProductId.ToString() }, { "productName", @Model.Products.Name } });}
+
+
+            </div>
+        </div>
+        <div class="wrapper">
+            <div id="guide-clip">
+                <!-- Show Video -->
+                @if (Model.ListVideos != null && Model.ListVideos.Count > 0)
+                {
+                
+                    <div class="item-guide">
+                        @foreach (var item in Model.ListVideos)
+                        {
+                            <div class="top-note">
+                                <h1>@item.VideosTitle</h1>
+                                <div class="frm-share">
+@*                                    <a title="Youtube" class="ytb" href="@item.VideosLink">Youtube</a>*@
+@*                                    <a title="Google Plus" class="gplus" href="#">Google Plus</a>*@
+                                    <a title="Facebook" class="fb" href="#">Facebook</a>
+                                </div>
+                            </div>
+                            <div class="frm-ytm-guide">
+                                <iframe width="560" height="315" frameborder="0" class="ifrm-clip-home" src="@item.VideosLink" allowfullscreen=""></iframe>
+                            </div>
+                        }
+                    </div>
+                
+                }
+                else
+                {
+                    @Html.Raw("<p>" + StaticVariable.Msg_Update + "</p>");
+                }
+            </div>
+        </div>
+        @{Html.RenderPartial(@StaticVariable._PartnerShipHome, Model.listPartnerships);}
+    </div>
+}
+
+
+
+
+
+

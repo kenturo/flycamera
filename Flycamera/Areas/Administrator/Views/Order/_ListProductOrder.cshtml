@@ -1,0 +1,45 @@
+﻿@using Flycamera.App_Start
+@using FlyEntity.Utilities
+@model Flycamera.Areas.Administrator.ViewModel.OrderVm
+
+<div class="wrapper__listCart">
+    <table width="100%" cellspacing="0" cellpadding="0" class="responstable">
+        <thead>
+        <tr>
+            <th width="10%">SKU</th>
+            <th width="15%">Products</th>
+            <th width="10%">Price</th>
+            <th width="5%">Quantity</th>
+            <th width="10%">Total</th>
+            @*            <th width="5%">Control</th>*@
+        </tr>
+        </thead>
+        <tbody>
+        @if (Model != null && Model.ListOrderProductVariant.Count > 0)
+        {
+            foreach (var item in Model.ListOrderProductVariant)
+            {
+                <tr>
+                    <td>
+                        @item.Fly_ProductVariant.SKU
+                    </td>
+                    <td>@item.Fly_ProductVariant.Fly_Product.Name</td>
+                    <td>
+                        <p class="currency-data checkout-price" rel="@item.Price">
+                            @item.Price
+                        </p>
+                    </td>
+                    <td>
+                        @item.Quantity
+                    </td>
+                    <td class="currency-data">@Html.Raw(item.Price*item.Quantity)</td>
+                </tr>
+            }
+        }
+        else
+        {
+            @Html.Raw("<p>" + StaticVariable.Msg_Update + "</p>");
+        }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,78 @@
+﻿<div id="header">
+    <div class="wrapper-header">
+        <div class="left-header">
+            <a href="/" class="logo" title="Trở về trang chủ">Trở về trang chủ</a>
+            <ul class="nav-main">
+                <li>
+                    <a href="/Administrator/Dashboard" title="Dashboard">
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="#" title="Catelog">Catelog</a>
+                    <ul class="child-nav">
+                        <li><a href="/Administrator/categories/" title="Category">Category</a></li>
+                        <li><a href="/Administrator/manufacturer/" title="Manufacturer">Manufacturer</a></li>
+                        <li><a href="/Administrator/discount/" title="Discount">Discount</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/Administrator/products/" title="Products">Products</a>
+                    <ul class="child-nav">
+                        <li><a href="/Administrator/ProductGallery/overview" title="Overview">Overview</a></li>
+                        <li><a href="/Administrator/ProductGallery/featuries" title="Feature">Feature</a></li>
+                        <li><a href="/Administrator/spec/" title="Spec">Spec</a></li>
+                        <li>
+                            <a href="/Administrator/accessory/" title="Accessories">Accessories</a>
+                        </li>
+                        <li><a href="/Administrator/order/" title="Order">Order</a></li>
+                    </ul>
+                </li>
+                <li>
+                </li>
+                <li>
+                    <a href="javascript:;" title="Video">Video</a>
+                    <ul class="child-nav">
+                        <li><a href="/Administrator/video/" title="List Video">List Video</a></li>
+                        <li><a href="/Administrator/video/eventclip" title="Event Clip">Event Clip</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" title="Content Managements">Content Managements</a>
+                    <ul class="child-nav">
+                        <li><a href="/Administrator/Partnership/" title="PartnerShip">Partnership</a></li>
+                        <li><a href="/Administrator/banner/" title="Banner">Banner</a></li>
+                        <li><a href="/Administrator/blogpost/" title="Article">Article</a></li>
+                        <li><a href="/Administrator/team/" title="Article">Team</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="/Administrator/customer/" title="Customer">Customer</a>
+                </li>
+
+                <li>
+                    <a href="#" title="Customer">System</a>
+                    <ul class="child-nav">
+                        <li><a href="/Administrator/navigation" title="Navigation">Navigation</a></li>
+                    </ul>
+                </li>
+
+                @*<li>
+                      <a href="#" title="Customers">Customers</a>
+                    </li>
+                    <li>
+                      <a href="#" title="Systems Configuration">Systems Configuration</a>
+                    </li> *@
+            </ul>
+            @if (Request.IsAuthenticated)
+            {
+                <div class="frm-signout">
+                    <strong>@Html.Encode(User.Identity.Name)</strong>
+                    @Html.ActionLink("Sign Out", "Logout", "UserLogin")
+                    <a href="/">View Site</a>
+                </div>
+            }
+        </div>
+    </div>
+</div>

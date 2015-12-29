@@ -1,0 +1,51 @@
+﻿@using Flycamera.App_Start
+@model Flycamera.Areas.Administrator.ViewModel.ProductGalleryVM
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
+}
+<div class="titlePage">
+    <div class="wrapper">
+        <h1>List Spec</h1>
+    </div>
+</div>
+@section bodyContent{
+
+    <div class="control-action">
+
+        @Html.ActionLink("New Item", "Create", null, new { @class = "button newItem" })
+    </div>
+    <table width="100%" cellspacing="0" cellpadding="0" class="responstable">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Type</th>
+                <th width="5%">Createdon</th>
+                <th width="5%">Updatedon</th>
+                <th colspan="2">Control</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.ListSectionContents != null)
+            {
+                foreach (var item in Model.ListSectionContents)
+                {
+                <tr class="row-@item.Fly_Product.ProductId">
+                    <td>@item.Fly_Product.Name</td>
+                    <td>@item.Fly_PositionGallery.PositionName</td>
+                    <td width="5%" title="@item.CreatedOn.GetValueOrDefault().ToString("dd/MM/yyyy")">@item.CreatedOn.GetValueOrDefault().ToString("dd/MM/yyyy")</td>
+                    <td width="5%" title="@item.UpdateOn.GetValueOrDefault().ToString("dd/MM/yyyy")">@item.UpdateOn.GetValueOrDefault().ToString("dd/MM/yyyy")</td>
+                    <td width="5%">@Html.ActionLink("Edit", "Edit", new { id = item.Fly_Product.ProductId }, new { @class = "editIcon", @title = "Edit" })</td>
+                    <td width="5%">@Html.ActionLink("Delete", null, null, new { @class = "removeItem", @title = "delete", @rel = item.Fly_Product.ProductId, @data = "Video" })</td>
+                </tr>
+                }
+            }
+            else
+            {
+                @Html.Raw("<p>" + StaticVariable.Msg_Update + "</p>");
+            }
+        </tbody>
+    </table>
+    @Html.Hidden("controllerServices", this.ViewContext.RouteData.Values["controller"].ToString(), new { @id = "controllerServices" })
+}

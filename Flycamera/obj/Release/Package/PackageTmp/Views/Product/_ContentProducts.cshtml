@@ -1,0 +1,16 @@
+﻿@using Flycamera.App_Start
+@model FlyEntity.Fly_SectionContent
+
+
+<div id="content-dynamic">
+    <div class="wrapper">
+        @if (Model != null)
+        {
+            @Html.Raw(@Model.FullDescription);
+        }
+        else
+        {
+            @Html.Raw("<p>"+StaticVariable.Msg_Update+"</p>");
+        }
+    </div>
+</div>

@@ -1,0 +1,30 @@
+﻿@model IEnumerable<FlyEntity.Fly_Banner>
+
+
+<div id="frm-banner">
+    <div class="swiper-container">
+        <a href="javascript:;" class="btn-prev-banner" title="Previous">Previous</a>
+        <div class="swiper-wrapper">
+            <!--First Slide-->
+            
+                @{
+                    foreach (var itemB in Model)
+                    {
+                        <div class="swiper-slide">
+                            <a href="@itemB.BannerLink" title="@itemB.BannerTitle">
+                            <img src="@itemB.Fly_Picture.OriginalURL.ToString()" alt="" />
+                                
+                            </a>
+                            <div class="info-banner">
+                                <h1>@itemB.BannerTitle</h1>
+                                <h2>@itemB.BannerShortContent</h2>
+                                <a href="@itemB.BannerLink" title="See Now">See Now</a>
+                            </div>
+                        </div>
+                    }
+                }
+        </div>
+        <a href="javascript:;" class="btn-next-banner" title="Next">Next</a>
+        <div class="pagina"></div>
+    </div>
+</div>

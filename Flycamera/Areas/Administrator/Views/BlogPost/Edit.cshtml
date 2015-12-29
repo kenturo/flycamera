@@ -1,0 +1,99 @@
+﻿@using Flycamera.App_Start
+@model Flycamera.Areas.Administrator.ViewModel.BlogPostVm
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
+}
+
+<div class="titlePage">
+    <div class="wrapper">
+        <h1>Edit BlogPost</h1>
+    </div>
+</div>
+
+@section bodyContent{
+    
+    @using (Html.BeginForm())
+    {
+        <div class="control-action">
+            @Html.ActionLink("Back to List", "Index", null, new {@class = "button"})
+            <input type="submit" value="Submit" class="button"/>
+        </div>
+        
+        @Html.ValidationSummary(true)
+
+        <div class="left-form">
+            @Html.HiddenFor(m => m.Blogpost.BlogPostID)
+            @Html.HiddenFor(m => m.Blogpost.BlogPostTypeID)
+             @Html.HiddenFor(m => m.Blogpost.CreatedByID)
+            <div class="editor-field">
+                <label>Title</label>
+                @Html.TextBoxFor(model => model.Blogpost.BlogPostTitle, new { @class = " k-textbox", @required = true })
+                @Html.ValidationMessageFor(model => model.Blogpost.BlogPostTitle)
+            </div>
+
+
+            <div class="editor-field">
+                <label>Video</label>
+                @Html.TextBoxFor(model => model.Blogpost.VideoLink, new { @class = " k-textbox"})
+            </div>
+
+
+            <div class="editor-field frm-upload--backgroundIMG">
+                <label>Choose Image :</label>
+                <ul class="frame-tabheader">
+                    <li>
+                        <a href="#frame-tab--url" class="button active" title="URL">URL</a>
+                    </li>
+                </ul>
+
+                <div id="frame-tab--url" class="frame-tab active">
+                    @Html.TextBoxFor(model => model.Blogpost.ImageUrl, new { @class = "imgLink SyncURLImageLink k-textbox", @oninput = "onChangeTextboxImage(this,1)", @required = true, @validationMessage = "Enter {0}" })
+                    @Html.ValidationMessageFor(model => model.Blogpost.ImageUrl)
+                </div>
+            </div>
+
+            <div class="editor-field">
+                <label>Short Content</label>
+                @Html.TextAreaFor(model => model.Blogpost.BlogPostShortContent, new { @class = " k-textbox", @required = true, @maxlength = 200 })
+                @Html.ValidationMessageFor(model => model.Blogpost.BlogPostShortContent)
+            </div>
+
+            <div class="editor-field">
+                <label class="boolean-label">Published</label>
+                @Html.CheckBoxFor(m => m.IsPublish, Model.IsPublish)
+                @Html.ValidationMessageFor(model => model.Blogpost.Published)
+            </div>
+        </div>
+        <div class="right-form">
+            <div class="editor-field">
+                <label>Review</label>
+                @if (Model.Blogpost.ImageUrl != null)
+                {
+                    <img src="@Model.Blogpost.ImageUrl" class="preview" width="100%" height="300" />
+                }
+                else
+                {
+                    <img src="http://www.placehold.it/385x250" class="preview" width="100%" height="300" />
+                }
+            </div>
+        </div>
+        <div class="editor-field">
+			<label></label>
+            <ul class="frame-tabheader">
+                <li><a href="#frame-tab--vi" class="button active" title="Tiếng Việt">Tiếng Việt</a></li>
+            </ul>
+            <div class="frame-tab--content">
+                <div id="frame-tab--vi" class="frame-tab active">
+                    @Html.TextAreaFor(model => model.Blogpost.BlogPostBody, new { @id = "editor" })
+                </div>
+            </div>
+        </div>
+    
+    }
+}
+
+@section Scripts {
+    @{Html.RenderPartial(@StaticVariableAdministrator._popupChooseVideos);}
+}

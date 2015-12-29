@@ -1,0 +1,24 @@
+﻿@using Flycamera.App_Start
+@model IEnumerable<FlyEntity.Fly_Partnership>
+<div id="partnership">
+    <div class="wrapper">
+        <ul>
+            @if (Model != null) { 
+                foreach (var item in Model)
+                {
+                    <li>
+                        <a href="@item.PartnershipLink" target="_blank" title="@item.PartnershipTitle" class="">
+                            <img src="@item.Fly_Picture.OriginalURL" alt="@item.PartnershipTitle" width="102" height="84"/>
+                        </a>
+                    </li>
+                }
+            }
+            else
+            {
+                @Html.Raw("<p>" + StaticVariable.Msg_Update + "</p>");
+            }
+
+        </ul>
+    </div>
+</div>
+

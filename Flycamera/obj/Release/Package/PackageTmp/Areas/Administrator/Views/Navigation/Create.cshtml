@@ -1,0 +1,113 @@
+﻿@model Flycamera.Areas.Administrator.ViewModel.NavigationVm
+@using Flycamera.App_Start
+
+
+@{
+    ViewBag.Title = "Create Navigation";
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="titlePage">
+    <div class="wrapper">
+        <h1>Create Navigation</h1>
+    </div>
+</div>
+@section bodyContent{
+
+    @using (Html.BeginForm())
+    {
+         <div class="control-action">
+            <input type="submit" value="Submit" class="button" />
+            @Html.ActionLink("Back to List", "Index", null, new {@class = "button"})
+        </div>
+        @Html.ValidationSummary(true)
+
+        <div class="left-form">
+            <div class="editor-field">
+                <label>Title VN</label>
+                @Html.TextBoxFor(model => model.Navigation.title_vn, new { @placeholder = "", @class = "k-textbox", @required = true, @validationMessage = "Enter {0}" })
+                @Html.ValidationMessageFor(model => model.Navigation.title_vn)
+            </div>
+
+            <div class="editor-field">
+                <label>Title English</label>
+                @Html.TextBoxFor(model => model.Navigation.title_en, new { @placeholder = "", @class = "k-textbox", @required = true, @validationMessage = "Enter {0}" })
+                @Html.ValidationMessageFor(model => model.Navigation.title_en)
+            </div>
+
+            <div class="editor-field">
+                <label>Url Link</label>
+                @Html.TextBoxFor(model => model.Navigation.href, new {@placeholder = "", @class = "k-textbox url-gen", @required = true, @validationMessage = "Enter {0}", @readonly = true})
+                @Html.ValidationMessageFor(model => model.Navigation.href)
+            </div>
+
+            <div class="editor-field">
+                <label>Sub Products</label>
+                @Html.TextBoxFor(model => model.SubProducts, new { @class = "reviewProduct", @readonly = true })
+                @Html.HiddenFor(m => m.Navigation.imgLink, new { @class = "imgLink_nav" })
+                <a href="javascript:;" title="choose product" data-popup=".popup-product" class="button choseProduct">Choose Product</a>
+                @Html.ValidationMessageFor(model => model.Navigation.parentid)
+            </div>
+
+            <div class="editor-field">
+                <label>Ico</label>
+                @Html.TextBoxFor(model => model.Navigation.ico, new { @placeholder = "", @class = "k-textbox",  @validationMessage = "Enter {0}" })
+                @Html.ValidationMessageFor(model => model.Navigation.ico)
+            </div>
+
+            <div class="editor-field">
+                <label>Class</label>
+                @Html.TextBoxFor(model => model.Navigation.classObj, new {@placeholder = "", @class = "k-textbox",  @validationMessage = "Enter {0}"})
+                @Html.ValidationMessageFor(model => model.Navigation.classObj)
+            </div>
+
+            <div class="editor-field">
+                <label>Id</label>
+                @Html.TextBoxFor(model => model.Navigation.idObj, new { @placeholder = "", @class = "k-textbox",@validationMessage = "Enter {0}" })
+                @Html.ValidationMessageFor(model => model.Navigation.idObj)
+            </div>
+
+            <div class="editor-field frm-upload--backgroundIMG">
+                <label>Upload Image :</label>
+                <ul class="frame-tabheader">
+                    <li>
+                        <a href="#frame-tab--url" class="button active" title="URL">URL</a>
+                    </li>
+                </ul>
+                <div class="frame-tab--content frame-tab--upload">
+                    <div id="frame-tab--url" class="frame-tab active">
+                        @Html.TextBoxFor(model => model.Navigation.imgLink, new { @class = "imgLink SyncURLImageLink k-textbox", @oninput = "onChangeTextboxImage(this,1)", @validationMessage = "Enter {0}" })
+                        <input type="button" class="btn-chose button btn-upload-img" value="Upload" onclick="BrowseServer();" />
+                        @Html.ValidationMessageFor(model => model.Navigation.imgLink)
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right-form">
+            <div class="editor-field">
+                <label>Review</label>
+                <img src="http://www.placehold.it/172x126" class="preview RviewLink_nav" width="350" height="200" />
+            </div>
+            <div class="editor-field">
+                <label class="boolean-label">Published</label>
+                @Html.CheckBoxFor(m => m.Publish, Model.Navigation.Published)
+                @Html.ValidationMessageFor(model => model.Navigation.Published)
+            </div>
+
+            <div class="editor-field">
+                <label class="boolean-label">Deleted</label>
+                @Html.CheckBoxFor(m => m.Deleted, Model.Navigation.Deleted)
+                @Html.ValidationMessageFor(model => model.Navigation.Deleted)
+            </div>
+        </div>
+
+      
+    }
+}
+@{Html.RenderPartial(@StaticVariableAdministrator._popupChooseProducts);}
+
+
+@section Scripts {
+
+}

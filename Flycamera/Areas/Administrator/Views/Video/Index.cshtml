@@ -1,0 +1,68 @@
+﻿@using Flycamera.App_Start
+@model Flycamera.Areas.Administrator.ViewModel.VideoVM
+
+@{
+    ViewBag.Title = "List Video";
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
+}
+<div class="titlePage">
+    <div class="wrapper">
+        <h1>List Video</h1>
+    </div>
+</div> 
+@section bodyContent{
+
+<div class="control-action">
+       
+    @Html.ActionLink("New Item", "Create",null, new { @class="button newItem" })
+</div>
+<table width="100%" cellspacing="0" cellpadding="0" class="responstable">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Short Content</th>
+            <th width="3%">Video</th>
+            <th width="5%">Type</th>
+            <th>PictureID</th>
+            <th>Order</th>
+            <th width="5%">isHome</th>
+            <th width="5%">Published</th>
+            <th width="5%">Deleted</th>
+            <th colspan="2">Control</th>
+        </tr>
+    </thead>
+    <tbody>
+    @if (Model != null && Model.ListVideo != null)
+    {
+        foreach (var item in Model.ListVideo)
+         {
+             <tr class="row-@item.VideosID">
+                 <td>@item.VideosTitle</td>
+                 <td>@item.VideosShortContent</td>
+                 <td width="3%"><a href="@item.VideosLink" title="View Clip" class="iconVideoClip fancybox">View Clip</a></td>
+                 <td width="5%">@item.Fly_PositionGallery.PositionName</td>
+                 <td>@if (item.PictureID != null)
+                     {
+                         <img src="@item.Fly_Picture.OriginalURL" class="preview" width="150" height="80"/>
+                     }
+                     else
+                     {
+                         <img src="@Url.Content("/Content/images/sprite/no-image.png")" class="preview" width="150" height="80"/>
+                     }</td>
+                 <td>@item.DisplayOrder</td>
+                 <td width="5%"><input type="checkbox" name="ShowOnHomePage" class="disable" value="ShowOnHomePage" checked="@item.isShowHome"/></td>
+                 <td width="5%"><input type="checkbox" name="Published" class="disable" value="Published" checked="@item.Published"/></td>
+                 <td width="5%"><input type="checkbox" name="Deleted" class="disable" value="Deleted" checked="@item.Deleted"/></td>
+                 <td width="5%"> @Html.ActionLink("Edit", "Edit", new {id = item.VideosID}, new {@class = "editIcon", @title = "Edit"})</td>
+                 <td width="5%"> @Html.ActionLink("Delete", null, null, new {@class = "removeItem", @title = "delete", @rel = item.VideosID, @data = "Video"})</td>
+             </tr>
+         }
+    }
+    else
+    {
+        @Html.Raw("<p>" + StaticVariable.Msg_Update + "</p>")
+    }
+    </tbody>
+</table>
+    @Html.Hidden("controllerServices", this.ViewContext.RouteData.Values["controller"].ToString(), new {@id="controllerServices" })
+    }

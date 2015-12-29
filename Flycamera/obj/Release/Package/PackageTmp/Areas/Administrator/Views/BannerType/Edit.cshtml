@@ -1,0 +1,63 @@
+﻿@model FlycameraData.Fly_BannerType
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="titlePage">
+    <div class="wrapper">
+        <h1>Edit Banner Type</h1>
+    </div>
+</div>
+@section bodyContent{
+    <div class="control-action">
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "button" })
+    </div>
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+
+        @Html.HiddenFor(model => model.BannerTypeID)
+        <div class="left-form">
+            <div class="editor-field">
+                <label>Banner Type Title</label>
+                @Html.TextBoxFor(model => model.BannerTypeTitle)
+                @Html.ValidationMessageFor(model => model.BannerTypeTitle)
+            </div>
+
+            <div class="editor-field">
+                <label>Short Content</label>
+                @Html.TextBoxFor(model => model.BannerTypeShortContent)
+                @Html.ValidationMessageFor(model => model.BannerTypeShortContent)
+            </div>
+
+            <div class="editor-field">
+                <label>Width</label>
+                @Html.TextBoxFor(model => model.Width)
+                @Html.ValidationMessageFor(model => model.Width)
+            </div>
+
+            <div class="editor-field">
+                <label>Height</label>
+                @Html.TextBoxFor(model => model.Height)
+                @Html.ValidationMessageFor(model => model.Height)
+            </div>
+
+            <div class="editor-field">
+                <label>Order</label>
+                @Html.TextBoxFor(model => model.DisplayOrder)
+                @Html.ValidationMessageFor(model => model.DisplayOrder)
+            </div>
+        </div>
+    
+        <div class="control-action">
+            <input type="submit" value="Submit" class="button" />
+        </div>
+    }
+}
+@section Scripts {
+}

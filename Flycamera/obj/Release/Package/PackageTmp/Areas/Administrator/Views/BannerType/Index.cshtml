@@ -1,0 +1,50 @@
+﻿@model IEnumerable<FlycameraData.Fly_BannerType>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
+}
+<div class="titlePage">
+    <div class="wrapper">
+        <h1>List Banner Type</h1>
+    </div>
+</div>
+@section bodyContent{
+
+    <div class="control-action">
+
+        @Html.ActionLink("New Item", "Create", null, new { @class = "button newItem" })
+    </div>
+<table width="100%" cellspacing="0" cellpadding="0" class="responstable">
+    <thead>
+        <tr>
+            <th>BannerTypeTitle</th>
+            <th>BannerTypeShortContent</th>
+            <th>CreatedByID</th>
+            <th>Width</th>
+            <th>Height</th>
+            <th>CreatedOn</th>
+            <th>DisplayOrder</th>
+            <th>Control</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr class="row-@item.BannerTypeID">
+            <td>@item.BannerTypeTitle</td>
+            <td>@item.BannerTypeShortContent</td>
+            <td>@item.CreatedByID</td>
+            <td>@item.Width</td>
+            <td>@item.Height</td>
+            <td title="@item.CreatedOn">@item.CreatedOn.GetValueOrDefault().ToString("dd/MM/yyyy")</td>
+            <td>@item.DisplayOrder</td>
+            <td>    @Html.ActionLink("Edit","Edit",new {id = item.BannerTypeID}, new { @class = "editIcon",@title="Edit" })</td>
+        </tr>
+    }
+    </tbody>
+</table>
+    @Html.Hidden("controllerServices", this.ViewContext.RouteData.Values["controller"].ToString(), new { @id = "controllerServices" })
+}
+@section Scripts {
+}

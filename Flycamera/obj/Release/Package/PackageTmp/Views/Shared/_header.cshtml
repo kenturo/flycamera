@@ -1,0 +1,87 @@
+﻿@using Flycamera.App_Start
+@model IEnumerable<FlyEntity.Fly_Navigation>
+
+@{
+    var lang = Session["lang"] ?? "";
+}
+
+<div id="header">
+        <div class="wrapper">
+            <div class="left-header">
+                <a href="@Url.Action("Index","home")" class="logo" title="Trở về trang chủ">Trở về trang chủ</a>
+                <ul class="nav-main">
+                    @if (Model != null && Model.Any())
+                    {
+                        foreach (var flyNavigation in Model)
+                        {
+                            if (flyNavigation.parentid == null)
+                            {
+                                <li class="">
+                                    <a href="@flyNavigation.href" title="@flyNavigation.title_en" class="@flyNavigation.classObj">
+
+                                        @if (flyNavigation.ico != null && flyNavigation.ico.Any())
+                                        {
+                                            @Html.Raw(@flyNavigation.ico)
+                                        }
+                                        else
+                                        {
+                                            @flyNavigation.title_en
+                                        }
+                                    </a>
+                                </li>
+                            }
+                        }
+                    }
+                </ul>
+
+            </div>
+            <div class="right-header">
+                <form action="" class="search">
+                    <input type="text" value="" placeholder="seach flycamera..." />
+                    <input type="submit" value="seach" />
+                </form>
+                <div class="hotline-block">
+                    <span class="icon-hot-line">0908.444.485</span>
+                    @if (lang.Equals("en")) {
+                        <a href="/Home/ChangeLanguage?culture=vi" class="flag flag-vn" title="Vietnamese">Vietnamese</a>
+                    }
+                    else {
+                        <a href="/Home/ChangeLanguage?culture=en" class="flag flag-en" title="English">English</a>
+                    }
+                </div>
+            </div>
+        </div>
+    <div id="nav-products">
+        <div class="frm-breadcrum">
+            <ul class="breadcrum">
+                <li>
+                    <a title="All Products" href="#">All Products</a>
+                </li>
+            </ul>
+        </div>
+        <ul class="all-product">
+            @if (Model != null && Model.Any())
+            {
+                foreach (var item in Model)
+                {
+                    if (item.parentid != null)
+                    {
+                        var arrLink = item.href.Split('/');
+                        var href = arrLink.Length < 4 ? Url.RouteUrl("newAccessories", new {product_name = Url.SeoUrl(item.title_en), id = Int32.Parse(arrLink[arrLink.Length - 1])}) : Url.RouteUrl("newProduct", new {action = "overview", product_name = Url.SeoUrl(item.title_en), id = Int32.Parse(arrLink[arrLink.Length - 1])});
+                        <li>
+                            <a href="@href" title="@item.title_en">
+                                <img src="@item.imgLink" alt="@item.title_en">
+                                <span class="title-sp">@item.title_en</span>
+
+                            </a>
+                        </li>
+                    }
+                }
+            }
+        </ul>
+        <div class="wrapper__seemore">
+            <a href="/product" title="See more" class="seemore-product">See more</a>
+        </div>
+    </div>
+    
+    </div>

@@ -1,0 +1,45 @@
+﻿@using Flycamera.App_Start
+@model IEnumerable<Flycamera.ViewModel.ProductAdminVM>
+
+<ul id="list-products">
+    @if (Model != null)
+    {
+        foreach (var item in Model)
+        {
+            string urlImage = "";
+            
+            <li>
+                <span class="stick-news"></span>
+                <a class="image-link" title="" href="#">
+                    @*@if (Model.ProductPictures.ProductID.Equals(item.ProductId))
+                    {
+                        @Html.Image(Model.ProductPictures.Fly_Picture.OriginalURL,"img-product")
+                    }*@
+                    </a>
+                <div class="detail-product" style="bottom: -150px;">
+                    <div class="subject">
+                        <a title="Phantom 2 Vision+" href="#">@item.Product.Name</a>
+                        <div class="frm-share">
+                            <a title="Google Plus" class="gplus" href="#">Google Plus</a>
+                            <a title="Facebook" class="fb" href="#">Facebook</a>
+                        </div>
+                    </div>
+                    <ul class="infomation-product">
+                        <li class="title-tbl">ID:</li>
+                        <li>@item.Product.ProductId</li>
+                        <li class="title-tbl">Call:</li>
+                        <li class="title-phone">0908 . 444 . 485</li>
+                    </ul>
+                    <div class="frm-btn-cotnrol">
+                        <a title="See Now" class="btn-more" href="#">See Now</a>
+                        <p class="serect-price">USD $700</p>
+                    </div>
+                </div>
+            </li>
+        }
+    }
+    else
+    {
+        <li>@StaticVariable.Msg_Update</li>
+    }
+</ul>

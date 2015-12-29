@@ -1,0 +1,117 @@
+﻿@{
+    ViewBag.Title = "ContactUs";
+    Layout = "~/Views/Shared/_LayoutAngular.cshtml";
+}
+
+
+@section bodyContent
+{
+    <section class="wrapper__GoogleMap">
+    <div id="wrapper__GoogleMap--canvas"></div>
+</section>
+
+<section class="wrapper__contactGrp">
+    <div id="contact-block">
+        <div class="wrapper">
+            <div class="left-contact">
+                <h1>Corporate Information</h1>
+                <p>
+                    <span class="c-fone"></span>
+                    0908.444.485
+                </p>
+                <p>
+                    <span class="c-gmail"></span>
+                    FlycamPro.vn@gmail.com
+                </p>
+                <a title="trang chủ" href="www.FlycamPro.vn" class="">
+                    <span class="c-flycam"></span>
+                    www.FlycamPro.vn
+                </a>
+                <a title="trang chủ" href="http://saigon-hobby.com" class="c-partner">
+                    <span class="c-partner"></span>
+                    http://saigon-hobby.com/
+                </a>
+                <p>
+                    <span class="c-address"></span>
+                    15 Ly Thai To, Phường 1 Quận 10 Tp HCM
+                </p>
+                <p class="c-note">
+                    Ship Hàng Đến Tận Nhà Trên Toàn Quốc Bằng Dịch Vụ Chuyển Phát Nhanh Đảm Bảo.
+                    Bộ Phận Bán Sỉ Và Lẻ, Nhận Đơn Đặt Hàng:
+                </p>
+                <span class="c-hotline">08. 38353962</span>
+            </div>
+            <div class="right-contact">
+                <h1>Contact us</h1>
+                <div class="frm-form">
+                    <ul>
+                        <li>
+                            <input type="text" placeholder="Full Name">
+                        </li>
+                        <li>
+                            <input type="text" placeholder="Phone">
+                        </li>
+                        <li>
+                            <input type="text" placeholder="Email">
+                        </li>
+                        <li>
+                            <input type="text" placeholder="Wedsite">
+                        </li>
+                    </ul>
+                    <textarea placeholder="Message"></textarea>
+                    <a class="btn-send-form" href="javascript():;">Send</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="wrapper__IntroServices">
+    <div class="wrapper">
+        <ul class="wrapper__IntroServices--list">
+            <li>
+                <a class="ico-cart" href="#" title="Giỏ hàng"></a>
+            </li>
+            <li>
+                <a class="ico-delivery" href="#" title="Vận chuyện"></a>
+            </li>
+            <li>
+                <a class="ico-contact" href="#" title="Liên hệ"></a>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<section class="wrapper__DescribServices">
+    <div class="wrapper">
+        <div class="wrapper__DescribServices--container">
+            <h2 class="wrapper__DescribServices--title">
+                Saigon-Hobby cam kết gửi hàng đúng và đủ cho bạn - FullBox !!
+            </h2>
+
+            <div class="wrapper__DescribServices--content">
+                <p>
+                    Khách hàng thân mến ! Đôi khi nhằm mục đích tăng thêm lợi nhuận hoặc giảm giá sản phẩm thấp xuống để cạnh tranh các cửa hàng Online có thể lấy bớt ra một số linh kiện của nhà sản xuất tặng thêm cho bạn gửi kèm trong hộp, hoặc trao đổi một vài linh kiện hàng nhái kém chất lượng hơn vd: Pin, cánh, tools, đồ điện thiết yếu như servo, mortor, esc, receivervv.
+                </p>
+
+                <p>
+                    Vì uy tin của chính thương hiệu Saigon-Hobby Shop. Chúng tôi cam kết gửi đầy đủ và đúng hàng chính hãng, tất cả những gì có kèm theo hộp sản phẩm để đảm bảo quyền lợi cho khách hàng của mình.
+                </p>
+
+            </div>
+            <span class="img-describ">
+               
+                <img src="@Url.Content("/Content/images/img-sample.jpg")" alt="images sample">
+            </span>
+        </div>
+
+    </div>
+</section>
+}
+
+
+@section scripts
+{
+    <script src="@Scripts.Url("/Scripts/map.googleapi.js")" type="text/javascript"></script>
+    
+}

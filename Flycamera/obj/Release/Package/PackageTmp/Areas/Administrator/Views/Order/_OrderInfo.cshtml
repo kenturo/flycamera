@@ -1,0 +1,88 @@
+﻿@using Flycamera.App_Start
+@model FlyEntity.Fly_Order
+
+
+<div class="box-infomatio-user">
+    <div class="editor-field">
+        <label class="status-approve-label">Order Status:</label>
+        <p class="status-approve">@Model.OrderStatus</p>
+    </div>
+
+    @if (Model != null && Model.ApproveID.GetValueOrDefault(-1) != -1)
+    {
+        <div class="editor-field">
+            <label class="status-approve-label">Approver:</label>
+            <p class="status-approve ">
+                @if(@Model.Fly_Customer1 != null)
+                {
+                @Model.Fly_Customer1.Username
+                }
+            </p>
+        </div>
+    }
+    
+    <div class="left-form">
+        <div class="editor-field">
+            @Html.HiddenFor(m => m.CustomerID)
+            <label>First Name</label>
+            @Html.TextBoxFor(model => model.BillingFirstName, new {@readonly = true, @class = "k-textbox", @required = true, @validationMessage = "Enter {0}"})
+            @Html.ValidationMessageFor(model => model.BillingFirstName)
+        </div>
+
+        <div class="editor-field">
+            <label>Last Name</label>
+            @Html.TextBoxFor(model => model.BillingLastName, new {@readonly = true, @class = "k-textbox", @required = true})
+            @Html.ValidationMessageFor(model => model.BillingLastName)
+        </div>
+        <div class="editor-field">
+            <label>Mobile Phone</label>
+            @Html.TextBoxFor(model => model.BillingPhoneNumber, new {@readonly = true, @class = "k-textbox", @required = true, pattern = @"\d{5,10}"})
+            @Html.ValidationMessageFor(model => model.BillingPhoneNumber)
+        </div>
+
+        <div class="editor-field">
+            <label>Email</label>
+            @Html.TextBoxFor(model => model.BillingEmail, new {@readonly = true, @class = "k-textbox", @required = true})
+            @Html.ValidationMessageFor(model => model.BillingEmail)
+        </div>
+        <div class="editor-field">
+            <label>City</label>
+            @Html.TextBoxFor(model => model.BillingCity, new {@readonly = true, @class = "k-textbox"})
+            @Html.ValidationMessageFor(model => model.BillingCity)
+        </div>
+        <div class="editor-field">
+            <label>Country</label>
+            @Html.TextBoxFor(m => m.Fly_Country.Name, new {@class = "k-textbox", @readonly = true})
+            @*        @Html.DropDownListFor(model => model.SelectIndexCountry, Model.ListCountryItems, "Select Country", new { @class = "f-select", @required = true })*@
+        </div>
+        <div class="editor-field">
+            <label>Delivery Date</label>
+            @Html.TextBoxFor(model => model.DeliveryDate, "{0:dd/MM/yyyy}", new {@readonly = true, @required = true})
+            @Html.ValidationMessageFor(model => model.DeliveryDate)
+        </div>
+    </div>
+    <div class="right-form">
+        <div class="editor-field">
+            <label>Shipping</label>
+            @Html.TextAreaFor(m => m.Fly_ShippingMethod.Name, new {@class = "k-textbox", @readonly = true})
+            @*        @Html.DropDownListFor(model => model.SelectIndexShipping, Model.ListShippingItems, "Select Shipping", new { @class = "f-select", @required = true })*@
+        </div>
+        <div class="editor-field">
+            <label>Payment Method</label>
+            @Html.TextAreaFor(m => m.PaymentMethodName, new {@class = "k-textbox", @readonly = true})
+            @*        @Html.DropDownListFor(model => model.SelectNamePaymentMethod, Model.ListPaymentMethodItems, "Select Payment", new { @class = "f-select", @required = true })*@
+
+        </div>
+
+        <div class="editor-field clearfix">
+            <label>Address Receive</label>
+            @Html.TextAreaFor(model => model.BillingAddress1, new {@readonly = true, @class = "k-textbox"})
+            @Html.ValidationMessageFor(model => model.BillingAddress1)
+        </div>
+        <div class="editor-field">
+            <label>Shipping Status</label>
+            @Html.TextBoxFor(model => model.Fly_ShippingStatus.Name, new {@readonly = true, @class = "k-textbox"})
+            @Html.ValidationMessageFor(model => model.Fly_ShippingStatus.Name)
+        </div>
+    </div>
+</div>

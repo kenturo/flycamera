@@ -1,0 +1,1672 @@
+@import url("http://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,vietnamese");
+/* line 40, ../sass/_mixins.scss */
+header .header__nav li a.header__nav--home, header .header__nav li a.header__nav--logo, .wrapper__clients p.wrapper__clients--title, .wrapper__footer .frm-flowus .flow, .wrapper__IntroServices .wrapper__IntroServices--list li a {
+  display: block;
+  text-decoration: none;
+  text-indent: -9999px;
+}
+
+/* line 45, ../sass/_mixins.scss */
+header .header__nav li a, .wrapper__poster--control a.wrapper__poster--expand, .wrapper__poster--list li a {
+  display: block;
+  text-decoration: none;
+}
+
+/* line 2, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/neat-compass-1.6.0/stylesheets/neat/grid/_grid.scss */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 304, sprites/*.png */
+.sprites-sprite, .sprites-ico-cart-hv, .sprites-ico-cart, .sprites-ico-contact-hv, .sprites-ico-contact, .sprites-ico-delivery-hv, .sprites-ico-delivery, .sprites-ico-fb-hv, .sprites-ico-fb, .sprites-ico-twt-hv, .sprites-ico-twt, .sprites-ico-ytb-hv, .sprites-ico-ytb, .sprites-icon-blank, .sprites-icon-email, .sprites-icon-fone, .sprites-icon-home, .sprites-icon-user, .sprites-icon-website, .sprites-mini-icon-fb-hv, .sprites-mini-icon-fb, .sprites-mini-icon-twt-hv, .sprites-mini-icon-twt, .sprites-mini-icon-ytb-hv, .sprites-mini-icon-ytb, .sprites-next-banner-hv, .sprites-next-banner-nor, .sprites-next-face-team-hv, .sprites-next-face-team, .sprites-prev-banner-hv, .sprites-prev-banner-nor, .sprites-prev-face-team-hv, .sprites-prev-face-team, .sprites-title-our-partner, .wrapper__clients p.wrapper__clients--title, .wrapper__footer .copyright-content .login-bottom, .wrapper__footer .frm-flowus .flow-ytb, .wrapper__footer .frm-flowus .flow-ytb:hover, .wrapper__footer .frm-flowus .flow-fb, .wrapper__footer .frm-flowus .flow-fb:hover, .wrapper__footer .frm-flowus .flow-twt, .wrapper__footer .frm-flowus .flow-twt:hover, .wrapper__Introduce--container .wrapper__Introduce--team .wrapper__Introduce--social a.social-ytb, .wrapper__Introduce--container .wrapper__Introduce--team .wrapper__Introduce--social a.social-ytb:hover, .wrapper__Introduce--container .wrapper__Introduce--team .wrapper__Introduce--social a.social-fb, .wrapper__Introduce--container .wrapper__Introduce--team .wrapper__Introduce--social a.social-fb:hover, .wrapper__Introduce--container .wrapper__Introduce--team .wrapper__Introduce--social a.social-twt, .wrapper__Introduce--container .wrapper__Introduce--team .wrapper__Introduce--social a.social-twt:hover, .wrapper__IntroServices .wrapper__IntroServices--list li a.ico-cart, .wrapper__IntroServices .wrapper__IntroServices--list li a.ico-cart:hover, .wrapper__IntroServices .wrapper__IntroServices--list li a.ico-delivery, .wrapper__IntroServices .wrapper__IntroServices--list li a.ico-delivery:hover, .wrapper__IntroServices .wrapper__IntroServices--list li a.ico-contact, .wrapper__IntroServices .wrapper__IntroServices--list li a.ico-contact:hover, .wrapper__banner .jcarousel-control-prev, .wrapper__banner .jcarousel-control-prev:hover, .wrapper__banner .jcarousel-control-next, .wrapper__banner .jcarousel-control-next:hover, .wrapper__Introduce--jcarousel .jcarousel-control-prev, .wrapper__Introduce--jcarousel .jcarousel-control-prev:hover, .wrapper__Introduce--jcarousel .jcarousel-control-next, .wrapper__Introduce--jcarousel .jcarousel-control-next:hover, #contact-block .left-contact span.c-fone, #contact-block .left-contact span.c-gmail, #contact-block .left-contact span.c-flycam, #contact-block .left-contact span.c-partner, #contact-block .left-contact span.c-address {
+  background-image: url('./../images/angular/sprites-s1a80489c68.png');
+  background-repeat: no-repeat;
+}
+
+/* line 84, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-ico-cart-hv {
+  background-position: 0 0;
+  height: 116px;
+  width: 115px;
+}
+
+/* line 84, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-ico-cart {
+  background-position: 0 -116px;
+  height: 116px;
+  width: 115px;
+}
+
+/* line 84, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-ico-contact-hv {
+  background-position: 0 -232px;
+  height: 116px;
+  width: 115px;
+}
+
+/* line 84, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-ico-contact {
+  background-position: 0 -348px;
+  height: 116px;
+  width: 115px;
+}
+
+/* line 84, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-ico-delivery-hv {
+  background-position: 0 -464px;
+  height: 116px;
+  width: 115px;
+}
+
+/* line 84, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-ico-delivery {
+  background-position: 0 -580px;
+  height: 116px;
+  width: 115px;
+}
+
+/* line 84, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-ico-fb-hv {
+  background-position: 0 -696px;
+  height: 70px;
+  width: 70px;
+}
+
+/* line 84, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-ico-fb {
+  background-position: 0 -766px;
+  height: 70px;
+  width: 70px;
+}
+
+/* line 84, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-ico-twt-hv {
+  background-position: 0 -836px;
+  height: 70px;
+  width: 70px;
+}
+
+/* line 84, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-ico-twt {
+  background-position: 0 -906px;
+  height: 70px;
+  width: 70px;
+}
+
+/* line 84, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-ico-ytb-hv {
+  background-position: 0 -976px;
+  height: 70px;
+  width: 71px;
+}
+
+/* line 84, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-ico-ytb {
+  background-position: 0 -1046px;
+  height: 70px;
+  width: 71px;
+}
+
+/* line 84, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-icon-blank {
+  background-position: 0 -1116px;
+  height: 13px;
+  width: 13px;
+}
+
+/* line 84, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-icon-email {
+  background-position: 0 -1129px;
+  height: 24px;
+  width: 24px;
+}
+
+/* line 84, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-icon-fone {
+  background-position: 0 -1153px;
+  height: 24px;
+  width: 24px;
+}
+
+/* line 84, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-icon-home {
+  background-position: 0 -1177px;
+  height: 24px;
+  width: 24px;
+}
+
+/* line 84, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-icon-user {
+  background-position: 0 -1201px;
+  height: 20px;
+  width: 19px;
+}
+
+/* line 84, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-icon-website {
+  background-position: 0 -1221px;
+  height: 24px;
+  width: 24px;
+}
+
+/* line 84, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-mini-icon-fb-hv {
+  background-position: 0 -1245px;
+  height: 25px;
+  width: 25px;
+}
+
+/* line 84, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-mini-icon-fb {
+  background-position: 0 -1270px;
+  height: 25px;
+  width: 25px;
+}
+
+/* line 84, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-mini-icon-twt-hv {
+  background-position: 0 -1295px;
+  height: 25px;
+  width: 25px;
+}
+
+/* line 84, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-mini-icon-twt {
+  background-position: 0 -1320px;
+  height: 25px;
+  width: 25px;
+}
+
+/* line 84, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-mini-icon-ytb-hv {
+  background-position: 0 -1345px;
+  height: 25px;
+  width: 25px;
+}
+
+/* line 84, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-mini-icon-ytb {
+  background-position: 0 -1370px;
+  height: 25px;
+  width: 25px;
+}
+
+/* line 84, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-next-banner-hv {
+  background-position: 0 -1395px;
+  height: 80px;
+  width: 50px;
+}
+
+/* line 84, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-next-banner-nor {
+  background-position: 0 -1475px;
+  height: 80px;
+  width: 50px;
+}
+
+/* line 84, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-next-face-team-hv {
+  background-position: 0 -1555px;
+  height: 61px;
+  width: 62px;
+}
+
+/* line 84, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-next-face-team {
+  background-position: 0 -1616px;
+  height: 61px;
+  width: 62px;
+}
+
+/* line 84, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-prev-banner-hv {
+  background-position: 0 -1677px;
+  height: 80px;
+  width: 50px;
+}
+
+/* line 84, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-prev-banner-nor {
+  background-position: 0 -1757px;
+  height: 80px;
+  width: 50px;
+}
+
+/* line 84, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-prev-face-team-hv {
+  background-position: 0 -1837px;
+  height: 61px;
+  width: 62px;
+}
+
+/* line 84, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-prev-face-team {
+  background-position: 0 -1898px;
+  height: 61px;
+  width: 62px;
+}
+
+/* line 84, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-title-our-partner {
+  background-position: 0 -1959px;
+  height: 61px;
+  width: 384px;
+}
+
+/*@import "debug";*/
+/* line 5, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 4, ../sass/_layout.scss */
+body {
+  background: #1a1a1a;
+  font-family: "Roboto", Arial, Tahoma, Verdana, sans-serif;
+  color: #777777;
+  font-size: 18px;
+  line-height: 1.2em;
+}
+
+/* line 13, ../sass/_layout.scss */
+.wrapper-out {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%;
+}
+/* line 38, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+.wrapper-out:last-child {
+  margin-right: 0;
+}
+
+/* line 17, ../sass/_layout.scss */
+.wrapper {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 15, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/bourbon-compass-4.0.2/stylesheets/bourbon/addons/_clearfix.scss */
+.wrapper:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 21, ../sass/_layout.scss */
+header {
+  height: 70px;
+  background-color: #000;
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%;
+}
+/* line 38, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+header:last-child {
+  margin-right: 0;
+}
+/* line 26, ../sass/_layout.scss */
+header .header__nav {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%;
+}
+/* line 38, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+header .header__nav:last-child {
+  margin-right: 0;
+}
+/* line 29, ../sass/_layout.scss */
+header .header__nav li {
+  display: inline-block;
+  float: left;
+  padding: 0 10px;
+  border: 1px solid #222020;
+  border-top: none;
+  border-bottom: none;
+}
+/* line 37, ../sass/_layout.scss */
+header .header__nav li a {
+  height: 70px;
+  line-height: 70px;
+  color: #908787;
+}
+/* line 43, ../sass/_layout.scss */
+header .header__nav li a.header__nav--home {
+  width: 21px;
+  background: url(./../images/angular/ico-home.png) center center no-repeat;
+}
+/* line 49, ../sass/_layout.scss */
+header .header__nav li a.header__nav--logo {
+  width: 87px;
+  background: url(./../images/angular/logo.png) center center no-repeat;
+}
+/* line 56, ../sass/_layout.scss */
+header .header__nav li:hover {
+  background-color: #171e21;
+}
+/* line 59, ../sass/_layout.scss */
+header .header__nav li:hover a {
+  color: #fff;
+}
+/* line 64, ../sass/_layout.scss */
+header .header__nav li:first-child {
+  border: none;
+}
+
+/* line 71, ../sass/_layout.scss */
+section {
+  overflow: hidden;
+}
+
+/* line 75, ../sass/_layout.scss */
+.wrapper__clients {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%;
+  background: url(./../images/angular/bg-partner.jpg) center top no-repeat;
+  height: 460px;
+}
+/* line 38, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+.wrapper__clients:last-child {
+  margin-right: 0;
+}
+/* line 80, ../sass/_layout.scss */
+.wrapper__clients p.wrapper__clients--title {
+  background-position: 0 -1959px;
+  height: 61px;
+  width: 384px;
+  margin: 74px auto 0;
+}
+/* line 86, ../sass/_layout.scss */
+.wrapper__clients .wrapper__clients--list {
+  position: relative;
+  margin-top: 30px;
+  text-align: center;
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%;
+}
+/* line 38, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+.wrapper__clients .wrapper__clients--list:last-child {
+  margin-right: 0;
+}
+/* line 93, ../sass/_layout.scss */
+.wrapper__clients .wrapper__clients--list li {
+  margin-left: 6px;
+  display: inline-block;
+  border: 1px solid transparent;
+  background-color: #FFF;
+}
+/* line 102, ../sass/_layout.scss */
+.wrapper__clients .wrapper__clients--list li:hover {
+  border-color: #ffa000;
+}
+/* line 106, ../sass/_layout.scss */
+.wrapper__clients .wrapper__clients--list li:first-child {
+  margin-left: 0;
+}
+
+/* line 113, ../sass/_layout.scss */
+.wrapper__poster {
+  width: 100%;
+  clear: both;
+}
+
+/* line 118, ../sass/_layout.scss */
+.wrapper__poster--control {
+  margin-top: 45px;
+  overflow: hidden;
+}
+/* line 122, ../sass/_layout.scss */
+.wrapper__poster--control a.wrapper__poster--expand {
+  width: 120px;
+  height: 40px;
+  line-height: 40px;
+  color: #fff;
+  background-color: #909090;
+  float: right;
+  text-align: center;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+/* line 133, ../sass/_layout.scss */
+.wrapper__poster--control a.wrapper__poster--expand:hover {
+  background-color: #ec7210;
+}
+
+/* line 139, ../sass/_layout.scss */
+.wrapper__poster--list {
+  clear: both;
+  margin-top: 35px;
+}
+/* line 142, ../sass/_layout.scss */
+.wrapper__poster--list li {
+  margin-left: 26px;
+  margin-bottom: 26px;
+  display: inline-block;
+  border: 1px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+/* line 150, ../sass/_layout.scss */
+.wrapper__poster--list li a {
+  width: 213px;
+  height: 316px;
+  overflow: hidden;
+}
+/* line 161, ../sass/_layout.scss */
+.wrapper__poster--list li a .wrapper__poster--title {
+  position: absolute;
+  background-color: #000;
+  bottom: -70px;
+  height: 70px;
+  width: 100%;
+  padding: 15px 10px;
+  color: #fff;
+  text-align: center;
+  opacity: 0.8;
+  -moz-opacity: 0.8;
+  -webkit-opacity: 0.8;
+  filter: alpha(opacity=80);
+  -webkit-transition: all 0.4s ease-out 0s;
+  -moz-transition: all 0.4s ease-out 0s;
+  -o-transition: all 0.4s ease-out 0s;
+  transition: all 0.4s ease-out 0s;
+}
+/* line 175, ../sass/_layout.scss */
+.wrapper__poster--list li a:hover .wrapper__poster--title {
+  bottom: 0;
+}
+
+/* line 184, ../sass/_layout.scss */
+.wrapper__footer {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%;
+  height: 135px;
+  background-color: #252525;
+}
+/* line 38, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+.wrapper__footer:last-child {
+  margin-right: 0;
+}
+/* line 189, ../sass/_layout.scss */
+.wrapper__footer .copyright-content {
+  width: 100%;
+  padding: 5px 0;
+}
+/* line 192, ../sass/_layout.scss */
+.wrapper__footer .copyright-content p {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 78.67549%;
+  background: url("./../images/angular/line-footer.png") no-repeat scroll center bottom;
+  padding: 15px 0;
+}
+/* line 38, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+.wrapper__footer .copyright-content p:last-child {
+  margin-right: 0;
+}
+/* line 197, ../sass/_layout.scss */
+.wrapper__footer .copyright-content .login-bottom {
+  text-decoration: none;
+  background-position: 0 -1201px;
+  height: 20px;
+  width: 19px;
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 18.96686%;
+  text-indent: 30px;
+  line-height: 25px;
+  margin-top: 10px;
+  color: #777777;
+}
+/* line 38, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+.wrapper__footer .copyright-content .login-bottom:last-child {
+  margin-right: 0;
+}
+/* line 207, ../sass/_layout.scss */
+.wrapper__footer .copyright-content .login-bottom:hover {
+  color: #E99200;
+}
+/* line 212, ../sass/_layout.scss */
+.wrapper__footer .frm-flowus {
+  clear: both;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+/* line 216, ../sass/_layout.scss */
+.wrapper__footer .frm-flowus .flow-right {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 18.96686%;
+  float: right;
+}
+/* line 38, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+.wrapper__footer .frm-flowus .flow-right:last-child {
+  margin-right: 0;
+}
+/* line 220, ../sass/_layout.scss */
+.wrapper__footer .frm-flowus span {
+  line-height: 23px;
+  float: left;
+  margin-right: 10px;
+}
+/* line 225, ../sass/_layout.scss */
+.wrapper__footer .frm-flowus .flow {
+  float: left;
+  margin: 0 5px;
+}
+/* line 230, ../sass/_layout.scss */
+.wrapper__footer .frm-flowus .flow-ytb {
+  background-position: 0 -1370px;
+  height: 25px;
+  width: 25px;
+}
+/* line 232, ../sass/_layout.scss */
+.wrapper__footer .frm-flowus .flow-ytb:hover {
+  background-position: 0 -1345px;
+  height: 25px;
+  width: 25px;
+}
+/* line 236, ../sass/_layout.scss */
+.wrapper__footer .frm-flowus .flow-fb {
+  background-position: 0 -1270px;
+  height: 25px;
+  width: 25px;
+}
+/* line 238, ../sass/_layout.scss */
+.wrapper__footer .frm-flowus .flow-fb:hover {
+  background-position: 0 -1245px;
+  height: 25px;
+  width: 25px;
+}
+/* line 242, ../sass/_layout.scss */
+.wrapper__footer .frm-flowus .flow-twt {
+  background-position: 0 -1320px;
+  height: 25px;
+  width: 25px;
+}
+/* line 244, ../sass/_layout.scss */
+.wrapper__footer .frm-flowus .flow-twt:hover {
+  background-position: 0 -1295px;
+  height: 25px;
+  width: 25px;
+}
+
+/* line 251, ../sass/_layout.scss */
+.wrapper__Team--bg {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%;
+  margin: 0;
+  background: url("./../images/angular/bg-team.jpg") no-repeat scroll center center;
+  height: 416px;
+}
+/* line 38, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+.wrapper__Team--bg:last-child {
+  margin-right: 0;
+}
+
+/* line 259, ../sass/_layout.scss */
+.wrapper__Introduce--container {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  padding-top: 55px;
+}
+/* line 38, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+.wrapper__Introduce--container:last-child {
+  margin-right: 0;
+}
+/* line 265, ../sass/_layout.scss */
+.wrapper__Introduce--container .wrapper__Introduce--preview {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 31.76157%;
+}
+/* line 38, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+.wrapper__Introduce--container .wrapper__Introduce--preview:last-child {
+  margin-right: 0;
+}
+/* line 270, ../sass/_layout.scss */
+.wrapper__Introduce--container .wrapper__Introduce--detail {
+  clear: both;
+  position: relative;
+}
+/* line 274, ../sass/_layout.scss */
+.wrapper__Introduce--container .wrapper__Introduce--detail > div {
+  height: 540px;
+  position: absolute;
+  top: 50px;
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 82.94039%;
+  z-index: 1;
+  opacity: 0;
+  -webkit-transition: opacity .5s ease-out, transform .5s ease-in-out;
+  transition: opacity .5s ease-out, transform .5s ease-in-out;
+}
+/* line 38, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+.wrapper__Introduce--container .wrapper__Introduce--detail > div:last-child {
+  margin-right: 0;
+}
+/* line 284, ../sass/_layout.scss */
+.wrapper__Introduce--container .wrapper__Introduce--detail > div.active {
+  z-index: 2;
+  opacity: 1;
+}
+/* line 291, ../sass/_layout.scss */
+.wrapper__Introduce--container .wrapper__Introduce--team {
+  padding-left: 30px;
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 65.88078%;
+  position: relative;
+  height: 785px;
+}
+/* line 38, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+.wrapper__Introduce--container .wrapper__Introduce--team:last-child {
+  margin-right: 0;
+}
+/* line 297, ../sass/_layout.scss */
+.wrapper__Introduce--container .wrapper__Introduce--team .wrapper__Introduce--content {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%;
+  margin-right: 0;
+  margin-top: 50px;
+}
+/* line 38, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+.wrapper__Introduce--container .wrapper__Introduce--team .wrapper__Introduce--content:last-child {
+  margin-right: 0;
+}
+/* line 302, ../sass/_layout.scss */
+.wrapper__Introduce--container .wrapper__Introduce--team .wrapper__Introduce--content .wrapper__Introduce--title {
+  color: #ffa000;
+  font-size: 72px;
+  padding: 20px 0;
+}
+/* line 308, ../sass/_layout.scss */
+.wrapper__Introduce--container .wrapper__Introduce--team .wrapper__Introduce--content .wrapper__Introduce--tagline {
+  color: #fff;
+  font-size: 20px;
+  padding: 20px 0;
+  line-height: 20px;
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 65.88078%;
+}
+/* line 38, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+.wrapper__Introduce--container .wrapper__Introduce--team .wrapper__Introduce--content .wrapper__Introduce--tagline:last-child {
+  margin-right: 0;
+}
+/* line 316, ../sass/_layout.scss */
+.wrapper__Introduce--container .wrapper__Introduce--team .wrapper__Introduce--content .wrapper__Introduce--description {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 65.88078%;
+  margin-top: 40px;
+  line-height: 28px;
+}
+/* line 38, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+.wrapper__Introduce--container .wrapper__Introduce--team .wrapper__Introduce--content .wrapper__Introduce--description:last-child {
+  margin-right: 0;
+}
+/* line 322, ../sass/_layout.scss */
+.wrapper__Introduce--container .wrapper__Introduce--team .wrapper__Introduce--social {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 48.82117%;
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+}
+/* line 38, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+.wrapper__Introduce--container .wrapper__Introduce--team .wrapper__Introduce--social:last-child {
+  margin-right: 0;
+}
+/* line 329, ../sass/_layout.scss */
+.wrapper__Introduce--container .wrapper__Introduce--team .wrapper__Introduce--social a {
+  display: block;
+  font-size: 0;
+  float: left;
+  margin-right: 20px;
+}
+/* line 338, ../sass/_layout.scss */
+.wrapper__Introduce--container .wrapper__Introduce--team .wrapper__Introduce--social a.social-ytb {
+  background-position: 0 -1046px;
+  height: 70px;
+  width: 71px;
+}
+/* line 340, ../sass/_layout.scss */
+.wrapper__Introduce--container .wrapper__Introduce--team .wrapper__Introduce--social a.social-ytb:hover {
+  background-position: 0 -976px;
+  height: 70px;
+  width: 71px;
+}
+/* line 345, ../sass/_layout.scss */
+.wrapper__Introduce--container .wrapper__Introduce--team .wrapper__Introduce--social a.social-fb {
+  background-position: 0 -766px;
+  height: 70px;
+  width: 70px;
+}
+/* line 347, ../sass/_layout.scss */
+.wrapper__Introduce--container .wrapper__Introduce--team .wrapper__Introduce--social a.social-fb:hover {
+  background-position: 0 -696px;
+  height: 70px;
+  width: 70px;
+}
+/* line 352, ../sass/_layout.scss */
+.wrapper__Introduce--container .wrapper__Introduce--team .wrapper__Introduce--social a.social-twt {
+  background-position: 0 -906px;
+  height: 70px;
+  width: 70px;
+}
+/* line 354, ../sass/_layout.scss */
+.wrapper__Introduce--container .wrapper__Introduce--team .wrapper__Introduce--social a.social-twt:hover {
+  background-position: 0 -836px;
+  height: 70px;
+  width: 70px;
+}
+
+/* line 363, ../sass/_layout.scss */
+.wrapper__GoogleMap {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%;
+  margin: 0;
+  height: 530px;
+}
+/* line 38, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+.wrapper__GoogleMap:last-child {
+  margin-right: 0;
+}
+/* line 368, ../sass/_layout.scss */
+.wrapper__GoogleMap #wrapper__GoogleMap--canvas {
+  width: inherit;
+  height: 530px;
+}
+
+/* line 375, ../sass/_layout.scss */
+.wrapper__IntroServices {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%;
+  margin: 0;
+  background-color: #e3e3e3;
+  height: 170px;
+}
+/* line 38, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+.wrapper__IntroServices:last-child {
+  margin-right: 0;
+}
+/* line 381, ../sass/_layout.scss */
+.wrapper__IntroServices .wrapper__IntroServices--list {
+  width: 100%;
+  height: 170px;
+}
+/* line 384, ../sass/_layout.scss */
+.wrapper__IntroServices .wrapper__IntroServices--list li {
+  float: left;
+  margin-right: 80px;
+}
+/* line 388, ../sass/_layout.scss */
+.wrapper__IntroServices .wrapper__IntroServices--list li:last-child {
+  margin-right: 0;
+}
+/* line 392, ../sass/_layout.scss */
+.wrapper__IntroServices .wrapper__IntroServices--list li a {
+  margin-top: 30px;
+}
+/* line 397, ../sass/_layout.scss */
+.wrapper__IntroServices .wrapper__IntroServices--list li a.ico-cart {
+  background-position: 0 -116px;
+  height: 116px;
+  width: 115px;
+}
+/* line 399, ../sass/_layout.scss */
+.wrapper__IntroServices .wrapper__IntroServices--list li a.ico-cart:hover {
+  background-position: 0 0;
+  height: 116px;
+  width: 115px;
+}
+/* line 405, ../sass/_layout.scss */
+.wrapper__IntroServices .wrapper__IntroServices--list li a.ico-delivery {
+  background-position: 0 -580px;
+  height: 116px;
+  width: 115px;
+}
+/* line 407, ../sass/_layout.scss */
+.wrapper__IntroServices .wrapper__IntroServices--list li a.ico-delivery:hover {
+  background-position: 0 -464px;
+  height: 116px;
+  width: 115px;
+}
+/* line 413, ../sass/_layout.scss */
+.wrapper__IntroServices .wrapper__IntroServices--list li a.ico-contact {
+  background-position: 0 -348px;
+  height: 116px;
+  width: 115px;
+}
+/* line 415, ../sass/_layout.scss */
+.wrapper__IntroServices .wrapper__IntroServices--list li a.ico-contact:hover {
+  background-position: 0 -232px;
+  height: 116px;
+  width: 115px;
+}
+
+/* line 425, ../sass/_layout.scss */
+.wrapper__DescribServices {
+  height: 390px;
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%;
+  margin: 0;
+  background: url("./../images/angular/bg-services.jpg") no-repeat scroll center center;
+}
+/* line 38, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+.wrapper__DescribServices:last-child {
+  margin-right: 0;
+}
+/* line 431, ../sass/_layout.scss */
+.wrapper__DescribServices .wrapper__DescribServices--container {
+  height: 338px;
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%;
+  margin-right: 0;
+  margin-top: 2px;
+  padding-left: 30px;
+  background: url("./../images/angular/bg-overlay-services.png") repeat scroll center center;
+}
+/* line 38, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+.wrapper__DescribServices .wrapper__DescribServices--container:last-child {
+  margin-right: 0;
+}
+/* line 439, ../sass/_layout.scss */
+.wrapper__DescribServices .wrapper__DescribServices--container h2.wrapper__DescribServices--title {
+  width: 100%;
+  color: #1a1a1a;
+  font-size: 24px;
+  padding: 30px 0;
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 61.61588%;
+}
+/* line 38, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+.wrapper__DescribServices .wrapper__DescribServices--container h2.wrapper__DescribServices--title:last-child {
+  margin-right: 0;
+}
+/* line 447, ../sass/_layout.scss */
+.wrapper__DescribServices .wrapper__DescribServices--container .wrapper__DescribServices--content {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 61.61588%;
+}
+/* line 38, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+.wrapper__DescribServices .wrapper__DescribServices--container .wrapper__DescribServices--content:last-child {
+  margin-right: 0;
+}
+/* line 449, ../sass/_layout.scss */
+.wrapper__DescribServices .wrapper__DescribServices--container .wrapper__DescribServices--content p {
+  float: left;
+  padding-right: 20px;
+  font-size: 16px;
+  text-indent: 35px;
+  color: #1a1a1a;
+  line-height: 30px;
+}
+/* line 459, ../sass/_layout.scss */
+.wrapper__DescribServices .wrapper__DescribServices--container .img-describ {
+  display: block;
+  padding: 40px 0;
+}
+
+/* line 468, ../sass/_layout.scss */
+.wrapper__Quotation {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%;
+  margin: 0;
+  height: 140px;
+  background: #fdfdfd;
+  background: -moz-linear-gradient(top, #fdfdfd 0%, #f5f5f5 12%, #e5e5e5 41%, #d7d7d7 85%, #d7d7d7 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, #fdfdfd), color-stop(12%, #f5f5f5), color-stop(41%, #e5e5e5), color-stop(85%, #d7d7d7), color-stop(100%, #d7d7d7));
+  background: -webkit-linear-gradient(top, #fdfdfd 0%, #f5f5f5 12%, #e5e5e5 41%, #d7d7d7 85%, #d7d7d7 100%);
+  background: -o-linear-gradient(top, #fdfdfd 0%, #f5f5f5 12%, #e5e5e5 41%, #d7d7d7 85%, #d7d7d7 100%);
+  background: -ms-linear-gradient(top, #fdfdfd 0%, #f5f5f5 12%, #e5e5e5 41%, #d7d7d7 85%, #d7d7d7 100%);
+  background: linear-gradient(to bottom, #fdfdfd 0%, #f5f5f5 12%, #e5e5e5 41%, #d7d7d7 85%, #d7d7d7 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdfdfd', endColorstr='#d7d7d7', GradientType=0 );
+}
+/* line 38, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+.wrapper__Quotation:last-child {
+  margin-right: 0;
+}
+
+/* line 1, ../sass/_banner-event.scss */
+.wrapper__banner {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%;
+  background: url(./../images/angular/bg-partner.jpg) center top no-repeat;
+  height: eb-height;
+}
+/* line 38, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+.wrapper__banner:last-child {
+  margin-right: 0;
+}
+/* line 5, ../sass/_banner-event.scss */
+.wrapper__banner .wrapper__banner--container {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%;
+  position: relative;
+}
+/* line 38, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+.wrapper__banner .wrapper__banner--container:last-child {
+  margin-right: 0;
+}
+/* line 10, ../sass/_banner-event.scss */
+.wrapper__banner .wrapper__banner--list {
+  float: left;
+  position: relative;
+  width: 68em;
+  height: 650px;
+  margin: 0;
+  overflow: hidden;
+}
+/* line 19, ../sass/_banner-event.scss */
+.wrapper__banner .wrapper__banner--list ul {
+  position: relative;
+  width: 20000em;
+  height: 100%;
+  float: left;
+}
+/* line 24, ../sass/_banner-event.scss */
+.wrapper__banner .wrapper__banner--list ul li {
+  float: left;
+  width: 68em;
+}
+/* line 28, ../sass/_banner-event.scss */
+.wrapper__banner .wrapper__banner--list ul li img {
+  max-width: 100%;
+  height: auto;
+  width: 100%;
+}
+/* line 40, ../sass/_banner-event.scss */
+.wrapper__banner .jcarousel-control {
+  border-radius: 0;
+  box-shadow: none;
+  top: 45%;
+}
+/* line 46, ../sass/_banner-event.scss */
+.wrapper__banner .jcarousel-control-prev {
+  left: 0;
+  background-position: 0 -1757px;
+  height: 80px;
+  width: 50px;
+}
+/* line 50, ../sass/_banner-event.scss */
+.wrapper__banner .jcarousel-control-prev:hover {
+  background-position: 0 -1677px;
+  height: 80px;
+  width: 50px;
+}
+/* line 55, ../sass/_banner-event.scss */
+.wrapper__banner .jcarousel-control-next {
+  right: 0;
+  background-position: 0 -1475px;
+  height: 80px;
+  width: 50px;
+}
+/* line 59, ../sass/_banner-event.scss */
+.wrapper__banner .jcarousel-control-next:hover {
+  background-position: 0 -1395px;
+  height: 80px;
+  width: 50px;
+}
+/* line 64, ../sass/_banner-event.scss */
+.wrapper__banner .jcarousel-pagination {
+  bottom: 10px;
+  display: inline-block;
+  left: 0;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+/* line 72, ../sass/_banner-event.scss */
+.wrapper__banner .jcarousel-pagination a {
+  background-color: #6f6f6f;
+  border-radius: 50%;
+  display: inline-block;
+  font-size: 0;
+  height: 15px;
+  margin-right: 8px;
+  opacity: 0.75;
+  padding: 3px;
+  text-align: center;
+  text-decoration: none;
+  width: 15px;
+}
+/* line 85, ../sass/_banner-event.scss */
+.wrapper__banner .jcarousel-pagination a:hover, .wrapper__banner .jcarousel-pagination a.active {
+  background-color: #ffa000;
+}
+
+/* line 92, ../sass/_banner-event.scss */
+.wrapper__banner--gallery {
+  background: none;
+}
+/* line 94, ../sass/_banner-event.scss */
+.wrapper__banner--gallery .wrapper__banner--list {
+  height: 550px;
+  width: 2000px;
+}
+/* line 99, ../sass/_banner-event.scss */
+.wrapper__banner--gallery .wrapper__banner--list ul li {
+  width: 2000px;
+}
+
+/* line 107, ../sass/_banner-event.scss */
+.wrapper__Introduce--jcarousel {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%;
+  margin: 0;
+  position: relative;
+}
+/* line 38, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+.wrapper__Introduce--jcarousel:last-child {
+  margin-right: 0;
+}
+/* line 112, ../sass/_banner-event.scss */
+.wrapper__Introduce--jcarousel .jcarousel-control {
+  border-radius: 0;
+  box-shadow: none;
+  top: 35%;
+  background-color: transparent;
+}
+/* line 119, ../sass/_banner-event.scss */
+.wrapper__Introduce--jcarousel .jcarousel-control-prev {
+  left: 0;
+  background-position: 0 -1898px;
+  height: 61px;
+  width: 62px;
+}
+/* line 123, ../sass/_banner-event.scss */
+.wrapper__Introduce--jcarousel .jcarousel-control-prev:hover {
+  background-position: 0 -1837px;
+  height: 61px;
+  width: 62px;
+}
+/* line 128, ../sass/_banner-event.scss */
+.wrapper__Introduce--jcarousel .jcarousel-control-next {
+  right: 0;
+  background-position: 0 -1616px;
+  height: 61px;
+  width: 62px;
+}
+/* line 132, ../sass/_banner-event.scss */
+.wrapper__Introduce--jcarousel .jcarousel-control-next:hover {
+  background-position: 0 -1555px;
+  height: 61px;
+  width: 62px;
+}
+
+/* line 138, ../sass/_banner-event.scss */
+.wrapper__Introduce--listFace {
+  float: left;
+  height: 200px;
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 82.94039%;
+  margin-left: 9.38278%;
+  margin-right: 0;
+  overflow: hidden;
+}
+/* line 38, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+.wrapper__Introduce--listFace:last-child {
+  margin-right: 0;
+}
+/* line 147, ../sass/_banner-event.scss */
+.wrapper__Introduce--listFace ul {
+  position: relative;
+  width: 20000em;
+  height: 100%;
+  float: left;
+}
+/* line 152, ../sass/_banner-event.scss */
+.wrapper__Introduce--listFace ul li {
+  float: left;
+  width: 200px;
+  margin-right: 12px;
+}
+/* line 156, ../sass/_banner-event.scss */
+.wrapper__Introduce--listFace ul li a {
+  width: 200px;
+  height: 200px;
+  display: block;
+  border: 3px solid transparent;
+  border-radius: 50%;
+}
+/* line 163, ../sass/_banner-event.scss */
+.wrapper__Introduce--listFace ul li a:hover, .wrapper__Introduce--listFace ul li a.active {
+  border-color: #ffa000;
+}
+/* line 167, ../sass/_banner-event.scss */
+.wrapper__Introduce--listFace ul li img {
+  max-width: 100%;
+  height: auto;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+
+/* line 1, ../sass/_sub-tab.scss */
+.wrapper__Tab--list {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%;
+  margin: 0;
+}
+/* line 38, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+.wrapper__Tab--list:last-child {
+  margin-right: 0;
+}
+/* line 4, ../sass/_sub-tab.scss */
+.wrapper__Tab--list li {
+  border-right: 1px solid #1a1a1a;
+  display: inline-block;
+  float: left;
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 16.66381%;
+  margin: 0;
+}
+/* line 38, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+.wrapper__Tab--list li:last-child {
+  margin-right: 0;
+}
+/* line 11, ../sass/_sub-tab.scss */
+.wrapper__Tab--list li a {
+  background-color: #ebebeb;
+  color: #1a1a1a;
+  display: block;
+  font-size: 25px;
+  font-weight: bold;
+  padding: 20px 0;
+  text-decoration: none;
+  width: 100%;
+  text-align: center;
+}
+/* line 23, ../sass/_sub-tab.scss */
+.wrapper__Tab--list li a:hover {
+  background-color: #ec720f;
+  color: #ebebeb;
+}
+
+/* line 31, ../sass/_sub-tab.scss */
+.wrapper__Tab--detail {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%;
+  margin: 0;
+  clear: both;
+  overflow: hidden;
+  margin-top: 45px;
+  padding-bottom: 45px;
+}
+/* line 38, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+.wrapper__Tab--detail:last-child {
+  margin-right: 0;
+}
+/* line 39, ../sass/_sub-tab.scss */
+.wrapper__Tab--detail h1.wrapper__Tab--title {
+  color: #ec720f;
+  float: left;
+  font-size: 25px;
+  padding: 0 20px 10px 0;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #2e2e2e;
+}
+
+/* line 49, ../sass/_sub-tab.scss */
+.wrapper__Tab--content {
+  clear: both;
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%;
+  margin: 0;
+  clear: both;
+}
+/* line 38, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+.wrapper__Tab--content:last-child {
+  margin-right: 0;
+}
+
+/* line 1, ../sass/_contact.scss */
+.wrapper__contactGrp {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%;
+  margin: 0;
+}
+/* line 38, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+.wrapper__contactGrp:last-child {
+  margin-right: 0;
+}
+
+/* line 6, ../sass/_contact.scss */
+#contact-block {
+  padding-bottom: 30px;
+  padding-top: 30px;
+}
+/* line 9, ../sass/_contact.scss */
+#contact-block h1 {
+  color: #939598;
+  font-size: 30px;
+  border-bottom: 1px solid #363636;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+  padding-right: 30px;
+  float: left;
+}
+/* line 18, ../sass/_contact.scss */
+#contact-block .left-contact {
+  float: left;
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 48.82117%;
+  overflow: hidden;
+  position: relative;
+  line-height: 30px;
+  font-size: 16px;
+}
+/* line 38, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+#contact-block .left-contact:last-child {
+  margin-right: 0;
+}
+/* line 25, ../sass/_contact.scss */
+#contact-block .left-contact span {
+  float: left;
+  position: relative;
+  top: 3px;
+}
+/* line 29, ../sass/_contact.scss */
+#contact-block .left-contact span.c-fone {
+  background-position: 0 -1153px;
+  height: 24px;
+  width: 24px;
+}
+/* line 33, ../sass/_contact.scss */
+#contact-block .left-contact span.c-gmail {
+  background-position: 0 -1129px;
+  height: 24px;
+  width: 24px;
+}
+/* line 36, ../sass/_contact.scss */
+#contact-block .left-contact span.c-flycam, #contact-block .left-contact span.c-partner {
+  background-position: 0 -1221px;
+  height: 24px;
+  width: 24px;
+  text-indent: 0;
+}
+/* line 40, ../sass/_contact.scss */
+#contact-block .left-contact span.c-address {
+  background-position: 0 -1177px;
+  height: 24px;
+  width: 24px;
+}
+/* line 43, ../sass/_contact.scss */
+#contact-block .left-contact span.c-hotline {
+  color: #ffa000;
+  font-size: 30px;
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%;
+  padding-top: 10px;
+}
+/* line 38, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+#contact-block .left-contact span.c-hotline:last-child {
+  margin-right: 0;
+}
+/* line 50, ../sass/_contact.scss */
+#contact-block .left-contact a {
+  text-decoration: none;
+  text-indent: 10px;
+  display: block;
+  color: #1366e1;
+}
+/* line 56, ../sass/_contact.scss */
+#contact-block .left-contact a:hover {
+  text-decoration: underline;
+}
+/* line 60, ../sass/_contact.scss */
+#contact-block .left-contact p {
+  color: #808080;
+  text-indent: 10px;
+  clear: both;
+}
+/* line 64, ../sass/_contact.scss */
+#contact-block .left-contact p.c-note {
+  text-indent: 0;
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 53.08608%;
+  line-height: 25px;
+}
+/* line 38, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+#contact-block .left-contact p.c-note:last-child {
+  margin-right: 0;
+}
+/* line 71, ../sass/_contact.scss */
+#contact-block .right-contact {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 48.82117%;
+  position: relative;
+  float: right;
+}
+/* line 38, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+#contact-block .right-contact:last-child {
+  margin-right: 0;
+}
+/* line 75, ../sass/_contact.scss */
+#contact-block .right-contact .frm-form {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 74.41059%;
+}
+/* line 38, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+#contact-block .right-contact .frm-form:last-child {
+  margin-right: 0;
+}
+/* line 77, ../sass/_contact.scss */
+#contact-block .right-contact .frm-form ul {
+  overflow: hidden;
+}
+/* line 79, ../sass/_contact.scss */
+#contact-block .right-contact .frm-form ul li {
+  float: left;
+}
+/* line 81, ../sass/_contact.scss */
+#contact-block .right-contact .frm-form ul li input {
+  float: left;
+  background-color: #383838;
+  height: 38px;
+  color: #929292;
+  margin: 5px 10px;
+  border: 1px solid #000;
+  padding-left: 10px;
+  font-size: 18px;
+  border-radius: 2px;
+}
+/* line 94, ../sass/_contact.scss */
+#contact-block .right-contact .frm-form textarea {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 93.17616%;
+  color: #929292;
+  border: 1px solid #000;
+  border-radius: 2px;
+  background-color: #383838;
+  margin: 5px 10px;
+  font-size: 18px;
+  text-indent: 10px;
+  min-height: 150px;
+}
+/* line 38, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+#contact-block .right-contact .frm-form textarea:last-child {
+  margin-right: 0;
+}
+/* line 105, ../sass/_contact.scss */
+#contact-block .right-contact .frm-form a.btn-send-form {
+  font-size: 20px;
+  color: #909090;
+  background-color: #383838;
+  border: 1px solid #000;
+  float: right;
+  clear: both;
+  text-decoration: none;
+  padding: 5px 15px;
+  margin-right: 20px;
+  margin-top: 5px;
+}
+/* line 116, ../sass/_contact.scss */
+#contact-block .right-contact .frm-form a.btn-send-form:hover {
+  color: #fff;
+  background-color: #ffa000;
+  border-color: #ffa000;
+}
+
+/* line 1, ../sass/_news.scss */
+.wrapper__news {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%;
+  min-height: 500px;
+}
+/* line 38, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+.wrapper__news:last-child {
+  margin-right: 0;
+}
+/* line 7, ../sass/_news.scss */
+.wrapper__news .wrapper__news--left {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 65.88078%;
+}
+/* line 38, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+.wrapper__news .wrapper__news--left:last-child {
+  margin-right: 0;
+}
+/* line 10, ../sass/_news.scss */
+.wrapper__news .wrapper__news--left h1.wrapper__news--title {
+  color: #d8d8d8;
+  font-size: 30px;
+  padding: 15px 0 0;
+  line-height: 28px;
+}
+/* line 17, ../sass/_news.scss */
+.wrapper__news .wrapper__news--left .wrapper__news--Date {
+  background: url("./../images/ico/ico-timeline.png") no-repeat scroll left 17px;
+  color: #d8d8d8;
+  font-size: 14px;
+  padding: 15px 0 7px 25px;
+  border-bottom: 1px solid #2c2c2c;
+}
+/* line 25, ../sass/_news.scss */
+.wrapper__news .wrapper__news--left .content-main {
+  margin-top: 30px;
+  overflow: hidden;
+  padding-bottom: 100px;
+}
+/* line 30, ../sass/_news.scss */
+.wrapper__news .wrapper__news--left .content-main * {
+  background-color: transparent !important;
+  color: #fff;
+}
+/* line 38, ../sass/_news.scss */
+.wrapper__news .wrapper__news--left .wrapper__news--list li {
+  overflow: hidden;
+  padding: 30px 0;
+  border-bottom: 1px solid #2c2c2c;
+}
+/* line 46, ../sass/_news.scss */
+.wrapper__news .wrapper__news--left .wrapper__news--list .wrapper__news--ico {
+  background: url("./../images/ico/ico-camera.png") no-repeat scroll right 0;
+  padding-right: 25px;
+}
+/* line 51, ../sass/_news.scss */
+.wrapper__news .wrapper__news--left .wrapper__news--list .wrapper__news--img {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 48.82117%;
+  margin-top: 25px;
+}
+/* line 38, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+.wrapper__news .wrapper__news--left .wrapper__news--list .wrapper__news--img:last-child {
+  margin-right: 0;
+}
+/* line 56, ../sass/_news.scss */
+.wrapper__news .wrapper__news--left .wrapper__news--list .wrapper__news--describ {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 48.82117%;
+  margin-top: 20px;
+  color: #d8d8d8;
+  font-size: 14px;
+  height: 250px;
+  position: relative;
+}
+/* line 38, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+.wrapper__news .wrapper__news--left .wrapper__news--list .wrapper__news--describ:last-child {
+  margin-right: 0;
+}
+/* line 64, ../sass/_news.scss */
+.wrapper__news .wrapper__news--left .wrapper__news--list .wrapper__news--describ .wrapper__news--btnmore {
+  background-color: #cfcfcf;
+  border-radius: 5px;
+  bottom: 0;
+  color: #2d2d2d;
+  display: block;
+  font-size: 20px;
+  margin-top: 30px;
+  padding: 7px 9px;
+  position: absolute;
+  right: 0;
+  text-decoration: none;
+}
+/* line 77, ../sass/_news.scss */
+.wrapper__news .wrapper__news--left .wrapper__news--list .wrapper__news--describ .wrapper__news--btnmore:hover {
+  background-color: #ffa000;
+  color: #fff;
+}
+/* line 87, ../sass/_news.scss */
+.wrapper__news .wrapper__news--right {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 31.76157%;
+}
+/* line 38, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+.wrapper__news .wrapper__news--right:last-child {
+  margin-right: 0;
+}
+
+/*# sourceMappingURL=home.css.map */

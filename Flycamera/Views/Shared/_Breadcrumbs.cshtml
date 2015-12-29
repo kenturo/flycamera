@@ -1,0 +1,17 @@
+﻿@model IEnumerable<Flycamera.Model.BreadcrumbsModel>
+
+<div class="frm-breadcrum">
+    <ul class="breadcrum">
+        @if (Model != null)
+        {
+            foreach (var item in Model)
+            {
+                string slash = (item.isFirst) ? "/" : "";
+                <li>
+                    @Html.ActionLink(@item.ControllerName, @item.ActionName, @item.ControllerName)
+                    @slash
+                </li>
+            }
+        }
+    </ul>
+</div>

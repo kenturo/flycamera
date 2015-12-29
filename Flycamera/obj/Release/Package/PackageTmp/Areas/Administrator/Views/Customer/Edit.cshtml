@@ -1,0 +1,140 @@
+﻿@using Flycamera.App_Start
+@model Flycamera.Areas.Administrator.ViewModel.CustomerVM
+@{
+    ViewBag.Title = "Edit Customer";
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="titlePage">
+    <div class="wrapper">
+        <h1>Edit Banner</h1>
+    </div>
+</div>
+@section bodyContent{
+    
+
+    @using (Html.BeginForm())
+    {
+         <div class="control-action">
+            <input type="submit" value="Submit" class="button" />
+            @Html.ActionLink("Back to List", "Index", null, new {@class = "button"})
+        </div>
+        @Html.ValidationSummary(true)
+        <ul class="frame-tabheader frame-tab border-inline">
+            <li>
+                <a title="Product Info" class="button active no-href" rel="customer-info--tab" href="#">Cusotmer Info</a>
+            </li>
+            <li>
+                <a title="Relate Product" class="button no-href" rel="customer-role--tab" href="#">Customer Role</a>
+            </li>
+            <li>
+                <a title="Relate Product" class="button no-href" rel="shipping-cart--tab" href="#">Current Shopping Cart</a>
+            </li>
+        </ul>
+        <div class="">
+            <div class="customer-info--tab frame-tab--cust active">
+                <div class="left-form">
+                    @Html.HiddenFor(model => model.Customer.CustomerID, new {id="idcustomer__page"})
+                    @Html.HiddenFor(model => model.CustomerRole.CustomerRoleID)
+                    @Html.HiddenFor(model => model.CustomerAttr.CustomerAttributeId)
+
+
+
+                    <div class="editor-field">
+                        <label>First Name</label>
+                        @Html.TextBoxFor(model => model.CustomerAttr.FirstName, new { @placeholder = PlaceHolder.BannerTitle_ph, @class = "k-textbox", @required = true, @validationMessage = "Enter {0}" })
+                        @Html.ValidationMessageFor(model => model.CustomerAttr.FirstName)
+                    </div>
+
+                    <div class="editor-field">
+                        <label>Last Name</label>
+                        @Html.TextBoxFor(model => model.CustomerAttr.LastName, new { @placeholder = PlaceHolder.ShortContent_ph, @class = "k-textbox", @required = true })
+                        @Html.ValidationMessageFor(model => model.CustomerAttr.LastName)
+                    </div>
+
+                    <div class="editor-field">
+                        <label>Email</label>
+                        @Html.TextBoxFor(model => model.Customer.Email, new { @placeholder = PlaceHolder.ShortContent_ph, @class = "k-textbox", @required = true })
+                        @Html.ValidationMessageFor(model => model.Customer.Email)
+                    </div>
+
+                    <div class="editor-field">
+                        <label>UserName</label>
+                        @Html.TextBoxFor(model => model.Customer.Username, new { @placeholder = PlaceHolder.Link_ph, @class = "k-textbox", @validationMessage = "Enter {0}" ,@readonly = true })
+                        @Html.ValidationMessageFor(model => model.Customer.Username)
+                    </div>
+
+
+
+                    <div class="editor-field">
+                        <label>City</label>
+                        @Html.TextBoxFor(model => model.CustomerAttr.City, new { @placeholder = PlaceHolder.ShortContent_ph, @class = "k-textbox" })
+                        @Html.ValidationMessageFor(model => model.CustomerAttr.City)
+                    </div>
+
+                    <div class="editor-field">
+                        <label>Position</label>
+                        @Html.DropDownListFor(model => model.selectItem, Model.PositionCountry, "Select Country", new { @class = "f-select" })
+                    </div>
+
+
+                </div>
+                <div class="right-form">
+                    <div class="editor-field">
+                        <label>Address</label>
+                        @Html.TextAreaFor(model => model.CustomerAttr.StreetAddress, new { @placeholder = PlaceHolder.ShortContent_ph, @class = "k-textbox" })
+                        @Html.ValidationMessageFor(model => model.CustomerAttr.StreetAddress)
+                    </div>
+
+                    <div class="editor-field">
+                        <label>Phone</label>
+                        @Html.TextBoxFor(model => model.CustomerAttr.MobilePhone, new { @placeholder = PlaceHolder.ShortContent_ph, @class = "k-textbox" })
+                        @Html.ValidationMessageFor(model => model.CustomerAttr.MobilePhone)
+                    </div>
+
+                    <div class="editor-field">
+                        <label>Registration Date</label>
+                        @Html.TextBoxFor(model => model.Customer.RegistrationDate, new { @placeholder = PlaceHolder.BannerStartTime_ph, @class = "k-textbox",@readonly = true, @validationMessage = "Enter {0}" })
+                    </div>
+
+
+
+                    <div class="editor-field">
+                        <label class="boolean-label">Active</label>
+                        @Html.CheckBoxFor(m => m.isActive, Model.Customer.Active)
+                        @Html.ValidationMessageFor(model => model.Customer.Active)
+                    </div>
+
+                    <div class="editor-field">
+                        <label class="boolean-label">Administrator</label>
+                        @Html.CheckBoxFor(m => m.isAdmin, Model.Customer.IsAdmin)
+                        @Html.ValidationMessageFor(model => model.Customer.IsAdmin)
+                    </div>
+                    <br />
+                </div>
+
+            </div>
+            <div class="customer-role--tab frame-tab--cust">
+                <div class="frm__search--boxRole">
+                    <input type="text" class="input-filter" placeholder="typing role name search" value="">
+                </div>
+                @{Html.RenderPartial(@StaticVariableAdministrator._listCustomerRole,Model.ListCustomerRole );}
+                @Html.HiddenFor(model => model.RoleSelect, new { @class = "arrRole__chose" })
+            </div>
+
+            <div class="shipping-cart--tab frame-tab--cust">
+                lorem cart
+            </div>
+        </div>
+        
+        <div class="control-action">
+            <br />
+        </div>
+    }
+}
+@section Scripts {
+  
+}
+

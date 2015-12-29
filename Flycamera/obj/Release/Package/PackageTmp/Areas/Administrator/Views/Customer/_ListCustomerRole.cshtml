@@ -1,0 +1,58 @@
+﻿@using Flycamera.App_Start
+@model IEnumerable<FlyEntity.Fly_CustomerRole>
+           
+<table width="100%" cellspacing="0" cellpadding="0" class="responstable table__customer-role">
+    <thead>
+        <tr>
+            <th width="5%">Check</th>
+            <th width="5%">Role Name</th>
+            <th width="5%">Free Shipping</th>
+            <th width="5%">Tax Exempt</th>
+            <th width="5%">Active</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+        {
+            
+            foreach (var item in Model.Select((model, index) => new { model, index }))
+            {
+                <tr class="row-@item.model.CustomerRoleID">
+                    <td width="5%">
+                        @*@foreach (var mpRole in Model.Customer.Fly_Customer_CustomerRole_Mapping)
+                            {
+                                if (mpRole.CustomerRoleID.Equals(@item.model.CustomerRoleID))
+                                {
+                                    <input type="checkbox" class="" checked="checked" name="check-@item.index" value="@item.model.CustomerRoleID"/>
+                                }
+                                else
+                                {
+                                    <input type="checkbox" class="" name="check-@item.index" value="@item.model.CustomerRoleID"/>
+                                }
+                                break;
+                            }*@
+                        @*@Html.CheckBoxFor(m=>m.ElementAt(@item.index).Selected,new { @name="f-ck"})*@
+                        <input type="checkbox" class="" checked="@item.model.Selected" name="f-ck" value="@item.model.CustomerRoleID"/>
+                        @*@Html.CheckBox("f-ck",@item.model.Selected, new { value = @item.model.Selected})*@
+                    </td>
+                    <td class="filter-name">
+                        @item.model.Name
+                    </td>
+                    <td width="5%">
+                        <input type="checkbox" name="FreeShipping" class="disable" value="FreeShipping" checked="@item.model.FreeShipping" />
+                    </td>
+                    <td width="5%">
+                        <input type="checkbox" name="TaxExempt" class="disable" value="TaxExempt" checked="@item.model.TaxExempt" />
+                    </td>
+                    <td width="5%">
+                        <input type="checkbox" name="Active" class="disable" value="Active" checked="@item.model.Active" />
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            @Html.Raw("<p>" + StaticVariable.Msg_Update + "</p>");
+        }
+    </tbody>
+</table>

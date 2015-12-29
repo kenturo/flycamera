@@ -1,0 +1,651 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="flycameraModelStoreContainer" CdmEntityContainer="flycameraEntities">
+    <EntitySetMapping Name="Fly_Banner">
+      <EntityTypeMapping TypeName="flycameraModel.Fly_Banner">
+        <MappingFragment StoreEntitySet="Fly_Banner">
+          <ScalarProperty Name="BannerID" ColumnName="BannerID" />
+          <ScalarProperty Name="BannerTypeID" ColumnName="BannerTypeID" />
+          <ScalarProperty Name="BannerTitle" ColumnName="BannerTitle" />
+          <ScalarProperty Name="BannerShortContent" ColumnName="BannerShortContent" />
+          <ScalarProperty Name="BannerLink" ColumnName="BannerLink" />
+          <ScalarProperty Name="BannerTimeFrom" ColumnName="BannerTimeFrom" />
+          <ScalarProperty Name="BannerTimeTo" ColumnName="BannerTimeTo" />
+          <ScalarProperty Name="PictureID" ColumnName="PictureID" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="Published" ColumnName="Published" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fly_BannerType">
+      <EntityTypeMapping TypeName="flycameraModel.Fly_BannerType">
+        <MappingFragment StoreEntitySet="Fly_BannerType">
+          <ScalarProperty Name="BannerTypeID" ColumnName="BannerTypeID" />
+          <ScalarProperty Name="BannerTypeTitle" ColumnName="BannerTypeTitle" />
+          <ScalarProperty Name="BannerTypeShortContent" ColumnName="BannerTypeShortContent" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="Width" ColumnName="Width" />
+          <ScalarProperty Name="Height" ColumnName="Height" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fly_BlogPost">
+      <EntityTypeMapping TypeName="flycameraModel.Fly_BlogPost">
+        <MappingFragment StoreEntitySet="Fly_BlogPost">
+          <ScalarProperty Name="BlogPostID" ColumnName="BlogPostID" />
+          <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+          <ScalarProperty Name="BlogPostTitle" ColumnName="BlogPostTitle" />
+          <ScalarProperty Name="BlogPostShortContent" ColumnName="BlogPostShortContent" />
+          <ScalarProperty Name="BlogPostBody" ColumnName="BlogPostBody" />
+          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+          <ScalarProperty Name="BlogPostTypeID" ColumnName="BlogPostTypeID" />
+          <ScalarProperty Name="VideoLink" ColumnName="VideoLink" />
+          <ScalarProperty Name="Tags" ColumnName="Tags" />
+          <ScalarProperty Name="Published" ColumnName="Published" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fly_BlogPostType">
+      <EntityTypeMapping TypeName="flycameraModel.Fly_BlogPostType">
+        <MappingFragment StoreEntitySet="Fly_BlogPostType">
+          <ScalarProperty Name="BlogPostTypeID" ColumnName="BlogPostTypeID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Descriptions" ColumnName="Descriptions" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="Published" ColumnName="Published" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fly_Category">
+      <EntityTypeMapping TypeName="flycameraModel.Fly_Category">
+        <MappingFragment StoreEntitySet="Fly_Category">
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ParentCategoryID" ColumnName="ParentCategoryID" />
+          <ScalarProperty Name="PictureID" ColumnName="PictureID" />
+          <ScalarProperty Name="ShowOnHomePage" ColumnName="ShowOnHomePage" />
+          <ScalarProperty Name="Published" ColumnName="Published" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fly_Category_Discount_Mapping">
+      <EntityTypeMapping TypeName="flycameraModel.Fly_Category_Discount_Mapping">
+        <MappingFragment StoreEntitySet="Fly_Category_Discount_Mapping">
+          <ScalarProperty Name="CategoryDiscountMappingID" ColumnName="CategoryDiscountMappingID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="DiscountID" ColumnName="DiscountID" />
+          <ScalarProperty Name="Createdon" ColumnName="Createdon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fly_CategoryLocalized">
+      <EntityTypeMapping TypeName="flycameraModel.Fly_CategoryLocalized">
+        <MappingFragment StoreEntitySet="Fly_CategoryLocalized">
+          <ScalarProperty Name="CategoryLocalizedID" ColumnName="CategoryLocalizedID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fly_Country">
+      <EntityTypeMapping TypeName="flycameraModel.Fly_Country">
+        <MappingFragment StoreEntitySet="Fly_Country">
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="TwoLetterISOCode" ColumnName="TwoLetterISOCode" />
+          <ScalarProperty Name="ThreeLetterISOCode" ColumnName="ThreeLetterISOCode" />
+          <ScalarProperty Name="NumericISOCode" ColumnName="NumericISOCode" />
+          <ScalarProperty Name="Published" ColumnName="Published" />
+          <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fly_Customer">
+      <EntityTypeMapping TypeName="flycameraModel.Fly_Customer">
+        <MappingFragment StoreEntitySet="Fly_Customer">
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="CustomerGUID" ColumnName="CustomerGUID" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="IsTaxExempt" ColumnName="IsTaxExempt" />
+          <ScalarProperty Name="IsAdmin" ColumnName="IsAdmin" />
+          <ScalarProperty Name="IsGuest" ColumnName="IsGuest" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="RegistrationDate" ColumnName="RegistrationDate" />
+          <ScalarProperty Name="AvatarID" ColumnName="AvatarID" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fly_Customer_CustomerRole_Mapping">
+      <EntityTypeMapping TypeName="flycameraModel.Fly_Customer_CustomerRole_Mapping">
+        <MappingFragment StoreEntitySet="Fly_Customer_CustomerRole_Mapping">
+          <ScalarProperty Name="CustomerMappingCustomerRoleID" ColumnName="CustomerMappingCustomerRoleID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="CustomerRoleID" ColumnName="CustomerRoleID" />
+          <ScalarProperty Name="Creadedon" ColumnName="Creadedon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fly_CustomerAction">
+      <EntityTypeMapping TypeName="flycameraModel.Fly_CustomerAction">
+        <MappingFragment StoreEntitySet="Fly_CustomerAction">
+          <ScalarProperty Name="CustomerActionID" ColumnName="CustomerActionID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="SystemKeyword" ColumnName="SystemKeyword" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fly_CustomerAttribute">
+      <EntityTypeMapping TypeName="flycameraModel.Fly_CustomerAttribute">
+        <MappingFragment StoreEntitySet="Fly_CustomerAttribute">
+          <ScalarProperty Name="CustomerAttributeId" ColumnName="CustomerAttributeId" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="StreetAddress" ColumnName="StreetAddress" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="MobilePhone" ColumnName="MobilePhone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fly_CustomerRole">
+      <EntityTypeMapping TypeName="flycameraModel.Fly_CustomerRole">
+        <MappingFragment StoreEntitySet="Fly_CustomerRole">
+          <ScalarProperty Name="CustomerRoleID" ColumnName="CustomerRoleID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="FreeShipping" ColumnName="FreeShipping" />
+          <ScalarProperty Name="TaxExempt" ColumnName="TaxExempt" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Selected" ColumnName="Selected" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fly_CustomerRole_Discount_Mapping">
+      <EntityTypeMapping TypeName="flycameraModel.Fly_CustomerRole_Discount_Mapping">
+        <MappingFragment StoreEntitySet="Fly_CustomerRole_Discount_Mapping">
+          <ScalarProperty Name="CustomerRoleMappingDiscountID" ColumnName="CustomerRoleMappingDiscountID" />
+          <ScalarProperty Name="CustomerRoleID" ColumnName="CustomerRoleID" />
+          <ScalarProperty Name="DiscountID" ColumnName="DiscountID" />
+          <ScalarProperty Name="Creadedon" ColumnName="Creadedon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fly_CustomerRole_ProductPrice">
+      <EntityTypeMapping TypeName="flycameraModel.Fly_CustomerRole_ProductPrice">
+        <MappingFragment StoreEntitySet="Fly_CustomerRole_ProductPrice">
+          <ScalarProperty Name="CustomerRoleProductPriceID" ColumnName="CustomerRoleProductPriceID" />
+          <ScalarProperty Name="CustomerRoleID" ColumnName="CustomerRoleID" />
+          <ScalarProperty Name="ProductVariantID" ColumnName="ProductVariantID" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fly_CustomerSession">
+      <EntityTypeMapping TypeName="flycameraModel.Fly_CustomerSession">
+        <MappingFragment StoreEntitySet="Fly_CustomerSession">
+          <ScalarProperty Name="CustomerSessionGUID" ColumnName="CustomerSessionGUID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="LastAccessed" ColumnName="LastAccessed" />
+          <ScalarProperty Name="IsExpired" ColumnName="IsExpired" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fly_Discount">
+      <EntityTypeMapping TypeName="flycameraModel.Fly_Discount">
+        <MappingFragment StoreEntitySet="Fly_Discount">
+          <ScalarProperty Name="DiscountID" ColumnName="DiscountID" />
+          <ScalarProperty Name="LimitationTimes" ColumnName="LimitationTimes" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Percentage" ColumnName="Percentage" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fly_DiscountUsageHistory">
+      <EntityTypeMapping TypeName="flycameraModel.Fly_DiscountUsageHistory">
+        <MappingFragment StoreEntitySet="Fly_DiscountUsageHistory">
+          <ScalarProperty Name="DiscountUsageHistoryID" ColumnName="DiscountUsageHistoryID" />
+          <ScalarProperty Name="DiscountID" ColumnName="DiscountID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fly_Language">
+      <EntityTypeMapping TypeName="flycameraModel.Fly_Language">
+        <MappingFragment StoreEntitySet="Fly_Language">
+          <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="LanguageCulture" ColumnName="LanguageCulture" />
+          <ScalarProperty Name="FlagImageFileName" ColumnName="FlagImageFileName" />
+          <ScalarProperty Name="Published" ColumnName="Published" />
+          <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fly_Manufacturer">
+      <EntityTypeMapping TypeName="flycameraModel.Fly_Manufacturer">
+        <MappingFragment StoreEntitySet="Fly_Manufacturer">
+          <ScalarProperty Name="ManufacturerID" ColumnName="ManufacturerID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="PictureID" ColumnName="PictureID" />
+          <ScalarProperty Name="Published" ColumnName="Published" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fly_ManufacturerLocalized">
+      <EntityTypeMapping TypeName="flycameraModel.Fly_ManufacturerLocalized">
+        <MappingFragment StoreEntitySet="Fly_ManufacturerLocalized">
+          <ScalarProperty Name="ManufacturerLocalizedID" ColumnName="ManufacturerLocalizedID" />
+          <ScalarProperty Name="ManufacturerID" ColumnName="ManufacturerID" />
+          <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fly_Navigation">
+      <EntityTypeMapping TypeName="flycameraModel.Fly_Navigation">
+        <MappingFragment StoreEntitySet="Fly_Navigation">
+          <ScalarProperty Name="navid" ColumnName="navid" />
+          <ScalarProperty Name="title_vn" ColumnName="title_vn" />
+          <ScalarProperty Name="title_en" ColumnName="title_en" />
+          <ScalarProperty Name="href" ColumnName="href" />
+          <ScalarProperty Name="parentid" ColumnName="parentid" />
+          <ScalarProperty Name="imgLink" ColumnName="imgLink" />
+          <ScalarProperty Name="ico" ColumnName="ico" />
+          <ScalarProperty Name="classObj" ColumnName="classObj" />
+          <ScalarProperty Name="idObj" ColumnName="idObj" />
+          <ScalarProperty Name="Published" ColumnName="Published" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fly_Order">
+      <EntityTypeMapping TypeName="flycameraModel.Fly_Order">
+        <MappingFragment StoreEntitySet="Fly_Order">
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="OrderGUID" ColumnName="OrderGUID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="ApproveID" ColumnName="ApproveID" />
+          <ScalarProperty Name="CustomerIP" ColumnName="CustomerIP" />
+          <ScalarProperty Name="TaxRates" ColumnName="TaxRates" />
+          <ScalarProperty Name="OrderTax" ColumnName="OrderTax" />
+          <ScalarProperty Name="OrderTotal" ColumnName="OrderTotal" />
+          <ScalarProperty Name="RefundedAmount" ColumnName="RefundedAmount" />
+          <ScalarProperty Name="OrderDiscount" ColumnName="OrderDiscount" />
+          <ScalarProperty Name="OrderStatus" ColumnName="OrderStatus" />
+          <ScalarProperty Name="PaymentMethodName" ColumnName="PaymentMethodName" />
+          <ScalarProperty Name="PaidDate" ColumnName="PaidDate" />
+          <ScalarProperty Name="BillingFirstName" ColumnName="BillingFirstName" />
+          <ScalarProperty Name="BillingLastName" ColumnName="BillingLastName" />
+          <ScalarProperty Name="BillingPhoneNumber" ColumnName="BillingPhoneNumber" />
+          <ScalarProperty Name="BillingEmail" ColumnName="BillingEmail" />
+          <ScalarProperty Name="BillingFaxNumber" ColumnName="BillingFaxNumber" />
+          <ScalarProperty Name="BillingCompany" ColumnName="BillingCompany" />
+          <ScalarProperty Name="BillingAddress1" ColumnName="BillingAddress1" />
+          <ScalarProperty Name="BillingAddress2" ColumnName="BillingAddress2" />
+          <ScalarProperty Name="BillingCity" ColumnName="BillingCity" />
+          <ScalarProperty Name="BillingCountryID" ColumnName="BillingCountryID" />
+          <ScalarProperty Name="ShippingStatusID" ColumnName="ShippingStatusID" />
+          <ScalarProperty Name="ShippingMethodID" ColumnName="ShippingMethodID" />
+          <ScalarProperty Name="ShippedDate" ColumnName="ShippedDate" />
+          <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fly_OrderNote">
+      <EntityTypeMapping TypeName="flycameraModel.Fly_OrderNote">
+        <MappingFragment StoreEntitySet="Fly_OrderNote">
+          <ScalarProperty Name="OrderNoteID" ColumnName="OrderNoteID" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="DisplayToCustomer" ColumnName="DisplayToCustomer" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fly_OrderProductVariant">
+      <EntityTypeMapping TypeName="flycameraModel.Fly_OrderProductVariant">
+        <MappingFragment StoreEntitySet="Fly_OrderProductVariant">
+          <ScalarProperty Name="OrderProductVariantID" ColumnName="OrderProductVariantID" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="ProductVariantID" ColumnName="ProductVariantID" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="DiscountAmount" ColumnName="DiscountAmount" />
+          <ScalarProperty Name="OrderProductVariantGUID" ColumnName="OrderProductVariantGUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fly_Partnership">
+      <EntityTypeMapping TypeName="flycameraModel.Fly_Partnership">
+        <MappingFragment StoreEntitySet="Fly_Partnership">
+          <ScalarProperty Name="PartnershipID" ColumnName="PartnershipID" />
+          <ScalarProperty Name="PartnershipTitle" ColumnName="PartnershipTitle" />
+          <ScalarProperty Name="PartnershipLink" ColumnName="PartnershipLink" />
+          <ScalarProperty Name="PictureID" ColumnName="PictureID" />
+          <ScalarProperty Name="ClassName" ColumnName="ClassName" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="Published" ColumnName="Published" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fly_PaymentMethod">
+      <EntityTypeMapping TypeName="flycameraModel.Fly_PaymentMethod">
+        <MappingFragment StoreEntitySet="Fly_PaymentMethod">
+          <ScalarProperty Name="PaymentMethodID" ColumnName="PaymentMethodID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="VisibleName" ColumnName="VisibleName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ConfigureTemplatePath" ColumnName="ConfigureTemplatePath" />
+          <ScalarProperty Name="UserTemplatePath" ColumnName="UserTemplatePath" />
+          <ScalarProperty Name="ClassName" ColumnName="ClassName" />
+          <ScalarProperty Name="SystemKeyword" ColumnName="SystemKeyword" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fly_Picture">
+      <EntityTypeMapping TypeName="flycameraModel.Fly_Picture">
+        <MappingFragment StoreEntitySet="Fly_Picture">
+          <ScalarProperty Name="PictureID" ColumnName="PictureID" />
+          <ScalarProperty Name="PictureBinary" ColumnName="PictureBinary" />
+          <ScalarProperty Name="IsNew" ColumnName="IsNew" />
+          <ScalarProperty Name="OriginalURL" ColumnName="OriginalURL" />
+          <ScalarProperty Name="MimeType" ColumnName="MimeType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fly_PositionGallery">
+      <EntityTypeMapping TypeName="flycameraModel.Fly_PositionGallery">
+        <MappingFragment StoreEntitySet="Fly_PositionGallery">
+          <ScalarProperty Name="PositionGalleryID" ColumnName="PositionGalleryID" />
+          <ScalarProperty Name="PositionName" ColumnName="PositionName" />
+          <ScalarProperty Name="PositionName_EN" ColumnName="PositionName_EN" />
+          <ScalarProperty Name="isContent" ColumnName="isContent" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fly_Product">
+      <EntityTypeMapping TypeName="flycameraModel.Fly_Product">
+        <MappingFragment StoreEntitySet="Fly_Product">
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ShortDescription" ColumnName="ShortDescription" />
+          <ScalarProperty Name="FullDescription" ColumnName="FullDescription" />
+          <ScalarProperty Name="TemplateID" ColumnName="TemplateID" />
+          <ScalarProperty Name="ShowOnHomePage" ColumnName="ShowOnHomePage" />
+          <ScalarProperty Name="isAccessories" ColumnName="isAccessories" />
+          <ScalarProperty Name="Published" ColumnName="Published" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fly_Product_Category_Mapping">
+      <EntityTypeMapping TypeName="flycameraModel.Fly_Product_Category_Mapping">
+        <MappingFragment StoreEntitySet="Fly_Product_Category_Mapping">
+          <ScalarProperty Name="ProductCategoryID" ColumnName="ProductCategoryID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="IsFeaturedProduct" ColumnName="IsFeaturedProduct" />
+          <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fly_Product_Manufacturer_Mapping">
+      <EntityTypeMapping TypeName="flycameraModel.Fly_Product_Manufacturer_Mapping">
+        <MappingFragment StoreEntitySet="Fly_Product_Manufacturer_Mapping">
+          <ScalarProperty Name="ProductManufacturerID" ColumnName="ProductManufacturerID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="ManufacturerID" ColumnName="ManufacturerID" />
+          <ScalarProperty Name="IsFeaturedProduct" ColumnName="IsFeaturedProduct" />
+          <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fly_ProductLocalized">
+      <EntityTypeMapping TypeName="flycameraModel.Fly_ProductLocalized">
+        <MappingFragment StoreEntitySet="Fly_ProductLocalized">
+          <ScalarProperty Name="ProductLocalizedID" ColumnName="ProductLocalizedID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ShortDescription" ColumnName="ShortDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fly_ProductPicture">
+      <EntityTypeMapping TypeName="flycameraModel.Fly_ProductPicture">
+        <MappingFragment StoreEntitySet="Fly_ProductPicture">
+          <ScalarProperty Name="ProductPictureID" ColumnName="ProductPictureID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="PictureID" ColumnName="PictureID" />
+          <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fly_ProductTemplate">
+      <EntityTypeMapping TypeName="flycameraModel.Fly_ProductTemplate">
+        <MappingFragment StoreEntitySet="Fly_ProductTemplate">
+          <ScalarProperty Name="ProductTemplateId" ColumnName="ProductTemplateId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="TemplatePath" ColumnName="TemplatePath" />
+          <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fly_ProductVariant">
+      <EntityTypeMapping TypeName="flycameraModel.Fly_ProductVariant">
+        <MappingFragment StoreEntitySet="Fly_ProductVariant">
+          <ScalarProperty Name="ProductVariantId" ColumnName="ProductVariantId" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="SKU" ColumnName="SKU" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ManufacturerPartNumber" ColumnName="ManufacturerPartNumber" />
+          <ScalarProperty Name="IsShipEnabled" ColumnName="IsShipEnabled" />
+          <ScalarProperty Name="IsFreeShipping" ColumnName="IsFreeShipping" />
+          <ScalarProperty Name="AdditionalShippingCharge" ColumnName="AdditionalShippingCharge" />
+          <ScalarProperty Name="IsTaxExempt" ColumnName="IsTaxExempt" />
+          <ScalarProperty Name="ManageInventory" ColumnName="ManageInventory" />
+          <ScalarProperty Name="NotifyAdminForQuantityBelow" ColumnName="NotifyAdminForQuantityBelow" />
+          <ScalarProperty Name="Backorders" ColumnName="Backorders" />
+          <ScalarProperty Name="OrderMinimumQuantity" ColumnName="OrderMinimumQuantity" />
+          <ScalarProperty Name="OrderMaximumQuantity" ColumnName="OrderMaximumQuantity" />
+          <ScalarProperty Name="WarehouseID" ColumnName="WarehouseID" />
+          <ScalarProperty Name="DisableBuyButton" ColumnName="DisableBuyButton" />
+          <ScalarProperty Name="CallForPrice" ColumnName="CallForPrice" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="OldPrice" ColumnName="OldPrice" />
+          <ScalarProperty Name="ProductCost" ColumnName="ProductCost" />
+          <ScalarProperty Name="AdminPrice" ColumnName="AdminPrice" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="Length" ColumnName="Length" />
+          <ScalarProperty Name="Width" ColumnName="Width" />
+          <ScalarProperty Name="Height" ColumnName="Height" />
+          <ScalarProperty Name="Published" ColumnName="Published" />
+          <ScalarProperty Name="isHot" ColumnName="isHot" />
+          <ScalarProperty Name="isNew" ColumnName="isNew" />
+          <ScalarProperty Name="isGift" ColumnName="isGift" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fly_ProductVariant_Discount_Mapping">
+      <EntityTypeMapping TypeName="flycameraModel.Fly_ProductVariant_Discount_Mapping">
+        <MappingFragment StoreEntitySet="Fly_ProductVariant_Discount_Mapping">
+          <ScalarProperty Name="DiscountMappingID" ColumnName="DiscountMappingID" />
+          <ScalarProperty Name="ProductVariantID" ColumnName="ProductVariantID" />
+          <ScalarProperty Name="DiscountID" ColumnName="DiscountID" />
+          <ScalarProperty Name="Createdon" ColumnName="Createdon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fly_ProductVariantLocalized">
+      <EntityTypeMapping TypeName="flycameraModel.Fly_ProductVariantLocalized">
+        <MappingFragment StoreEntitySet="Fly_ProductVariantLocalized">
+          <ScalarProperty Name="ProductVariantLocalizedID" ColumnName="ProductVariantLocalizedID" />
+          <ScalarProperty Name="ProductVariantID" ColumnName="ProductVariantID" />
+          <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fly_RelatedProduct">
+      <EntityTypeMapping TypeName="flycameraModel.Fly_RelatedProduct">
+        <MappingFragment StoreEntitySet="Fly_RelatedProduct">
+          <ScalarProperty Name="RelatedProductID" ColumnName="RelatedProductID" />
+          <ScalarProperty Name="ProductID1" ColumnName="ProductID1" />
+          <ScalarProperty Name="ProductID2" ColumnName="ProductID2" />
+          <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fly_SectionContent">
+      <EntityTypeMapping TypeName="flycameraModel.Fly_SectionContent">
+        <MappingFragment StoreEntitySet="Fly_SectionContent">
+          <ScalarProperty Name="SectionContentID" ColumnName="SectionContentID" />
+          <ScalarProperty Name="PositionGalleryID" ColumnName="PositionGalleryID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="FullDescription" ColumnName="FullDescription" />
+          <ScalarProperty Name="FullDescription_EN" ColumnName="FullDescription_EN" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="UpdateOn" ColumnName="UpdateOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fly_SectionGallery">
+      <EntityTypeMapping TypeName="flycameraModel.Fly_SectionGallery">
+        <MappingFragment StoreEntitySet="Fly_SectionGallery">
+          <ScalarProperty Name="SectionGalleryID" ColumnName="SectionGalleryID" />
+          <ScalarProperty Name="PositionGalleryID" ColumnName="PositionGalleryID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="CollectionImage" ColumnName="CollectionImage" />
+          <ScalarProperty Name="BackgroundImage" ColumnName="BackgroundImage" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fly_ShippingMethod">
+      <EntityTypeMapping TypeName="flycameraModel.Fly_ShippingMethod">
+        <MappingFragment StoreEntitySet="Fly_ShippingMethod">
+          <ScalarProperty Name="ShippingMethodID" ColumnName="ShippingMethodID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+          <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fly_ShippingStatus">
+      <EntityTypeMapping TypeName="flycameraModel.Fly_ShippingStatus">
+        <MappingFragment StoreEntitySet="Fly_ShippingStatus">
+          <ScalarProperty Name="ShippingStatusID" ColumnName="ShippingStatusID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fly_ShoppingCartItem">
+      <EntityTypeMapping TypeName="flycameraModel.Fly_ShoppingCartItem">
+        <MappingFragment StoreEntitySet="Fly_ShoppingCartItem">
+          <ScalarProperty Name="ShoppingCartItemID" ColumnName="ShoppingCartItemID" />
+          <ScalarProperty Name="CustomerSessionGUID" ColumnName="CustomerSessionGUID" />
+          <ScalarProperty Name="ProductVariantID" ColumnName="ProductVariantID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="Prices" ColumnName="Prices" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fly_Videos">
+      <EntityTypeMapping TypeName="flycameraModel.Fly_Videos">
+        <MappingFragment StoreEntitySet="Fly_Videos">
+          <ScalarProperty Name="VideosID" ColumnName="VideosID" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="VideosTitle" ColumnName="VideosTitle" />
+          <ScalarProperty Name="VideosShortContent" ColumnName="VideosShortContent" />
+          <ScalarProperty Name="VideosLink" ColumnName="VideosLink" />
+          <ScalarProperty Name="SectionContentID" ColumnName="SectionContentID" />
+          <ScalarProperty Name="PictureID" ColumnName="PictureID" />
+          <ScalarProperty Name="PositionID" ColumnName="PositionID" />
+          <ScalarProperty Name="Width" ColumnName="Width" />
+          <ScalarProperty Name="Height" ColumnName="Height" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="Published" ColumnName="Published" />
+          <ScalarProperty Name="isShowHome" ColumnName="isShowHome" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fly_Team">
+      <EntityTypeMapping TypeName="flycameraModel.Fly_Team">
+        <MappingFragment StoreEntitySet="Fly_Team">
+          <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="Published" ColumnName="Published" />
+          <ScalarProperty Name="Twitter" ColumnName="Twitter" />
+          <ScalarProperty Name="Google" ColumnName="Google" />
+          <ScalarProperty Name="Facebook" ColumnName="Facebook" />
+          <ScalarProperty Name="AvatarURL" ColumnName="AvatarURL" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="TagLine" ColumnName="TagLine" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="TeamID" ColumnName="TeamID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,61 @@
+﻿@using Flycamera.App_Start
+@model Flycamera.Areas.Administrator.ViewModel.DiscountVm
+
+
+@{
+    ViewBag.Title = "Create Discount";
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="titlePage">
+    <div class="wrapper">
+        <h1>Create Discount</h1>
+    </div>
+</div>
+@section bodyContent{
+
+
+    @using (Html.BeginForm())
+    {
+        <div class="control-action">
+            <input type="submit" value="Submit" class="button" />
+            @Html.ActionLink("Back to List", "Index", null, new { @class = "button" })
+        </div>
+        @Html.ValidationSummary(true)
+
+        <div class="left-form">
+            @Html.HiddenFor(model => model.FlyDiscount.DiscountID)
+
+            <div class="editor-field">
+                <label>Title</label>
+                @Html.TextBoxFor(model => model.FlyDiscount.Name, new { @placeholder = PlaceHolder.DiscountTitle_ph, @class = "k-textbox", @required = true, @validationMessage = "Enter {0}" })
+                @Html.ValidationMessageFor(model => model.FlyDiscount.Name)
+            </div>
+
+            <div class="editor-field">
+                <label>Percentage (%)</label>
+                @Html.TextBoxFor(model => model.FlyDiscount.Percentage, new { @placeholder = PlaceHolder.DiscountPercentage_ph, @class = "k-textbox", @required = true, @validationMessage = "Enter {0}" })
+                @Html.ValidationMessageFor(model => model.FlyDiscount.Percentage)
+            </div>
+
+            <div class="editor-field">
+                <label>Limitation Times</label>
+                @Html.TextBoxFor(model => model.FlyDiscount.LimitationTimes, new { @placeholder = PlaceHolder.DiscountLimitTime_ph, @class = "k-textbox", @required = true, @validationMessage = "Enter {0}" })
+                @Html.ValidationMessageFor(model => model.FlyDiscount.LimitationTimes)
+            </div>
+
+            <div class="editor-field">
+                <label class="boolean-label">Deleted</label>
+                @Html.CheckBoxFor(m => m.Deleted, Model.FlyDiscount.Deleted)
+                @Html.ValidationMessageFor(model => model.FlyDiscount.Deleted)
+            </div>
+        </div>
+        <div class="control-action">
+        </div>
+    }
+}
+@section Scripts {
+
+}
+

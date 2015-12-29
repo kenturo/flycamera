@@ -1,0 +1,26 @@
+﻿@using Flycamera.App_Start
+@model Flycamera.ViewModel.ProductsVM
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@section bodyContent{
+    <div id="body-content">
+        @{Html.RenderPartial(@StaticVariable._Breadcrumbs, ViewData[StaticVariable.Breadcrumbs]);}
+        <div class="wrapper">
+
+            @{Html.RenderPartial(@StaticVariable._ListProducts, Model.ProductList);}
+
+            @{Html.RenderPartial(@StaticVariable._Pagination, ViewData[StaticVariable.Pagination]);}
+
+        </div>
+        @{Html.RenderPartial(@StaticVariable._PartnerShipHome, Model.listPartnerships);}
+    </div>
+}
+
+@section contactBlock{
+    @Html.Partial("_Contact")
+}

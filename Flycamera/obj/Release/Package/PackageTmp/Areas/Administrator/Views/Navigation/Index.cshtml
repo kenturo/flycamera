@@ -1,0 +1,72 @@
+﻿@model IEnumerable<FlyEntity.Fly_Navigation>
+
+@{
+    ViewBag.Title = "Index Navigation";
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
+}
+<div class="titlePage">
+    <div class="wrapper">
+        <h1>Index Navigation</h1>
+    </div>
+</div>
+@section bodyContent{
+
+    <div class="control-action">
+
+        @Html.ActionLink("New Item", "Create", null, new { @class = "button newItem" })
+    </div>
+    <table width="100%" cellspacing="0" cellpadding="0" class="responstable">
+        <thead>
+            <tr>
+                <th width="15%">Title VN</th>
+                <th width="15%">Title EN</th>
+                <th width="5%">Link</th>
+                <th width="3%">ParentId</th>
+                <th width="150">Image</th>
+                <th width="5%">Ico</th>
+                <th width="5%">Classes</th>
+                <th width="5%">Id</th>
+                <th width="5%">Createdon</th>
+                <th colspan="2">Control</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Any())
+            {
+                foreach (var navigation in Model)
+                {
+                    <tr>
+                        <td>@navigation.title_vn</td>
+                        <td>@navigation.title_en</td>
+                        <td>
+                            @navigation.href
+                        </td>
+                        <td>@navigation.parentid</td>
+                        <td>
+                            @if (@navigation.imgLink != null)
+                            {
+                                <img src="@navigation.imgLink" class="preview" width="150" height="80"/>
+                            }
+                            else
+                            {
+                                <img src="@Url.Content("/Content/images/sprite/no-image.png")" class="preview" width="150" height="80"/>
+                            }
+                        </td>
+                        <td>
+                            @navigation.ico
+                        </td>
+                        <td>@navigation.classObj</td>
+                        <td>@navigation.idObj</td>
+                        <td>@navigation.CreatedOn</td>
+                        <td class="control" width="5%">@Html.ActionLink("Edit", "Edit", new { id = @navigation.navid }, new { @class = "editIcon", @title = "Edit" })</td>
+                        <td class="control" width="5%">@Html.ActionLink("Delete", null, null, new { @class = "removeItem", @rel = @navigation.navid, @title = "Delete" })</td>
+                    </tr>
+                }
+            }
+            else
+            {
+                @Html.Raw("<p>" + StaticVariable.Msg_Update + "</p>");
+            }
+        </tbody>
+    </table>
+}

@@ -1,0 +1,24 @@
+﻿@using Flycamera.App_Start
+<div class="boxLogin boxRegister active">
+    <div class="left-form">
+        <span class="msg-login">(*) Tài khoản hoặc mật khẩu không chính xác</span>
+        <div class="editor-field">
+            <input type="text" value="" validationmessage="Enter {0}" required="True" placeholder="Enter User Name" name="Customer.Username" id="Customer_Username" class="k-textbox f-tbx-user f-txb-user-login">
+        </div>
+
+        <div class="editor-field">
+            <input type="password" value="" validationmessage="Enter {0}" required="True" placeholder="Enter Password" name="Customer.PasswordHash" id="Customer_PasswordHash" class="k-textbox f-txb-pwd-login">
+        </div>
+    </div>
+    <div class="control-action">
+        <input type="submit" value="Đăng nhập" class="button form-submit submit-button--login" />
+    </div>
+
+    <ul class="other-action--user">
+        <li><a href="javascript:;" title="Quên mật khẩu ?">Quên mật khẩu ?</a></li>
+        <li>Hoặc đăng nhập bằng 
+                <a class="icogplus icoemb" title="Google+" href="javascript:void(0)"></a>
+            <a class="icofb icoemb" title="Facebook" href="javascript:void(0)"></a>
+        </li>
+    </ul>
+</div>

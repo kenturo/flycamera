@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "Client";
+    Layout = "~/Views/Shared/_LayoutAngular.cshtml";
+}
+
+
+@section bodyContent
+{
+    <section class="wrapper__clients" ng-controller="partner-controller">
+        <div class="wrapper">
+            <p class="wrapper__clients--title"></p>
+
+            <ul class="wrapper__clients--list">
+                <li ng-repeat="x in resultPartnerShip">
+                    <a href="{{x.link}}" title="{{x.title}}">
+                        <img src="{{x.imglink}}" alt="{{x.title}}">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section class="wrapper__poster" ng-controller="eventClip-controller">
+        <div class="wrapper">
+            <div class="wrapper__poster--control ">
+                <a href="javacript:;" class="wrapper__poster--expand" title="Expand">Expand</a>
+            </div>
+
+            <ul class="wrapper__poster--list">
+                <li ng-repeat="item in resultEventClip" ng-repeat-end-watch="initFancybox">
+                    <a href="{{item.link}}" title="{{item.title}}" class="fancybox">
+                        <img src="{{item.imglink}}" alt="{{item.title}}">
+                        <p class="wrapper__poster--title">{{item.title}}</p>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </section>
+}
+
+@section scripts
+{
+    <script src="@Scripts.Url("/Scripts/fancybox/jquery.fancybox.js")" type="text/javascript"></script>
+    <script src="@Scripts.Url("/Scripts/fancybox/jquery.fancybox.pack.js")" type="text/javascript"></script>
+    <script src="@Scripts.Url("/Scripts/fancybox/jquery.fancybox-media.js")" type="text/javascript"></script>
+
+}

@@ -1,0 +1,26 @@
+﻿@model Flycamera.ViewModel.PaginationList
+<div class="pagination">
+    <div class="frm-pagination">
+        <a title="First" class="btn-pag first" rel="first" href="#">«</a>
+        <a title="Previous" class="btn-pag prev" rel="prev" href="#">‹</a>
+        <ul class="list-pag">
+            @if (Model != null)
+            {
+                for (int i = 1; i <= Model.PageNumber; i++)
+                {
+                    string isActive = (i == 1) ? "active" : "";
+                    <li class="@isActive"><a title="@i" rel="@i" href="#">@i</a></li>
+                }
+            }
+        </ul>
+        <a title="Next" class="btn-pag next" rel="next" href="#">›</a>
+        <a title="Last" class="btn-pag last" rel="last" href="#">»</a>
+    </div>
+
+</div>
+@if (Model != null) { 
+    @Html.Hidden("TotalSize",@Model.TotalItem.ToString())
+    @Html.Hidden("PageSize",@Model.PageSize.ToString(), new {@class="pagesizeList" })
+    @Html.Hidden("CurrentPage", @Model.CurrentPage.ToString(), new {@class="currentList" })
+    @Html.Hidden("pageNumber", @Model.PageNumber.ToString(), new {@class="pageNumber" })
+}

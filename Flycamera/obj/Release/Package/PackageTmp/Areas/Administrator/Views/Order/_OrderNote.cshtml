@@ -1,0 +1,49 @@
+﻿@using Flycamera.App_Start
+@using FlyEntity.Utilities
+@model Flycamera.Areas.Administrator.ViewModel.OrderVm
+
+<div class="wrapper__listCart">
+    <table width="100%" cellspacing="0" cellpadding="0" class="responstable">
+        <thead>
+            <tr>
+                <th width="5%">STT</th>
+                <th width="5%">OrderID</th>
+                <th>Note</th>
+                <th width="3%">DisplayToCustomer</th>
+                <th width="5%">CreatedOn</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Order != null)
+            {
+                // index stt
+                var idx = 1;
+                if (Model.Order.Fly_OrderNote != null) { 
+                    foreach (var item in Model.Order.Fly_OrderNote)
+                    {
+                        <tr>
+                            <td>
+                                @idx
+                            </td>
+                            <td>
+                                @item.OrderID
+                            </td>
+                            <td>@item.Note</td>
+                            <td>
+                                <input type="checkbox" name="DisplayToCustomer" class="disable" value="DisplayToCustomer" checked="@item.DisplayToCustomer.GetValueOrDefault(false)"/>
+                            </td>
+                            <td>
+                                @item.CreatedOn.GetValueOrDefault().ToString("dd/mm/yyyy")
+                            </td>
+                        </tr>
+                        idx++;
+                    }
+                }
+            }
+            else
+            {
+                @Html.Raw("<p>" + StaticVariable.Msg_Update + "</p>");
+            }
+        </tbody>
+    </table>
+</div>

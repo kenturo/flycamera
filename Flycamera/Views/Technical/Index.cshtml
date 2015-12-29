@@ -1,0 +1,45 @@
+﻿@using Flycamera.App_Start
+@using FlyEntity.Utilities
+@model Flycamera.ViewModel.TechnicalVm
+@{
+    ViewBag.Title = "Teachnical";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section styleSheet{
+@*    @Styles.Render("~/Content/fancybox")*@
+}
+
+@section bodyContent{
+    <div id="body-content">
+        <div class="frm-breadcrum detail-sps">
+            <div class="feature-sp">
+                <div class="frm-left-sp">
+                    <h1 class="name-sp">Technicals Guide</h1>
+                    <div class="frm-share">
+                        @*                        <a href="#" class="gplus" title="Google Plus">Google Plus</a>*@
+                        <a href="#" class="fb btn__FB--share" title="Facebook">Facebook</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div id="list-news-sp">
+                <!-- Show Video -->
+                @if (Model.ListVideos != null && Model.ListVideos.Count > 0)
+                {
+                    Html.RenderPartial(@StaticVariable._TechnicalGuide, Model);
+                }
+                else
+                {
+                    @Html.Raw("<p>" + StaticVariable.Msg_Update + "</p>");
+                }
+            </div>
+        </div>
+        @{Html.RenderPartial(@StaticVariable._PartnerShipHome, Model.ListPartnerships);}
+    </div>
+}
+
+@section scripts{
+    @Scripts.Render("~/bundles/fancybox")
+}

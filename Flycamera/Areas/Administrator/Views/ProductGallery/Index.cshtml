@@ -1,0 +1,88 @@
+﻿@using Flycamera.App_Start
+@using FlyEntity.Utilities
+@model Flycamera.Areas.Administrator.ViewModel.ProductGalleryVM
+
+@{
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
+    string actionName = ViewContext.RouteData.Values["catepage"].ToString() == PositionTab.Overview.ToLower() ? "Overview" : "Featuries";
+    ViewBag.Title = "List " + actionName;
+}
+<div class="titlePage">
+    <div class="wrapper">
+        <h1>List @actionName</h1>
+@*        <ul class="mini-tab-pr">*@
+@*            <li><a href="@Url.Content("/Administrator/ProductGallery/overview")" class="active" data-param="Overview">Overview</a>|</li>*@
+@*            <li><a href="@Url.Content("/Administrator/ProductGallery/feature")" data-param="Feature">Feature</a></li>*@
+@*        </ul>*@
+    </div>
+</div> 
+@section bodyContent{
+    <input type="hidden" id="listViewTab" value="1" />
+<div class="control-action">
+    <a href=@Url.Content("/Administrator/ProductGallery/" + ViewContext.RouteData.Values["catepage"] + "/create") class="button newItem">New Item</a>
+</div>
+<table width="100%" cellspacing="0" cellpadding="0" class="responstable">
+    <thead>
+        <tr>
+            <th width="8%">ID</th>
+            <th width="8%">Type</th>
+            <th>Title</th>
+            <th width="10%">Description</th>
+            <th width="10%">Description EN</th>
+            <th width="10%">Createdon</th>
+            <th width="10%">Updateon</th>
+            <th colspan="2">Control</th>
+        </tr>
+    </thead>
+    <tbody>
+    @if (Model != null && Model.ListSectionContents.Any())
+    {
+        foreach (var item in Model.ListSectionContents)
+        {
+            <tr class="row-@item.SectionContentID">
+                <td width="8%">@item.SectionContentID</td>
+                <td width="8%">@item.Fly_PositionGallery.PositionName_EN - @item.Fly_PositionGallery.PositionName</td>
+                <td>@item.Fly_Product.Name</td>
+                <td>
+                    @if (!string.IsNullOrEmpty(item.FullDescription))
+                    {
+                        <input type="checkbox" checked="checked" class="disable">
+
+                    }
+                    else
+                    {
+                        <input type="checkbox"  class="disable">
+
+                    }
+                </td>
+                <td>
+                    @if (!string.IsNullOrEmpty(item.FullDescription_EN))
+                    {
+                        <input type="checkbox" checked="checked" class="disable">
+                    }
+                    else
+                    {
+                        <input type="checkbox"  class="disable">
+                    }
+                </td>
+                <td title="@item.CreatedOn">@item.CreatedOn.GetValueOrDefault().ToString("dd/MM/yyyy")</td>
+                <td title="@item.UpdateOn">@item.UpdateOn.GetValueOrDefault().ToString("dd/MM/yyyy")</td>
+                <td width="5%">
+@*                     @Html.ActionLink("Edit", "Edit", new {id = item.ProductID}, new {@class = "editIcon", @title = "Edit"})*@
+                    <a class="editIcon" href="/Administrator/ProductGallery/@actionName/Edit/@item.ProductID" title="Edit">Edit</a>
+                </td>
+                <td width="5%"> @Html.ActionLink("Delete", null, null, new {@class = "removeItem", @title = "delete", @rel = item.SectionContentID, @data = "Video"})</td>
+            </tr>
+        }
+    }
+    else
+    {
+        <tr>
+            <td colspan="9">Không tìm thấy dữ liệu</td>
+        </tr>
+    }
+    </tbody>
+</table>
+    @Html.Hidden("controllerServices", this.ViewContext.RouteData.Values["controller"].ToString(), new {@id="controllerServices" })
+@{Html.RenderPartial(@StaticVariableAdministrator.PopupReviewContent);}
+}

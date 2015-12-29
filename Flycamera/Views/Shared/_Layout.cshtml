@@ -1,0 +1,32 @@
+﻿@using Flycamera.App_Start
+<!DOCTYPE html>
+<html>
+<head>
+    @Html.Partial("_MetaSEO")
+    <title>@ViewBag.Title</title>
+    @RenderSection("styleSheet", required: false)
+    @Styles.Render("~/Content/MainsiteCSS")
+    @if (Request.Browser.IsMobileDevice)
+    {
+        @Styles.Render("~/Content/CSSMobile");
+    }
+</head>
+<body class="">
+    @Html.Partial(StaticVariable._header, ViewData[StaticVariable.Navigation])
+    @RenderSection("bodyContent", required: false)
+    @RenderSection("contactBlock", required: false)
+    @Html.Partial(StaticVariable._Footer)
+    @RenderBody()
+    @{Html.RenderPartial(StaticVariable._popupLogin);}
+
+<script src="@Scripts.Url("/Scripts/jquery-1.11.2.js")" type="text/javascript"></script>
+@RenderSection("scripts", required: false)
+@Scripts.Render("~/Scripts/MainsiteJS")
+
+@if (Request.Browser.IsMobileDevice)
+{
+    @Scripts.Render("~/Scripts/JSMobile");
+}
+
+</body>
+</html>

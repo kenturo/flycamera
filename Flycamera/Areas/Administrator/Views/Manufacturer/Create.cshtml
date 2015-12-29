@@ -1,0 +1,109 @@
+﻿@using Flycamera.App_Start
+@model Flycamera.Areas.Administrator.ViewModel.ManufacturerVM
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
+}
+
+<div class="titlePage">
+    <div class="wrapper">
+        <h1>Create Manufacturer</h1>
+    </div>
+</div>
+
+@section bodyContent{
+   
+    @using (Html.BeginForm())
+    {
+         <div class="control-action">
+            <input type="submit" value="Submit" class="button" />
+            @Html.ActionLink("Back to List", "Index", null, new {@class = "button"})
+        </div>
+        @Html.ValidationSummary(true)
+
+        <div class="left-form">
+            <div class="editor-field">
+                <label>Name</label>
+                @Html.TextBoxFor(model => model.Manufacturer.Name, new { @placeholder = PlaceHolder.ManufacturerName_ph })
+                @Html.ValidationMessageFor(model => model.Manufacturer.Name)
+            </div>
+
+
+            <div class="editor-field">
+                <label>Name English</label>
+                @Html.TextBoxFor(model => model.ManufacturerLocalized.Name, new { @placeholder = PlaceHolder.ManufacturerNameEN_ph })
+                @Html.ValidationMessageFor(model => model.ManufacturerLocalized.Name)
+            </div>
+
+            <div class="editor-field">
+                <label>Description</label>
+                @Html.TextAreaFor(model => model.Manufacturer.Description, new { @placeholder = PlaceHolder.ManufacturerDescription_ph })
+                @Html.ValidationMessageFor(model => model.Manufacturer.Description)
+            </div>
+
+            <div class="editor-field">
+                <label>Description English</label>
+                @Html.TextAreaFor(model => model.ManufacturerLocalized.Description, new { @placeholder = PlaceHolder.ManufacturerDescriptionEN_ph })
+                @Html.ValidationMessageFor(model => model.ManufacturerLocalized.Description)
+            </div>
+          
+            <div class="editor-field frm-upload--backgroundIMG">
+                <label>Upload Image :</label>
+                <ul class="frame-tabheader">
+                    <li>
+                        <a href="#frame-tab--url" class="button active" title="URL">URL</a>
+                    </li>
+@*                    <li>*@
+@*                        <a href="#frame-tab--pc" class="button" title="Computer">Computer</a>*@
+@*                    </li>*@
+                </ul>
+                <div class="frame-tab--content frame-tab--upload">
+                    <div id="frame-tab--url" class="frame-tab active">
+                        @Html.TextBoxFor(model => model.Manufacturer.PictureID, new { @class = "imgLink SyncURLImageLink", @oninput = "onChangeTextboxImage(this,1)" })
+                        <input type="button" class="btn-chose button btn-upload-img" value="Upload" onclick="BrowseServer();" />
+                        @Html.ValidationMessageFor(model => model.Manufacturer.PictureID)
+                    </div>
+
+@*                    <div id="frame-tab--pc" class="frame-tab">*@
+@*                        @Html.TextBoxFor(model => model.Manufacturer.PictureID, new { @class = "imgLink", @readonly = "readonly" })*@
+@*                        <input type="button" class="btn-chose button" value="Choose Image" onclick="BrowseServer();" />*@
+@*                        @Html.ValidationMessageFor(model => model.Manufacturer.PictureID)*@
+@*                    </div>*@
+                </div>
+            </div>
+
+            
+        </div>
+        <div class="right-form">
+            <div class="editor-field">
+                <label>Review</label>
+                <img src="@Url.Content("/Content/images/sprite/no-image.png")" class="preview" width="350" height="200" />
+            </div>
+
+            <div class="editor-field">
+                <label class="boolean-label">Published</label>
+                @Html.CheckBoxFor(m => m.isPubish, Model.Manufacturer.Published)
+                @Html.ValidationMessageFor(model => model.Manufacturer.Published)
+            </div>
+
+            <div class="editor-field">
+                <label class="boolean-label">Deleted</label>
+                @Html.CheckBoxFor(m => m.isDelete, Model.Manufacturer.Deleted)
+                @Html.ValidationMessageFor(model => model.Manufacturer.Deleted)
+            </div>
+              <div class="editor-field">
+                <label>Order</label>
+                @Html.TextBoxFor(model => model.Manufacturer.DisplayOrder, new { @placeholder = PlaceHolder.Order_ph })
+                @Html.ValidationMessageFor(model => model.Manufacturer.DisplayOrder)
+            </div>
+        </div>
+        
+        <div style="clear:both;"></div>
+        
+       
+    }
+}
+
+@section Scripts {
+}

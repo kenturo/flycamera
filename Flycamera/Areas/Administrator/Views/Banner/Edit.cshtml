@@ -1,0 +1,122 @@
+﻿@using Flycamera.App_Start
+@model Flycamera.Areas.Administrator.ViewModel.BannerModel
+
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="titlePage">
+    <div class="wrapper">
+        <h1>Edit Banner</h1>
+    </div>
+</div>
+@section bodyContent{
+    
+
+    @using (Html.BeginForm())
+    {
+        <div class="control-action">
+            <input type="submit" value="Submit" class="button" />
+            @Html.ActionLink("Back to List", "Index", null, new {@class = "button"})
+        </div>
+        @Html.ValidationSummary(true)
+
+        <div class="left-form">
+            @Html.HiddenFor(model => model.banner.BannerID)
+            @Html.HiddenFor(model => model.banner.BannerTypeID)
+
+            <div class="editor-field">
+                <label>Position</label>
+                @Html.DropDownListFor(model => model.positionType, Model.PositionBannerType, "Select Banner Type", new { @required = true })
+            </div>
+
+            <div class="editor-field">
+                <label>Banner Title</label>
+                @Html.TextBoxFor(model => model.banner.BannerTitle, new { @placeholder = PlaceHolder.BannerTitle_ph,@class="k-textbox" ,@required = true,@validationMessage = "Enter {0}" })
+                @Html.ValidationMessageFor(model => model.banner.BannerTitle)
+            </div>
+
+            <div class="editor-field">
+                <label>Short Content</label>
+                @Html.TextAreaFor(model => model.banner.BannerShortContent, new { @placeholder = PlaceHolder.ShortContent_ph, @maxLenght = "190", @class = "k-textbox" })
+                @Html.ValidationMessageFor(model => model.banner.BannerShortContent)
+            </div>
+
+            <div class="editor-field">
+                <label>Banner Link</label>
+                @Html.TextBoxFor(model => model.banner.BannerLink, new { @placeholder = PlaceHolder.Link_ph,@class="k-textbox" ,@required = true,@validationMessage = "Enter {0}" })
+                @Html.ValidationMessageFor(model => model.banner.BannerLink)
+            </div>
+
+@*            <div class="editor-field">*@
+@*                <label>Start Time</label>*@
+@*                @Html.TextBoxFor(model => model.banner.BannerTimeFrom, new { @placeholder = PlaceHolder.BannerStartTime_ph,@class="datetimepicker k-textbox" ,@required = true,@validationMessage = "Enter {0}" })*@
+@*                @Html.ValidationMessageFor(model => model.banner.BannerTimeFrom)*@
+@*            </div>*@
+@**@
+@*            <div class="editor-field">*@
+@*                <label>End Time</label>*@
+@*                @Html.TextBoxFor(model => model.banner.BannerTimeTo, new { @placeholder = PlaceHolder.BannerEndTime_ph,@class="datetimepicker k-textbox" ,@required = true,@validationMessage = "Enter {0}" })*@
+@*                @Html.ValidationMessageFor(model => model.banner.BannerTimeTo)*@
+@*            </div>*@
+
+            <div class="editor-field frm-upload--backgroundIMG">
+                <label>Upload Image :</label>
+                <ul class="frame-tabheader">
+                    <li>
+                        <a href="#frame-tab--url" class="button active" title="URL">URL</a>
+                    </li>
+                </ul>
+                <div class="frame-tab--content frame-tab--upload">
+                    <div id="frame-tab--url" class="frame-tab active">
+                        @Html.TextBoxFor(model => model.banner.PictureID, new { @class = "imgLink SyncURLImageLink k-textbox", @oninput = "onChangeTextboxImage(this,1)" ,@required = true,@validationMessage = "Enter {0}" })
+                        <input type="button" class="btn-chose button btn-upload-img" value="Upload" onclick="BrowseServer();" />
+                        @Html.ValidationMessageFor(model => model.banner.PictureID)
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right-form">
+            <div class="editor-field">
+                <label>Review</label>
+                @if (!string.IsNullOrEmpty(Model.banner.PictureID.ToString()))
+                {
+                    <img src="@Model.banner.Fly_Picture.OriginalURL" class="preview" width="400" height="300" />
+                }
+                else
+                {
+                    <img src="http://www.placehold.it/2000x467" class="preview" width="400" height="300" />
+                }
+            </div>
+
+
+
+            <div class="editor-field">
+                <label class="boolean-label">Published</label>
+                @Html.CheckBoxFor(m => m.isPublish, Model.banner.Published)
+                @Html.ValidationMessageFor(model => model.banner.Published)
+            </div>
+
+            <div class="editor-field">
+                <label class="boolean-label">Deleted</label>
+                @Html.CheckBoxFor(m => m.isDelete, Model.banner.Deleted)
+                @Html.ValidationMessageFor(model => model.banner.Deleted)
+            </div>
+
+            <div class="editor-field">
+                <label>Order</label>
+                @Html.TextBoxFor(model => model.banner.DisplayOrder, new { @placeholder = PlaceHolder.Order_ph })
+                @Html.ValidationMessageFor(model => model.banner.DisplayOrder)
+            </div>
+        </div>
+        <div class="control-action">
+        </div>
+    }
+}
+@section Scripts {
+    
+}
+

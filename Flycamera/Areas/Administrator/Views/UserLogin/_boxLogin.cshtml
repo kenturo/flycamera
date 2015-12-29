@@ -1,0 +1,17 @@
+﻿@using Flycamera.App_Start
+@model Flycamera.ViewModel.UserVM
+<div class="boxLogin boxRegister active">
+    <div class="left-form--user">
+        <div class="">
+            @Html.TextBoxFor(model => model.Customer.Username, new { @placeholder = PlaceHolder.UserName_ph, @class = "k-textbox f-tbx-user f-txb-user-login", @required = true, @validationMessage = "Enter {0}" })
+        </div>
+
+        <div class="" rel="">
+            @Html.TextBoxFor(model => model.Customer.PasswordHash, new { @placeholder = PlaceHolder.Password_ph, @type = "password", @class = "k-textbox f-txb-pwd-login f-tbx-user", @required = true, @validationMessage = "Enter {0}" })
+        </div>
+    </div>
+    <div class="control-action">
+        <input type="submit" value="Đăng nhập" class="button form-submit submit-button--login" />
+    </div>
+    <span class="msg-login">(*) Tài khoản hoặc mật khẩu không chính xác</span>
+</div>

@@ -1,0 +1,41 @@
+﻿@using Flycamera.App_Start
+@using FlyEntity.Utilities
+@model Flycamera.ViewModel.TechnicalVm
+
+@if (Model != null && Model.ListVideos != null && Model.ListVideos.Count > 0) { 
+    foreach (var item in Model.ListVideos.Where(item => item.Fly_PositionGallery.PositionName_EN.Equals(PositionTab.Technical)))
+    {
+        <div class="item-list">
+            <div class="left-list">
+                <a title="@item.VideosTitle" href="@item.VideosLink" class="fancybox" rel="video">
+                    @if (item.Fly_Picture != null && item.Fly_Picture.OriginalURL.Length > 0)
+                    {
+                        @:<img alt="" src="@item.Fly_Picture.OriginalURL" title="@item.VideosTitle">
+                    }
+                    else
+                    {
+                        @:<img alt="" src="@Url.Content("/Content/images/sprite/no-image.png")" title="@item.VideosTitle">
+                    }
+                </a>
+            </div>
+            <div class="right-list">
+                <div class="top">
+                    <h1>
+                        <a rel="video" title="@item.VideosTitle" href="@Url.RouteUrl("detailTechnical", new { title_name = Url.SeoUrl(@item.VideosTitle), id = @item.VideosID })" class="">@item.VideosTitle</a>
+                    </h1>
+                </div>
+                <div class="middle">
+                    <p>
+                        @item.VideosShortContent
+                    </p>
+                    <a title="View Clip" class="view-now fancybox" rel="video" href="@item.VideosLink">View Clip</a>
+                    <a title="View More" class="view-now" href="@Url.RouteUrl("detailTechnical", new { title_name = Url.SeoUrl(@item.VideosTitle), id = @item.VideosID })">View More</a>
+                    <div class="frm-share">
+                        <a title="Google Plus" class="gplus" href="#" style="visibility: hidden; ">Google Plus</a>
+                        <a title="Facebook" class="fb share__fb--evenItem" href="#" rel="@Url.RouteUrl("detailTechnical", new { title_name = Url.SeoUrl(@item.VideosTitle), id = @item.VideosID })">Facebook</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+}

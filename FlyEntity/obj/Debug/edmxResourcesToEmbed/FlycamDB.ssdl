@@ -1,0 +1,1823 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="flycameraModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Fly_Banner">
+    <Key>
+      <PropertyRef Name="BannerID" />
+    </Key>
+    <Property Name="BannerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BannerTypeID" Type="int" />
+    <Property Name="BannerTitle" Type="nvarchar" MaxLength="1000" />
+    <Property Name="BannerShortContent" Type="nvarchar" MaxLength="200" />
+    <Property Name="BannerLink" Type="nvarchar(max)" />
+    <Property Name="BannerTimeFrom" Type="datetime" />
+    <Property Name="BannerTimeTo" Type="datetime" />
+    <Property Name="PictureID" Type="int" />
+    <Property Name="CreatedByID" Type="int" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="Published" Type="bit" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="DisplayOrder" Type="int" />
+  </EntityType>
+  <EntityType Name="Fly_BannerType">
+    <Key>
+      <PropertyRef Name="BannerTypeID" />
+    </Key>
+    <Property Name="BannerTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BannerTypeTitle" Type="nvarchar" MaxLength="1000" />
+    <Property Name="BannerTypeShortContent" Type="nvarchar" MaxLength="200" />
+    <Property Name="CreatedByID" Type="int" />
+    <Property Name="Width" Type="int" />
+    <Property Name="Height" Type="int" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="DisplayOrder" Type="int" />
+  </EntityType>
+  <EntityType Name="Fly_BlogPost">
+    <Key>
+      <PropertyRef Name="BlogPostID" />
+    </Key>
+    <Property Name="BlogPostID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LanguageID" Type="int" />
+    <Property Name="BlogPostTitle" Type="nvarchar" MaxLength="200" />
+    <Property Name="BlogPostShortContent" Type="nvarchar" MaxLength="200" />
+    <Property Name="BlogPostBody" Type="nvarchar(max)" />
+    <Property Name="ImageUrl" Type="nvarchar(max)" />
+    <Property Name="BlogPostTypeID" Type="int" />
+    <Property Name="VideoLink" Type="nvarchar(max)" />
+    <Property Name="Tags" Type="nvarchar" MaxLength="300" />
+    <Property Name="Published" Type="bit" />
+    <Property Name="CreatedByID" Type="int" />
+    <Property Name="CreatedOn" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Fly_BlogPostType">
+    <Key>
+      <PropertyRef Name="BlogPostTypeID" />
+    </Key>
+    <Property Name="BlogPostTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Descriptions" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CreatedByID" Type="int" />
+    <Property Name="Published" Type="bit" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="CreatedOn" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Fly_Category">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="400" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="ParentCategoryID" Type="int" />
+    <Property Name="PictureID" Type="int" />
+    <Property Name="ShowOnHomePage" Type="bit" />
+    <Property Name="Published" Type="bit" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="DisplayOrder" Type="int" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="UpdatedOn" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Fly_Category_Discount_Mapping">
+    <Key>
+      <PropertyRef Name="CategoryDiscountMappingID" />
+    </Key>
+    <Property Name="CategoryDiscountMappingID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryID" Type="int" Nullable="false" />
+    <Property Name="DiscountID" Type="int" Nullable="false" />
+    <Property Name="Createdon" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Fly_CategoryLocalized">
+    <Key>
+      <PropertyRef Name="CategoryLocalizedID" />
+    </Key>
+    <Property Name="CategoryLocalizedID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryID" Type="int" />
+    <Property Name="LanguageID" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="400" />
+    <Property Name="Description" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Fly_Country">
+    <Key>
+      <PropertyRef Name="CountryID" />
+    </Key>
+    <Property Name="CountryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="TwoLetterISOCode" Type="nvarchar" MaxLength="2" />
+    <Property Name="ThreeLetterISOCode" Type="nvarchar" MaxLength="3" />
+    <Property Name="NumericISOCode" Type="int" />
+    <Property Name="Published" Type="bit" />
+    <Property Name="DisplayOrder" Type="int" />
+  </EntityType>
+  <EntityType Name="Fly_Customer">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerGUID" Type="uniqueidentifier" />
+    <Property Name="Email" Type="nvarchar" MaxLength="255" />
+    <Property Name="Username" Type="nvarchar" MaxLength="100" />
+    <Property Name="PasswordHash" Type="nvarchar" MaxLength="255" />
+    <Property Name="IsTaxExempt" Type="bit" />
+    <Property Name="IsAdmin" Type="bit" />
+    <Property Name="IsGuest" Type="bit" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="RegistrationDate" Type="datetime" />
+    <Property Name="AvatarID" Type="int" />
+    <Property Name="DateOfBirth" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Fly_Customer_CustomerRole_Mapping">
+    <Key>
+      <PropertyRef Name="CustomerMappingCustomerRoleID" />
+    </Key>
+    <Property Name="CustomerMappingCustomerRoleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerID" Type="int" Nullable="false" />
+    <Property Name="CustomerRoleID" Type="int" Nullable="false" />
+    <Property Name="Creadedon" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Fly_CustomerAction">
+    <Key>
+      <PropertyRef Name="CustomerActionID" />
+    </Key>
+    <Property Name="CustomerActionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="SystemKeyword" Type="nvarchar" MaxLength="100" />
+    <Property Name="Description" Type="nvarchar" MaxLength="1000" />
+    <Property Name="DisplayOrder" Type="int" />
+  </EntityType>
+  <EntityType Name="Fly_CustomerAttribute">
+    <Key>
+      <PropertyRef Name="CustomerAttributeId" />
+    </Key>
+    <Property Name="CustomerAttributeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerId" Type="int" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="100" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="100" />
+    <Property Name="StreetAddress" Type="nvarchar" MaxLength="1000" />
+    <Property Name="City" Type="nvarchar" MaxLength="1000" />
+    <Property Name="CountryID" Type="int" />
+    <Property Name="MobilePhone" Type="int" />
+  </EntityType>
+  <EntityType Name="Fly_CustomerRole">
+    <Key>
+      <PropertyRef Name="CustomerRoleID" />
+    </Key>
+    <Property Name="CustomerRoleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="255" />
+    <Property Name="FreeShipping" Type="bit" />
+    <Property Name="TaxExempt" Type="bit" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="Selected" Type="bit" />
+    <Property Name="Deleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="Fly_CustomerRole_Discount_Mapping">
+    <Key>
+      <PropertyRef Name="CustomerRoleMappingDiscountID" />
+    </Key>
+    <Property Name="CustomerRoleMappingDiscountID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerRoleID" Type="int" Nullable="false" />
+    <Property Name="DiscountID" Type="int" Nullable="false" />
+    <Property Name="Creadedon" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Fly_CustomerRole_ProductPrice">
+    <Key>
+      <PropertyRef Name="CustomerRoleProductPriceID" />
+    </Key>
+    <Property Name="CustomerRoleProductPriceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerRoleID" Type="int" />
+    <Property Name="ProductVariantID" Type="int" />
+    <Property Name="Price" Type="money" />
+  </EntityType>
+  <EntityType Name="Fly_CustomerSession">
+    <Key>
+      <PropertyRef Name="CustomerSessionGUID" />
+    </Key>
+    <Property Name="CustomerSessionGUID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CustomerID" Type="int" />
+    <Property Name="LastAccessed" Type="datetime" />
+    <Property Name="IsExpired" Type="bit" />
+  </EntityType>
+  <EntityType Name="Fly_Discount">
+    <Key>
+      <PropertyRef Name="DiscountID" />
+    </Key>
+    <Property Name="DiscountID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LimitationTimes" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Percentage" Type="int" />
+    <Property Name="StartDate" Type="datetime" />
+    <Property Name="EndDate" Type="datetime" />
+    <Property Name="Deleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="Fly_DiscountUsageHistory">
+    <Key>
+      <PropertyRef Name="DiscountUsageHistoryID" />
+    </Key>
+    <Property Name="DiscountUsageHistoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DiscountID" Type="int" />
+    <Property Name="CustomerID" Type="int" />
+    <Property Name="OrderID" Type="int" />
+    <Property Name="CreatedOn" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Fly_Language">
+    <Key>
+      <PropertyRef Name="LanguageId" />
+    </Key>
+    <Property Name="LanguageId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="LanguageCulture" Type="varchar" MaxLength="20" />
+    <Property Name="FlagImageFileName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Published" Type="bit" />
+    <Property Name="DisplayOrder" Type="int" />
+  </EntityType>
+  <EntityType Name="Fly_Manufacturer">
+    <Key>
+      <PropertyRef Name="ManufacturerID" />
+    </Key>
+    <Property Name="ManufacturerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="400" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="PictureID" Type="int" />
+    <Property Name="Published" Type="bit" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="DisplayOrder" Type="int" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="UpdatedOn" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Fly_ManufacturerLocalized">
+    <Key>
+      <PropertyRef Name="ManufacturerLocalizedID" />
+    </Key>
+    <Property Name="ManufacturerLocalizedID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ManufacturerID" Type="int" />
+    <Property Name="LanguageID" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="400" />
+    <Property Name="Description" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Fly_Navigation">
+    <Key>
+      <PropertyRef Name="navid" />
+    </Key>
+    <Property Name="navid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title_vn" Type="nvarchar(max)" />
+    <Property Name="title_en" Type="nvarchar(max)" />
+    <Property Name="href" Type="nvarchar(max)" />
+    <Property Name="parentid" Type="int" />
+    <Property Name="imgLink" Type="nvarchar(max)" />
+    <Property Name="ico" Type="nvarchar(max)" />
+    <Property Name="classObj" Type="nvarchar(max)" />
+    <Property Name="idObj" Type="nvarchar(max)" />
+    <Property Name="Published" Type="bit" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="CreatedOn" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Fly_Order">
+    <Key>
+      <PropertyRef Name="OrderID" />
+    </Key>
+    <Property Name="OrderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderGUID" Type="uniqueidentifier" />
+    <Property Name="CustomerID" Type="int" />
+    <Property Name="ApproveID" Type="int" />
+    <Property Name="CustomerIP" Type="nvarchar" MaxLength="50" />
+    <Property Name="TaxRates" Type="nvarchar" MaxLength="4000" />
+    <Property Name="OrderTax" Type="money" />
+    <Property Name="OrderTotal" Type="money" />
+    <Property Name="RefundedAmount" Type="money" />
+    <Property Name="OrderDiscount" Type="money" />
+    <Property Name="OrderStatus" Type="nvarchar" MaxLength="100" />
+    <Property Name="PaymentMethodName" Type="nvarchar" MaxLength="100" />
+    <Property Name="PaidDate" Type="datetime" />
+    <Property Name="BillingFirstName" Type="nvarchar" MaxLength="100" />
+    <Property Name="BillingLastName" Type="nvarchar" MaxLength="100" />
+    <Property Name="BillingPhoneNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="BillingEmail" Type="nvarchar" MaxLength="255" />
+    <Property Name="BillingFaxNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="BillingCompany" Type="nvarchar" MaxLength="100" />
+    <Property Name="BillingAddress1" Type="nvarchar" MaxLength="100" />
+    <Property Name="BillingAddress2" Type="nvarchar" MaxLength="100" />
+    <Property Name="BillingCity" Type="nvarchar" MaxLength="100" />
+    <Property Name="BillingCountryID" Type="int" />
+    <Property Name="ShippingStatusID" Type="int" />
+    <Property Name="ShippingMethodID" Type="int" />
+    <Property Name="ShippedDate" Type="datetime" />
+    <Property Name="DeliveryDate" Type="datetime" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="CreatedOn" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Fly_OrderNote">
+    <Key>
+      <PropertyRef Name="OrderNoteID" />
+    </Key>
+    <Property Name="OrderNoteID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderID" Type="int" />
+    <Property Name="Note" Type="nvarchar" MaxLength="4000" />
+    <Property Name="DisplayToCustomer" Type="bit" />
+    <Property Name="CreatedOn" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Fly_OrderProductVariant">
+    <Key>
+      <PropertyRef Name="OrderProductVariantID" />
+    </Key>
+    <Property Name="OrderProductVariantID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderID" Type="int" />
+    <Property Name="ProductVariantID" Type="int" />
+    <Property Name="Price" Type="money" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="DiscountAmount" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="OrderProductVariantGUID" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="Fly_Partnership">
+    <Key>
+      <PropertyRef Name="PartnershipID" />
+    </Key>
+    <Property Name="PartnershipID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PartnershipTitle" Type="nvarchar" MaxLength="1000" />
+    <Property Name="PartnershipLink" Type="nvarchar(max)" />
+    <Property Name="PictureID" Type="int" />
+    <Property Name="ClassName" Type="nvarchar" MaxLength="500" />
+    <Property Name="CreatedByID" Type="int" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="Published" Type="bit" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="DisplayOrder" Type="int" />
+  </EntityType>
+  <EntityType Name="Fly_PaymentMethod">
+    <Key>
+      <PropertyRef Name="PaymentMethodID" />
+    </Key>
+    <Property Name="PaymentMethodID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="VisibleName" Type="nvarchar" MaxLength="100" />
+    <Property Name="Description" Type="nvarchar" MaxLength="4000" />
+    <Property Name="ConfigureTemplatePath" Type="nvarchar" MaxLength="500" />
+    <Property Name="UserTemplatePath" Type="nvarchar" MaxLength="500" />
+    <Property Name="ClassName" Type="nvarchar" MaxLength="500" />
+    <Property Name="SystemKeyword" Type="nvarchar" MaxLength="500" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="DisplayOrder" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Fly_Picture">
+    <Key>
+      <PropertyRef Name="PictureID" />
+    </Key>
+    <Property Name="PictureID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PictureBinary" Type="varbinary(max)" />
+    <Property Name="IsNew" Type="bit" />
+    <Property Name="OriginalURL" Type="nvarchar" MaxLength="2000" />
+    <Property Name="MimeType" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Fly_PositionGallery">
+    <Key>
+      <PropertyRef Name="PositionGalleryID" />
+    </Key>
+    <Property Name="PositionGalleryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PositionName" Type="nvarchar" MaxLength="500" />
+    <Property Name="PositionName_EN" Type="nvarchar" MaxLength="500" />
+    <Property Name="isContent" Type="bit" />
+    <Property Name="CreatedOn" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Fly_Product">
+    <Key>
+      <PropertyRef Name="ProductId" />
+    </Key>
+    <Property Name="ProductId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="400" />
+    <Property Name="ShortDescription" Type="nvarchar(max)" />
+    <Property Name="FullDescription" Type="nvarchar(max)" />
+    <Property Name="TemplateID" Type="int" />
+    <Property Name="ShowOnHomePage" Type="bit" />
+    <Property Name="isAccessories" Type="bit" />
+    <Property Name="Published" Type="bit" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="UpdatedOn" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Fly_Product_Category_Mapping">
+    <Key>
+      <PropertyRef Name="ProductCategoryID" />
+    </Key>
+    <Property Name="ProductCategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductID" Type="int" />
+    <Property Name="CategoryID" Type="int" />
+    <Property Name="IsFeaturedProduct" Type="bit" />
+    <Property Name="DisplayOrder" Type="int" />
+  </EntityType>
+  <EntityType Name="Fly_Product_Manufacturer_Mapping">
+    <Key>
+      <PropertyRef Name="ProductManufacturerID" />
+    </Key>
+    <Property Name="ProductManufacturerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductID" Type="int" />
+    <Property Name="ManufacturerID" Type="int" />
+    <Property Name="IsFeaturedProduct" Type="bit" />
+    <Property Name="DisplayOrder" Type="int" />
+  </EntityType>
+  <EntityType Name="Fly_ProductLocalized">
+    <Key>
+      <PropertyRef Name="ProductLocalizedID" />
+    </Key>
+    <Property Name="ProductLocalizedID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductID" Type="int" />
+    <Property Name="LanguageID" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="400" />
+    <Property Name="ShortDescription" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Fly_ProductPicture">
+    <Key>
+      <PropertyRef Name="ProductPictureID" />
+    </Key>
+    <Property Name="ProductPictureID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductID" Type="int" />
+    <Property Name="PictureID" Type="int" />
+    <Property Name="DisplayOrder" Type="int" />
+  </EntityType>
+  <EntityType Name="Fly_ProductTemplate">
+    <Key>
+      <PropertyRef Name="ProductTemplateId" />
+    </Key>
+    <Property Name="ProductTemplateId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="TemplatePath" Type="nvarchar" MaxLength="200" />
+    <Property Name="DisplayOrder" Type="int" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="UpdatedOn" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Fly_ProductVariant">
+    <Key>
+      <PropertyRef Name="ProductVariantId" />
+    </Key>
+    <Property Name="ProductVariantId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductID" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="400" />
+    <Property Name="SKU" Type="nvarchar" MaxLength="100" />
+    <Property Name="Description" Type="nvarchar" MaxLength="4000" />
+    <Property Name="ManufacturerPartNumber" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsShipEnabled" Type="bit" />
+    <Property Name="IsFreeShipping" Type="bit" />
+    <Property Name="AdditionalShippingCharge" Type="money" />
+    <Property Name="IsTaxExempt" Type="bit" />
+    <Property Name="ManageInventory" Type="int" />
+    <Property Name="NotifyAdminForQuantityBelow" Type="int" />
+    <Property Name="Backorders" Type="int" />
+    <Property Name="OrderMinimumQuantity" Type="int" />
+    <Property Name="OrderMaximumQuantity" Type="int" />
+    <Property Name="WarehouseID" Type="int" />
+    <Property Name="DisableBuyButton" Type="bit" />
+    <Property Name="CallForPrice" Type="bit" />
+    <Property Name="Price" Type="money" />
+    <Property Name="OldPrice" Type="money" />
+    <Property Name="ProductCost" Type="money" />
+    <Property Name="AdminPrice" Type="money" />
+    <Property Name="Weight" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="Length" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="Width" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="Height" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="Published" Type="bit" />
+    <Property Name="isHot" Type="bit" />
+    <Property Name="isNew" Type="bit" />
+    <Property Name="isGift" Type="bit" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="DisplayOrder" Type="int" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="UpdatedOn" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Fly_ProductVariant_Discount_Mapping">
+    <Key>
+      <PropertyRef Name="DiscountMappingID" />
+    </Key>
+    <Property Name="DiscountMappingID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductVariantID" Type="int" Nullable="false" />
+    <Property Name="DiscountID" Type="int" Nullable="false" />
+    <Property Name="Createdon" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Fly_ProductVariantLocalized">
+    <Key>
+      <PropertyRef Name="ProductVariantLocalizedID" />
+    </Key>
+    <Property Name="ProductVariantLocalizedID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductVariantID" Type="int" />
+    <Property Name="LanguageID" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="400" />
+    <Property Name="Description" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Fly_RelatedProduct">
+    <Key>
+      <PropertyRef Name="RelatedProductID" />
+    </Key>
+    <Property Name="RelatedProductID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductID1" Type="int" />
+    <Property Name="ProductID2" Type="int" />
+    <Property Name="DisplayOrder" Type="int" />
+  </EntityType>
+  <EntityType Name="Fly_SectionContent">
+    <Key>
+      <PropertyRef Name="SectionContentID" />
+    </Key>
+    <Property Name="SectionContentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PositionGalleryID" Type="int" />
+    <Property Name="ProductID" Type="int" />
+    <Property Name="FullDescription" Type="nvarchar(max)" />
+    <Property Name="FullDescription_EN" Type="nvarchar(max)" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="UpdateOn" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Fly_SectionGallery">
+    <Key>
+      <PropertyRef Name="SectionGalleryID" />
+    </Key>
+    <Property Name="SectionGalleryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PositionGalleryID" Type="int" />
+    <Property Name="ProductID" Type="int" />
+    <Property Name="CollectionImage" Type="nvarchar(max)" />
+    <Property Name="BackgroundImage" Type="nvarchar(max)" />
+    <Property Name="CreatedOn" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Fly_ShippingMethod">
+    <Key>
+      <PropertyRef Name="ShippingMethodID" />
+    </Key>
+    <Property Name="ShippingMethodID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Description" Type="nvarchar" MaxLength="2000" />
+    <Property Name="LanguageID" Type="int" />
+    <Property Name="DisplayOrder" Type="int" />
+  </EntityType>
+  <EntityType Name="Fly_ShippingStatus">
+    <Key>
+      <PropertyRef Name="ShippingStatusID" />
+    </Key>
+    <Property Name="ShippingStatusID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Fly_ShoppingCartItem">
+    <Key>
+      <PropertyRef Name="ShoppingCartItemID" />
+    </Key>
+    <Property Name="ShoppingCartItemID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerSessionGUID" Type="uniqueidentifier" />
+    <Property Name="ProductVariantID" Type="int" />
+    <Property Name="CustomerID" Type="int" />
+    <Property Name="Prices" Type="money" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="UpdatedOn" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Fly_Team">
+    <Key>
+      <PropertyRef Name="TeamID" />
+    </Key>
+    <Property Name="TeamID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FullName" Type="nvarchar(max)" />
+    <Property Name="TagLine" Type="nvarchar(max)" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="AvatarURL" Type="nvarchar(max)" />
+    <Property Name="Facebook" Type="nvarchar(max)" />
+    <Property Name="Google" Type="nvarchar(max)" />
+    <Property Name="Twitter" Type="nvarchar(max)" />
+    <Property Name="Published" Type="bit" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="LanguageId" Type="int" />
+  </EntityType>
+  <EntityType Name="Fly_Videos">
+    <Key>
+      <PropertyRef Name="VideosID" />
+    </Key>
+    <Property Name="VideosID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductId" Type="int" />
+    <Property Name="VideosTitle" Type="nvarchar" MaxLength="1000" />
+    <Property Name="VideosShortContent" Type="nvarchar" MaxLength="1000" />
+    <Property Name="VideosLink" Type="nvarchar(max)" />
+    <Property Name="SectionContentID" Type="int" />
+    <Property Name="PictureID" Type="int" />
+    <Property Name="PositionID" Type="int" />
+    <Property Name="Width" Type="int" />
+    <Property Name="Height" Type="int" />
+    <Property Name="CreatedByID" Type="int" />
+    <Property Name="Published" Type="bit" />
+    <Property Name="isShowHome" Type="bit" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="DisplayOrder" Type="int" />
+  </EntityType>
+  <Association Name="FK_CustomerAttribute_Fly_Country">
+    <End Role="Fly_Country" Type="Self.Fly_Country" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Fly_CustomerAttribute" Type="Self.Fly_CustomerAttribute" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_Country">
+        <PropertyRef Name="CountryID" />
+      </Principal>
+      <Dependent Role="Fly_CustomerAttribute">
+        <PropertyRef Name="CountryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_Banner_Fly_BannerType">
+    <End Role="Fly_BannerType" Type="Self.Fly_BannerType" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Fly_Banner" Type="Self.Fly_Banner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_BannerType">
+        <PropertyRef Name="BannerTypeID" />
+      </Principal>
+      <Dependent Role="Fly_Banner">
+        <PropertyRef Name="BannerTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_Banner_Fly_Customer">
+    <End Role="Fly_Customer" Type="Self.Fly_Customer" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Fly_Banner" Type="Self.Fly_Banner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_Customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="Fly_Banner">
+        <PropertyRef Name="CreatedByID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_Banner_Fly_Picture">
+    <End Role="Fly_Picture" Type="Self.Fly_Picture" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Fly_Banner" Type="Self.Fly_Banner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_Picture">
+        <PropertyRef Name="PictureID" />
+      </Principal>
+      <Dependent Role="Fly_Banner">
+        <PropertyRef Name="PictureID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_BannerType_Fly_Customer">
+    <End Role="Fly_Customer" Type="Self.Fly_Customer" Multiplicity="0..1" />
+    <End Role="Fly_BannerType" Type="Self.Fly_BannerType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_Customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="Fly_BannerType">
+        <PropertyRef Name="CreatedByID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_BlogPost_Fly_BlogPostType">
+    <End Role="Fly_BlogPostType" Type="Self.Fly_BlogPostType" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Fly_BlogPost" Type="Self.Fly_BlogPost" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_BlogPostType">
+        <PropertyRef Name="BlogPostTypeID" />
+      </Principal>
+      <Dependent Role="Fly_BlogPost">
+        <PropertyRef Name="BlogPostTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_BlogPost_Fly_Customer">
+    <End Role="Fly_Customer" Type="Self.Fly_Customer" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Fly_BlogPost" Type="Self.Fly_BlogPost" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_Customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="Fly_BlogPost">
+        <PropertyRef Name="CreatedByID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_BlogPost_Fly_Language">
+    <End Role="Fly_Language" Type="Self.Fly_Language" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Fly_BlogPost" Type="Self.Fly_BlogPost" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_Language">
+        <PropertyRef Name="LanguageId" />
+      </Principal>
+      <Dependent Role="Fly_BlogPost">
+        <PropertyRef Name="LanguageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_Category_Discount_Mapping_Fly_Category">
+    <End Role="Fly_Category" Type="Self.Fly_Category" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Fly_Category_Discount_Mapping" Type="Self.Fly_Category_Discount_Mapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_Category">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="Fly_Category_Discount_Mapping">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_Category_Discount_Mapping_Fly_Discount">
+    <End Role="Fly_Discount" Type="Self.Fly_Discount" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Fly_Category_Discount_Mapping" Type="Self.Fly_Category_Discount_Mapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_Discount">
+        <PropertyRef Name="DiscountID" />
+      </Principal>
+      <Dependent Role="Fly_Category_Discount_Mapping">
+        <PropertyRef Name="DiscountID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_Category_Fly_Picture">
+    <End Role="Fly_Picture" Type="Self.Fly_Picture" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Fly_Category" Type="Self.Fly_Category" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_Picture">
+        <PropertyRef Name="PictureID" />
+      </Principal>
+      <Dependent Role="Fly_Category">
+        <PropertyRef Name="PictureID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_CategoryLocalized_Fly_Category">
+    <End Role="Fly_Category" Type="Self.Fly_Category" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Fly_CategoryLocalized" Type="Self.Fly_CategoryLocalized" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_Category">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="Fly_CategoryLocalized">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_CategoryLocalized_Fly_Language">
+    <End Role="Fly_Language" Type="Self.Fly_Language" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Fly_CategoryLocalized" Type="Self.Fly_CategoryLocalized" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_Language">
+        <PropertyRef Name="LanguageId" />
+      </Principal>
+      <Dependent Role="Fly_CategoryLocalized">
+        <PropertyRef Name="LanguageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_Customer_CustomerRole_Mapping_Fly_Customer">
+    <End Role="Fly_Customer" Type="Self.Fly_Customer" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Fly_Customer_CustomerRole_Mapping" Type="Self.Fly_Customer_CustomerRole_Mapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_Customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="Fly_Customer_CustomerRole_Mapping">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_Customer_CustomerRole_Mapping_Fly_CustomerRole">
+    <End Role="Fly_CustomerRole" Type="Self.Fly_CustomerRole" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Fly_Customer_CustomerRole_Mapping" Type="Self.Fly_Customer_CustomerRole_Mapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_CustomerRole">
+        <PropertyRef Name="CustomerRoleID" />
+      </Principal>
+      <Dependent Role="Fly_Customer_CustomerRole_Mapping">
+        <PropertyRef Name="CustomerRoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_Customer_Fly_Picture">
+    <End Role="Fly_Picture" Type="Self.Fly_Picture" Multiplicity="0..1" />
+    <End Role="Fly_Customer" Type="Self.Fly_Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_Picture">
+        <PropertyRef Name="PictureID" />
+      </Principal>
+      <Dependent Role="Fly_Customer">
+        <PropertyRef Name="AvatarID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_CustomerAttribute_Fly_Customer">
+    <End Role="Fly_Customer" Type="Self.Fly_Customer" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Fly_CustomerAttribute" Type="Self.Fly_CustomerAttribute" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_Customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="Fly_CustomerAttribute">
+        <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_CustomerRole_Discount_Mapping_Fly_CustomerRole">
+    <End Role="Fly_CustomerRole" Type="Self.Fly_CustomerRole" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Fly_CustomerRole_Discount_Mapping" Type="Self.Fly_CustomerRole_Discount_Mapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_CustomerRole">
+        <PropertyRef Name="CustomerRoleID" />
+      </Principal>
+      <Dependent Role="Fly_CustomerRole_Discount_Mapping">
+        <PropertyRef Name="CustomerRoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_CustomerRole_Discount_Mapping_Fly_Discount">
+    <End Role="Fly_Discount" Type="Self.Fly_Discount" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Fly_CustomerRole_Discount_Mapping" Type="Self.Fly_CustomerRole_Discount_Mapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_Discount">
+        <PropertyRef Name="DiscountID" />
+      </Principal>
+      <Dependent Role="Fly_CustomerRole_Discount_Mapping">
+        <PropertyRef Name="DiscountID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_CustomerRole_ProductPrice_Fly_CustomerRole">
+    <End Role="Fly_CustomerRole" Type="Self.Fly_CustomerRole" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Fly_CustomerRole_ProductPrice" Type="Self.Fly_CustomerRole_ProductPrice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_CustomerRole">
+        <PropertyRef Name="CustomerRoleID" />
+      </Principal>
+      <Dependent Role="Fly_CustomerRole_ProductPrice">
+        <PropertyRef Name="CustomerRoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_CustomerRole_ProductPrice_Fly_ProductVariant">
+    <End Role="Fly_ProductVariant" Type="Self.Fly_ProductVariant" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Fly_CustomerRole_ProductPrice" Type="Self.Fly_CustomerRole_ProductPrice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_ProductVariant">
+        <PropertyRef Name="ProductVariantId" />
+      </Principal>
+      <Dependent Role="Fly_CustomerRole_ProductPrice">
+        <PropertyRef Name="ProductVariantID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_CustomerSession_Fly_Customer">
+    <End Role="Fly_Customer" Type="Self.Fly_Customer" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Fly_CustomerSession" Type="Self.Fly_CustomerSession" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_Customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="Fly_CustomerSession">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_DiscountUsageHistory_Fly_Customer">
+    <End Role="Fly_Customer" Type="Self.Fly_Customer" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Fly_DiscountUsageHistory" Type="Self.Fly_DiscountUsageHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_Customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="Fly_DiscountUsageHistory">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_DiscountUsageHistory_Fly_Discount">
+    <End Role="Fly_Discount" Type="Self.Fly_Discount" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Fly_DiscountUsageHistory" Type="Self.Fly_DiscountUsageHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_Discount">
+        <PropertyRef Name="DiscountID" />
+      </Principal>
+      <Dependent Role="Fly_DiscountUsageHistory">
+        <PropertyRef Name="DiscountID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_DiscountUsageHistory_Fly_Order">
+    <End Role="Fly_Order" Type="Self.Fly_Order" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Fly_DiscountUsageHistory" Type="Self.Fly_DiscountUsageHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_Order">
+        <PropertyRef Name="OrderID" />
+      </Principal>
+      <Dependent Role="Fly_DiscountUsageHistory">
+        <PropertyRef Name="OrderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_Manufacturer_Fly_Picture">
+    <End Role="Fly_Picture" Type="Self.Fly_Picture" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Fly_Manufacturer" Type="Self.Fly_Manufacturer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_Picture">
+        <PropertyRef Name="PictureID" />
+      </Principal>
+      <Dependent Role="Fly_Manufacturer">
+        <PropertyRef Name="PictureID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_ManufacturerLocalized_Fly_Language">
+    <End Role="Fly_Language" Type="Self.Fly_Language" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Fly_ManufacturerLocalized" Type="Self.Fly_ManufacturerLocalized" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_Language">
+        <PropertyRef Name="LanguageId" />
+      </Principal>
+      <Dependent Role="Fly_ManufacturerLocalized">
+        <PropertyRef Name="LanguageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_ManufacturerLocalized_Fly_Manufacturer">
+    <End Role="Fly_Manufacturer" Type="Self.Fly_Manufacturer" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Fly_ManufacturerLocalized" Type="Self.Fly_ManufacturerLocalized" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_Manufacturer">
+        <PropertyRef Name="ManufacturerID" />
+      </Principal>
+      <Dependent Role="Fly_ManufacturerLocalized">
+        <PropertyRef Name="ManufacturerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_Navigation_Fly_Navigation">
+    <End Role="Fly_Navigation" Type="Self.Fly_Navigation" Multiplicity="0..1" />
+    <End Role="Fly_Navigation1" Type="Self.Fly_Navigation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_Navigation">
+        <PropertyRef Name="navid" />
+      </Principal>
+      <Dependent Role="Fly_Navigation1">
+        <PropertyRef Name="parentid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_Order_Fly_Country">
+    <End Role="Fly_Country" Type="Self.Fly_Country" Multiplicity="0..1" />
+    <End Role="Fly_Order" Type="Self.Fly_Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_Country">
+        <PropertyRef Name="CountryID" />
+      </Principal>
+      <Dependent Role="Fly_Order">
+        <PropertyRef Name="BillingCountryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_Order_Fly_Customer">
+    <End Role="Fly_Customer" Type="Self.Fly_Customer" Multiplicity="0..1" />
+    <End Role="Fly_Order" Type="Self.Fly_Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_Customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="Fly_Order">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_Order_Fly_Customer_Approve">
+    <End Role="Fly_Customer" Type="Self.Fly_Customer" Multiplicity="0..1" />
+    <End Role="Fly_Order" Type="Self.Fly_Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_Customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="Fly_Order">
+        <PropertyRef Name="ApproveID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_Order_Fly_ShippingMethod">
+    <End Role="Fly_ShippingMethod" Type="Self.Fly_ShippingMethod" Multiplicity="0..1" />
+    <End Role="Fly_Order" Type="Self.Fly_Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_ShippingMethod">
+        <PropertyRef Name="ShippingMethodID" />
+      </Principal>
+      <Dependent Role="Fly_Order">
+        <PropertyRef Name="ShippingMethodID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_Order_Fly_ShippingStatus">
+    <End Role="Fly_ShippingStatus" Type="Self.Fly_ShippingStatus" Multiplicity="0..1" />
+    <End Role="Fly_Order" Type="Self.Fly_Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_ShippingStatus">
+        <PropertyRef Name="ShippingStatusID" />
+      </Principal>
+      <Dependent Role="Fly_Order">
+        <PropertyRef Name="ShippingStatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_OrderNote_Fly_Order">
+    <End Role="Fly_Order" Type="Self.Fly_Order" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Fly_OrderNote" Type="Self.Fly_OrderNote" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_Order">
+        <PropertyRef Name="OrderID" />
+      </Principal>
+      <Dependent Role="Fly_OrderNote">
+        <PropertyRef Name="OrderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_OrderProductVariant_Fly_Order">
+    <End Role="Fly_Order" Type="Self.Fly_Order" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Fly_OrderProductVariant" Type="Self.Fly_OrderProductVariant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_Order">
+        <PropertyRef Name="OrderID" />
+      </Principal>
+      <Dependent Role="Fly_OrderProductVariant">
+        <PropertyRef Name="OrderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_OrderProductVariant_Fly_ProductVariant">
+    <End Role="Fly_ProductVariant" Type="Self.Fly_ProductVariant" Multiplicity="0..1" />
+    <End Role="Fly_OrderProductVariant" Type="Self.Fly_OrderProductVariant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_ProductVariant">
+        <PropertyRef Name="ProductVariantId" />
+      </Principal>
+      <Dependent Role="Fly_OrderProductVariant">
+        <PropertyRef Name="ProductVariantID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_Partnership_Fly_Customer">
+    <End Role="Fly_Customer" Type="Self.Fly_Customer" Multiplicity="0..1" />
+    <End Role="Fly_Partnership" Type="Self.Fly_Partnership" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_Customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="Fly_Partnership">
+        <PropertyRef Name="CreatedByID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_Partnership_Fly_Picture">
+    <End Role="Fly_Picture" Type="Self.Fly_Picture" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Fly_Partnership" Type="Self.Fly_Partnership" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_Picture">
+        <PropertyRef Name="PictureID" />
+      </Principal>
+      <Dependent Role="Fly_Partnership">
+        <PropertyRef Name="PictureID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_Product_Category_Mapping_Fly_Category1">
+    <End Role="Fly_Category" Type="Self.Fly_Category" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Fly_Product_Category_Mapping" Type="Self.Fly_Product_Category_Mapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_Category">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="Fly_Product_Category_Mapping">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_Product_Category_Mapping_Fly_Product1">
+    <End Role="Fly_Product" Type="Self.Fly_Product" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Fly_Product_Category_Mapping" Type="Self.Fly_Product_Category_Mapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_Product">
+        <PropertyRef Name="ProductId" />
+      </Principal>
+      <Dependent Role="Fly_Product_Category_Mapping">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_Product_Fly_ProductTemplate">
+    <End Role="Fly_ProductTemplate" Type="Self.Fly_ProductTemplate" Multiplicity="0..1" />
+    <End Role="Fly_Product" Type="Self.Fly_Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_ProductTemplate">
+        <PropertyRef Name="ProductTemplateId" />
+      </Principal>
+      <Dependent Role="Fly_Product">
+        <PropertyRef Name="TemplateID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_Product_Manufacturer_Mapping_Fly_Manufacturer1">
+    <End Role="Fly_Manufacturer" Type="Self.Fly_Manufacturer" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Fly_Product_Manufacturer_Mapping" Type="Self.Fly_Product_Manufacturer_Mapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_Manufacturer">
+        <PropertyRef Name="ManufacturerID" />
+      </Principal>
+      <Dependent Role="Fly_Product_Manufacturer_Mapping">
+        <PropertyRef Name="ManufacturerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_Product_Manufacturer_Mapping_Fly_Product1">
+    <End Role="Fly_Product" Type="Self.Fly_Product" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Fly_Product_Manufacturer_Mapping" Type="Self.Fly_Product_Manufacturer_Mapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_Product">
+        <PropertyRef Name="ProductId" />
+      </Principal>
+      <Dependent Role="Fly_Product_Manufacturer_Mapping">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_ProductLocalized_Fly_Language">
+    <End Role="Fly_Language" Type="Self.Fly_Language" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Fly_ProductLocalized" Type="Self.Fly_ProductLocalized" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_Language">
+        <PropertyRef Name="LanguageId" />
+      </Principal>
+      <Dependent Role="Fly_ProductLocalized">
+        <PropertyRef Name="LanguageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_ProductLocalized_Fly_Product">
+    <End Role="Fly_Product" Type="Self.Fly_Product" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Fly_ProductLocalized" Type="Self.Fly_ProductLocalized" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_Product">
+        <PropertyRef Name="ProductId" />
+      </Principal>
+      <Dependent Role="Fly_ProductLocalized">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_ProductPicture_Fly_Picture">
+    <End Role="Fly_Picture" Type="Self.Fly_Picture" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Fly_ProductPicture" Type="Self.Fly_ProductPicture" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_Picture">
+        <PropertyRef Name="PictureID" />
+      </Principal>
+      <Dependent Role="Fly_ProductPicture">
+        <PropertyRef Name="PictureID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_ProductPicture_Fly_Product">
+    <End Role="Fly_Product" Type="Self.Fly_Product" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Fly_ProductPicture" Type="Self.Fly_ProductPicture" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_Product">
+        <PropertyRef Name="ProductId" />
+      </Principal>
+      <Dependent Role="Fly_ProductPicture">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_ProductVariant_Discount_Mapping_Fly_Discount">
+    <End Role="Fly_Discount" Type="Self.Fly_Discount" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Fly_ProductVariant_Discount_Mapping" Type="Self.Fly_ProductVariant_Discount_Mapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_Discount">
+        <PropertyRef Name="DiscountID" />
+      </Principal>
+      <Dependent Role="Fly_ProductVariant_Discount_Mapping">
+        <PropertyRef Name="DiscountID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_ProductVariant_Discount_Mapping_Fly_ProductVariant">
+    <End Role="Fly_ProductVariant" Type="Self.Fly_ProductVariant" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Fly_ProductVariant_Discount_Mapping" Type="Self.Fly_ProductVariant_Discount_Mapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_ProductVariant">
+        <PropertyRef Name="ProductVariantId" />
+      </Principal>
+      <Dependent Role="Fly_ProductVariant_Discount_Mapping">
+        <PropertyRef Name="ProductVariantID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_ProductVariant_Fly_Product1">
+    <End Role="Fly_Product" Type="Self.Fly_Product" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Fly_ProductVariant" Type="Self.Fly_ProductVariant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_Product">
+        <PropertyRef Name="ProductId" />
+      </Principal>
+      <Dependent Role="Fly_ProductVariant">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_ProductVariantLocalized_Fly_Language">
+    <End Role="Fly_Language" Type="Self.Fly_Language" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Fly_ProductVariantLocalized" Type="Self.Fly_ProductVariantLocalized" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_Language">
+        <PropertyRef Name="LanguageId" />
+      </Principal>
+      <Dependent Role="Fly_ProductVariantLocalized">
+        <PropertyRef Name="LanguageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_ProductVariantLocalized_Fly_ProductVariant">
+    <End Role="Fly_ProductVariant" Type="Self.Fly_ProductVariant" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Fly_ProductVariantLocalized" Type="Self.Fly_ProductVariantLocalized" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_ProductVariant">
+        <PropertyRef Name="ProductVariantId" />
+      </Principal>
+      <Dependent Role="Fly_ProductVariantLocalized">
+        <PropertyRef Name="ProductVariantID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_RelatedProduct_Fly_Product">
+    <End Role="Fly_Product" Type="Self.Fly_Product" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Fly_RelatedProduct" Type="Self.Fly_RelatedProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_Product">
+        <PropertyRef Name="ProductId" />
+      </Principal>
+      <Dependent Role="Fly_RelatedProduct">
+        <PropertyRef Name="ProductID1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_SectionContent_Fly_PositionGallery">
+    <End Role="Fly_PositionGallery" Type="Self.Fly_PositionGallery" Multiplicity="0..1" />
+    <End Role="Fly_SectionContent" Type="Self.Fly_SectionContent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_PositionGallery">
+        <PropertyRef Name="PositionGalleryID" />
+      </Principal>
+      <Dependent Role="Fly_SectionContent">
+        <PropertyRef Name="PositionGalleryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_SectionContent_Fly_Product">
+    <End Role="Fly_Product" Type="Self.Fly_Product" Multiplicity="0..1" />
+    <End Role="Fly_SectionContent" Type="Self.Fly_SectionContent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_Product">
+        <PropertyRef Name="ProductId" />
+      </Principal>
+      <Dependent Role="Fly_SectionContent">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_SectionGallery_Fly_PositionGallery">
+    <End Role="Fly_PositionGallery" Type="Self.Fly_PositionGallery" Multiplicity="0..1" />
+    <End Role="Fly_SectionGallery" Type="Self.Fly_SectionGallery" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_PositionGallery">
+        <PropertyRef Name="PositionGalleryID" />
+      </Principal>
+      <Dependent Role="Fly_SectionGallery">
+        <PropertyRef Name="PositionGalleryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_SectionGallery_Fly_Product">
+    <End Role="Fly_Product" Type="Self.Fly_Product" Multiplicity="0..1" />
+    <End Role="Fly_SectionGallery" Type="Self.Fly_SectionGallery" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_Product">
+        <PropertyRef Name="ProductId" />
+      </Principal>
+      <Dependent Role="Fly_SectionGallery">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_ShippingMethod_Fly_Language">
+    <End Role="Fly_Language" Type="Self.Fly_Language" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Fly_ShippingMethod" Type="Self.Fly_ShippingMethod" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_Language">
+        <PropertyRef Name="LanguageId" />
+      </Principal>
+      <Dependent Role="Fly_ShippingMethod">
+        <PropertyRef Name="LanguageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_ShoppingCart_Fly_Customer">
+    <End Role="Fly_Customer" Type="Self.Fly_Customer" Multiplicity="0..1" />
+    <End Role="Fly_ShoppingCartItem" Type="Self.Fly_ShoppingCartItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_Customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="Fly_ShoppingCartItem">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_ShoppingCart_Fly_CustomerSession">
+    <End Role="Fly_CustomerSession" Type="Self.Fly_CustomerSession" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Fly_ShoppingCartItem" Type="Self.Fly_ShoppingCartItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_CustomerSession">
+        <PropertyRef Name="CustomerSessionGUID" />
+      </Principal>
+      <Dependent Role="Fly_ShoppingCartItem">
+        <PropertyRef Name="CustomerSessionGUID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_ShoppingCart_Fly_ProductVariant">
+    <End Role="Fly_ProductVariant" Type="Self.Fly_ProductVariant" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Fly_ShoppingCartItem" Type="Self.Fly_ShoppingCartItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_ProductVariant">
+        <PropertyRef Name="ProductVariantId" />
+      </Principal>
+      <Dependent Role="Fly_ShoppingCartItem">
+        <PropertyRef Name="ProductVariantID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_Videos_Fly_Customer">
+    <End Role="Fly_Customer" Type="Self.Fly_Customer" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Fly_Videos" Type="Self.Fly_Videos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_Customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="Fly_Videos">
+        <PropertyRef Name="CreatedByID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_Videos_Fly_Picture">
+    <End Role="Fly_Picture" Type="Self.Fly_Picture" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Fly_Videos" Type="Self.Fly_Videos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_Picture">
+        <PropertyRef Name="PictureID" />
+      </Principal>
+      <Dependent Role="Fly_Videos">
+        <PropertyRef Name="PictureID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_Videos_Fly_PositionGallery">
+    <End Role="Fly_PositionGallery" Type="Self.Fly_PositionGallery" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Fly_Videos" Type="Self.Fly_Videos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_PositionGallery">
+        <PropertyRef Name="PositionGalleryID" />
+      </Principal>
+      <Dependent Role="Fly_Videos">
+        <PropertyRef Name="PositionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_Videos_Fly_Product">
+    <End Role="Fly_Product" Type="Self.Fly_Product" Multiplicity="0..1" />
+    <End Role="Fly_Videos" Type="Self.Fly_Videos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_Product">
+        <PropertyRef Name="ProductId" />
+      </Principal>
+      <Dependent Role="Fly_Videos">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fly_Videos_Fly_SectionContent">
+    <End Role="Fly_SectionContent" Type="Self.Fly_SectionContent" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Fly_Videos" Type="Self.Fly_Videos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fly_SectionContent">
+        <PropertyRef Name="SectionContentID" />
+      </Principal>
+      <Dependent Role="Fly_Videos">
+        <PropertyRef Name="SectionContentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="flycameraModelStoreContainer">
+    <EntitySet Name="Fly_Banner" EntityType="Self.Fly_Banner" Schema="admin_flycamera" store:Type="Tables" />
+    <EntitySet Name="Fly_BannerType" EntityType="Self.Fly_BannerType" Schema="admin_flycamera" store:Type="Tables" />
+    <EntitySet Name="Fly_BlogPost" EntityType="Self.Fly_BlogPost" Schema="admin_flycamera" store:Type="Tables" />
+    <EntitySet Name="Fly_BlogPostType" EntityType="Self.Fly_BlogPostType" Schema="admin_flycamera" store:Type="Tables" />
+    <EntitySet Name="Fly_Category" EntityType="Self.Fly_Category" Schema="admin_flycamera" store:Type="Tables" />
+    <EntitySet Name="Fly_Category_Discount_Mapping" EntityType="Self.Fly_Category_Discount_Mapping" Schema="admin_flycamera" store:Type="Tables" />
+    <EntitySet Name="Fly_CategoryLocalized" EntityType="Self.Fly_CategoryLocalized" Schema="admin_flycamera" store:Type="Tables" />
+    <EntitySet Name="Fly_Country" EntityType="Self.Fly_Country" Schema="admin_flycamera" store:Type="Tables" />
+    <EntitySet Name="Fly_Customer" EntityType="Self.Fly_Customer" Schema="admin_flycamera" store:Type="Tables" />
+    <EntitySet Name="Fly_Customer_CustomerRole_Mapping" EntityType="Self.Fly_Customer_CustomerRole_Mapping" Schema="admin_flycamera" store:Type="Tables" />
+    <EntitySet Name="Fly_CustomerAction" EntityType="Self.Fly_CustomerAction" Schema="admin_flycamera" store:Type="Tables" />
+    <EntitySet Name="Fly_CustomerAttribute" EntityType="Self.Fly_CustomerAttribute" Schema="admin_flycamera" store:Type="Tables" />
+    <EntitySet Name="Fly_CustomerRole" EntityType="Self.Fly_CustomerRole" Schema="admin_flycamera" store:Type="Tables" />
+    <EntitySet Name="Fly_CustomerRole_Discount_Mapping" EntityType="Self.Fly_CustomerRole_Discount_Mapping" Schema="admin_flycamera" store:Type="Tables" />
+    <EntitySet Name="Fly_CustomerRole_ProductPrice" EntityType="Self.Fly_CustomerRole_ProductPrice" Schema="admin_flycamera" store:Type="Tables" />
+    <EntitySet Name="Fly_CustomerSession" EntityType="Self.Fly_CustomerSession" Schema="admin_flycamera" store:Type="Tables" />
+    <EntitySet Name="Fly_Discount" EntityType="Self.Fly_Discount" Schema="admin_flycamera" store:Type="Tables" />
+    <EntitySet Name="Fly_DiscountUsageHistory" EntityType="Self.Fly_DiscountUsageHistory" Schema="admin_flycamera" store:Type="Tables" />
+    <EntitySet Name="Fly_Language" EntityType="Self.Fly_Language" Schema="admin_flycamera" store:Type="Tables" />
+    <EntitySet Name="Fly_Manufacturer" EntityType="Self.Fly_Manufacturer" Schema="admin_flycamera" store:Type="Tables" />
+    <EntitySet Name="Fly_ManufacturerLocalized" EntityType="Self.Fly_ManufacturerLocalized" Schema="admin_flycamera" store:Type="Tables" />
+    <EntitySet Name="Fly_Navigation" EntityType="Self.Fly_Navigation" Schema="admin_flycamera" store:Type="Tables" />
+    <EntitySet Name="Fly_Order" EntityType="Self.Fly_Order" Schema="admin_flycamera" store:Type="Tables" />
+    <EntitySet Name="Fly_OrderNote" EntityType="Self.Fly_OrderNote" Schema="admin_flycamera" store:Type="Tables" />
+    <EntitySet Name="Fly_OrderProductVariant" EntityType="Self.Fly_OrderProductVariant" Schema="admin_flycamera" store:Type="Tables" />
+    <EntitySet Name="Fly_Partnership" EntityType="Self.Fly_Partnership" Schema="admin_flycamera" store:Type="Tables" />
+    <EntitySet Name="Fly_PaymentMethod" EntityType="Self.Fly_PaymentMethod" Schema="admin_flycamera" store:Type="Tables" />
+    <EntitySet Name="Fly_Picture" EntityType="Self.Fly_Picture" Schema="admin_flycamera" store:Type="Tables" />
+    <EntitySet Name="Fly_PositionGallery" EntityType="Self.Fly_PositionGallery" Schema="admin_flycamera" store:Type="Tables" />
+    <EntitySet Name="Fly_Product" EntityType="Self.Fly_Product" Schema="admin_flycamera" store:Type="Tables" />
+    <EntitySet Name="Fly_Product_Category_Mapping" EntityType="Self.Fly_Product_Category_Mapping" Schema="admin_flycamera" store:Type="Tables" />
+    <EntitySet Name="Fly_Product_Manufacturer_Mapping" EntityType="Self.Fly_Product_Manufacturer_Mapping" Schema="admin_flycamera" store:Type="Tables" />
+    <EntitySet Name="Fly_ProductLocalized" EntityType="Self.Fly_ProductLocalized" Schema="admin_flycamera" store:Type="Tables" />
+    <EntitySet Name="Fly_ProductPicture" EntityType="Self.Fly_ProductPicture" Schema="admin_flycamera" store:Type="Tables" />
+    <EntitySet Name="Fly_ProductTemplate" EntityType="Self.Fly_ProductTemplate" Schema="admin_flycamera" store:Type="Tables" />
+    <EntitySet Name="Fly_ProductVariant" EntityType="Self.Fly_ProductVariant" Schema="admin_flycamera" store:Type="Tables" />
+    <EntitySet Name="Fly_ProductVariant_Discount_Mapping" EntityType="Self.Fly_ProductVariant_Discount_Mapping" Schema="admin_flycamera" store:Type="Tables" />
+    <EntitySet Name="Fly_ProductVariantLocalized" EntityType="Self.Fly_ProductVariantLocalized" Schema="admin_flycamera" store:Type="Tables" />
+    <EntitySet Name="Fly_RelatedProduct" EntityType="Self.Fly_RelatedProduct" Schema="admin_flycamera" store:Type="Tables" />
+    <EntitySet Name="Fly_SectionContent" EntityType="Self.Fly_SectionContent" Schema="admin_flycamera" store:Type="Tables" />
+    <EntitySet Name="Fly_SectionGallery" EntityType="Self.Fly_SectionGallery" Schema="admin_flycamera" store:Type="Tables" />
+    <EntitySet Name="Fly_ShippingMethod" EntityType="Self.Fly_ShippingMethod" Schema="admin_flycamera" store:Type="Tables" />
+    <EntitySet Name="Fly_ShippingStatus" EntityType="Self.Fly_ShippingStatus" Schema="admin_flycamera" store:Type="Tables" />
+    <EntitySet Name="Fly_ShoppingCartItem" EntityType="Self.Fly_ShoppingCartItem" Schema="admin_flycamera" store:Type="Tables" />
+    <EntitySet Name="Fly_Team" EntityType="Self.Fly_Team" Schema="admin_flycamera" store:Type="Tables" />
+    <EntitySet Name="Fly_Videos" EntityType="Self.Fly_Videos" Schema="admin_flycamera" store:Type="Tables" />
+    <AssociationSet Name="FK_CustomerAttribute_Fly_Country" Association="Self.FK_CustomerAttribute_Fly_Country">
+      <End Role="Fly_Country" EntitySet="Fly_Country" />
+      <End Role="Fly_CustomerAttribute" EntitySet="Fly_CustomerAttribute" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_Banner_Fly_BannerType" Association="Self.FK_Fly_Banner_Fly_BannerType">
+      <End Role="Fly_BannerType" EntitySet="Fly_BannerType" />
+      <End Role="Fly_Banner" EntitySet="Fly_Banner" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_Banner_Fly_Customer" Association="Self.FK_Fly_Banner_Fly_Customer">
+      <End Role="Fly_Customer" EntitySet="Fly_Customer" />
+      <End Role="Fly_Banner" EntitySet="Fly_Banner" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_Banner_Fly_Picture" Association="Self.FK_Fly_Banner_Fly_Picture">
+      <End Role="Fly_Picture" EntitySet="Fly_Picture" />
+      <End Role="Fly_Banner" EntitySet="Fly_Banner" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_BannerType_Fly_Customer" Association="Self.FK_Fly_BannerType_Fly_Customer">
+      <End Role="Fly_Customer" EntitySet="Fly_Customer" />
+      <End Role="Fly_BannerType" EntitySet="Fly_BannerType" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_BlogPost_Fly_BlogPostType" Association="Self.FK_Fly_BlogPost_Fly_BlogPostType">
+      <End Role="Fly_BlogPostType" EntitySet="Fly_BlogPostType" />
+      <End Role="Fly_BlogPost" EntitySet="Fly_BlogPost" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_BlogPost_Fly_Customer" Association="Self.FK_Fly_BlogPost_Fly_Customer">
+      <End Role="Fly_Customer" EntitySet="Fly_Customer" />
+      <End Role="Fly_BlogPost" EntitySet="Fly_BlogPost" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_BlogPost_Fly_Language" Association="Self.FK_Fly_BlogPost_Fly_Language">
+      <End Role="Fly_Language" EntitySet="Fly_Language" />
+      <End Role="Fly_BlogPost" EntitySet="Fly_BlogPost" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_Category_Discount_Mapping_Fly_Category" Association="Self.FK_Fly_Category_Discount_Mapping_Fly_Category">
+      <End Role="Fly_Category" EntitySet="Fly_Category" />
+      <End Role="Fly_Category_Discount_Mapping" EntitySet="Fly_Category_Discount_Mapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_Category_Discount_Mapping_Fly_Discount" Association="Self.FK_Fly_Category_Discount_Mapping_Fly_Discount">
+      <End Role="Fly_Discount" EntitySet="Fly_Discount" />
+      <End Role="Fly_Category_Discount_Mapping" EntitySet="Fly_Category_Discount_Mapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_Category_Fly_Picture" Association="Self.FK_Fly_Category_Fly_Picture">
+      <End Role="Fly_Picture" EntitySet="Fly_Picture" />
+      <End Role="Fly_Category" EntitySet="Fly_Category" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_CategoryLocalized_Fly_Category" Association="Self.FK_Fly_CategoryLocalized_Fly_Category">
+      <End Role="Fly_Category" EntitySet="Fly_Category" />
+      <End Role="Fly_CategoryLocalized" EntitySet="Fly_CategoryLocalized" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_CategoryLocalized_Fly_Language" Association="Self.FK_Fly_CategoryLocalized_Fly_Language">
+      <End Role="Fly_Language" EntitySet="Fly_Language" />
+      <End Role="Fly_CategoryLocalized" EntitySet="Fly_CategoryLocalized" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_Customer_CustomerRole_Mapping_Fly_Customer" Association="Self.FK_Fly_Customer_CustomerRole_Mapping_Fly_Customer">
+      <End Role="Fly_Customer" EntitySet="Fly_Customer" />
+      <End Role="Fly_Customer_CustomerRole_Mapping" EntitySet="Fly_Customer_CustomerRole_Mapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_Customer_CustomerRole_Mapping_Fly_CustomerRole" Association="Self.FK_Fly_Customer_CustomerRole_Mapping_Fly_CustomerRole">
+      <End Role="Fly_CustomerRole" EntitySet="Fly_CustomerRole" />
+      <End Role="Fly_Customer_CustomerRole_Mapping" EntitySet="Fly_Customer_CustomerRole_Mapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_Customer_Fly_Picture" Association="Self.FK_Fly_Customer_Fly_Picture">
+      <End Role="Fly_Picture" EntitySet="Fly_Picture" />
+      <End Role="Fly_Customer" EntitySet="Fly_Customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_CustomerAttribute_Fly_Customer" Association="Self.FK_Fly_CustomerAttribute_Fly_Customer">
+      <End Role="Fly_Customer" EntitySet="Fly_Customer" />
+      <End Role="Fly_CustomerAttribute" EntitySet="Fly_CustomerAttribute" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_CustomerRole_Discount_Mapping_Fly_CustomerRole" Association="Self.FK_Fly_CustomerRole_Discount_Mapping_Fly_CustomerRole">
+      <End Role="Fly_CustomerRole" EntitySet="Fly_CustomerRole" />
+      <End Role="Fly_CustomerRole_Discount_Mapping" EntitySet="Fly_CustomerRole_Discount_Mapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_CustomerRole_Discount_Mapping_Fly_Discount" Association="Self.FK_Fly_CustomerRole_Discount_Mapping_Fly_Discount">
+      <End Role="Fly_Discount" EntitySet="Fly_Discount" />
+      <End Role="Fly_CustomerRole_Discount_Mapping" EntitySet="Fly_CustomerRole_Discount_Mapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_CustomerRole_ProductPrice_Fly_CustomerRole" Association="Self.FK_Fly_CustomerRole_ProductPrice_Fly_CustomerRole">
+      <End Role="Fly_CustomerRole" EntitySet="Fly_CustomerRole" />
+      <End Role="Fly_CustomerRole_ProductPrice" EntitySet="Fly_CustomerRole_ProductPrice" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_CustomerRole_ProductPrice_Fly_ProductVariant" Association="Self.FK_Fly_CustomerRole_ProductPrice_Fly_ProductVariant">
+      <End Role="Fly_ProductVariant" EntitySet="Fly_ProductVariant" />
+      <End Role="Fly_CustomerRole_ProductPrice" EntitySet="Fly_CustomerRole_ProductPrice" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_CustomerSession_Fly_Customer" Association="Self.FK_Fly_CustomerSession_Fly_Customer">
+      <End Role="Fly_Customer" EntitySet="Fly_Customer" />
+      <End Role="Fly_CustomerSession" EntitySet="Fly_CustomerSession" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_DiscountUsageHistory_Fly_Customer" Association="Self.FK_Fly_DiscountUsageHistory_Fly_Customer">
+      <End Role="Fly_Customer" EntitySet="Fly_Customer" />
+      <End Role="Fly_DiscountUsageHistory" EntitySet="Fly_DiscountUsageHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_DiscountUsageHistory_Fly_Discount" Association="Self.FK_Fly_DiscountUsageHistory_Fly_Discount">
+      <End Role="Fly_Discount" EntitySet="Fly_Discount" />
+      <End Role="Fly_DiscountUsageHistory" EntitySet="Fly_DiscountUsageHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_DiscountUsageHistory_Fly_Order" Association="Self.FK_Fly_DiscountUsageHistory_Fly_Order">
+      <End Role="Fly_Order" EntitySet="Fly_Order" />
+      <End Role="Fly_DiscountUsageHistory" EntitySet="Fly_DiscountUsageHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_Manufacturer_Fly_Picture" Association="Self.FK_Fly_Manufacturer_Fly_Picture">
+      <End Role="Fly_Picture" EntitySet="Fly_Picture" />
+      <End Role="Fly_Manufacturer" EntitySet="Fly_Manufacturer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_ManufacturerLocalized_Fly_Language" Association="Self.FK_Fly_ManufacturerLocalized_Fly_Language">
+      <End Role="Fly_Language" EntitySet="Fly_Language" />
+      <End Role="Fly_ManufacturerLocalized" EntitySet="Fly_ManufacturerLocalized" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_ManufacturerLocalized_Fly_Manufacturer" Association="Self.FK_Fly_ManufacturerLocalized_Fly_Manufacturer">
+      <End Role="Fly_Manufacturer" EntitySet="Fly_Manufacturer" />
+      <End Role="Fly_ManufacturerLocalized" EntitySet="Fly_ManufacturerLocalized" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_Navigation_Fly_Navigation" Association="Self.FK_Fly_Navigation_Fly_Navigation">
+      <End Role="Fly_Navigation" EntitySet="Fly_Navigation" />
+      <End Role="Fly_Navigation1" EntitySet="Fly_Navigation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_Order_Fly_Country" Association="Self.FK_Fly_Order_Fly_Country">
+      <End Role="Fly_Country" EntitySet="Fly_Country" />
+      <End Role="Fly_Order" EntitySet="Fly_Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_Order_Fly_Customer" Association="Self.FK_Fly_Order_Fly_Customer">
+      <End Role="Fly_Customer" EntitySet="Fly_Customer" />
+      <End Role="Fly_Order" EntitySet="Fly_Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_Order_Fly_Customer_Approve" Association="Self.FK_Fly_Order_Fly_Customer_Approve">
+      <End Role="Fly_Customer" EntitySet="Fly_Customer" />
+      <End Role="Fly_Order" EntitySet="Fly_Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_Order_Fly_ShippingMethod" Association="Self.FK_Fly_Order_Fly_ShippingMethod">
+      <End Role="Fly_ShippingMethod" EntitySet="Fly_ShippingMethod" />
+      <End Role="Fly_Order" EntitySet="Fly_Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_Order_Fly_ShippingStatus" Association="Self.FK_Fly_Order_Fly_ShippingStatus">
+      <End Role="Fly_ShippingStatus" EntitySet="Fly_ShippingStatus" />
+      <End Role="Fly_Order" EntitySet="Fly_Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_OrderNote_Fly_Order" Association="Self.FK_Fly_OrderNote_Fly_Order">
+      <End Role="Fly_Order" EntitySet="Fly_Order" />
+      <End Role="Fly_OrderNote" EntitySet="Fly_OrderNote" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_OrderProductVariant_Fly_Order" Association="Self.FK_Fly_OrderProductVariant_Fly_Order">
+      <End Role="Fly_Order" EntitySet="Fly_Order" />
+      <End Role="Fly_OrderProductVariant" EntitySet="Fly_OrderProductVariant" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_OrderProductVariant_Fly_ProductVariant" Association="Self.FK_Fly_OrderProductVariant_Fly_ProductVariant">
+      <End Role="Fly_ProductVariant" EntitySet="Fly_ProductVariant" />
+      <End Role="Fly_OrderProductVariant" EntitySet="Fly_OrderProductVariant" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_Partnership_Fly_Customer" Association="Self.FK_Fly_Partnership_Fly_Customer">
+      <End Role="Fly_Customer" EntitySet="Fly_Customer" />
+      <End Role="Fly_Partnership" EntitySet="Fly_Partnership" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_Partnership_Fly_Picture" Association="Self.FK_Fly_Partnership_Fly_Picture">
+      <End Role="Fly_Picture" EntitySet="Fly_Picture" />
+      <End Role="Fly_Partnership" EntitySet="Fly_Partnership" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_Product_Category_Mapping_Fly_Category1" Association="Self.FK_Fly_Product_Category_Mapping_Fly_Category1">
+      <End Role="Fly_Category" EntitySet="Fly_Category" />
+      <End Role="Fly_Product_Category_Mapping" EntitySet="Fly_Product_Category_Mapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_Product_Category_Mapping_Fly_Product1" Association="Self.FK_Fly_Product_Category_Mapping_Fly_Product1">
+      <End Role="Fly_Product" EntitySet="Fly_Product" />
+      <End Role="Fly_Product_Category_Mapping" EntitySet="Fly_Product_Category_Mapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_Product_Fly_ProductTemplate" Association="Self.FK_Fly_Product_Fly_ProductTemplate">
+      <End Role="Fly_ProductTemplate" EntitySet="Fly_ProductTemplate" />
+      <End Role="Fly_Product" EntitySet="Fly_Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_Product_Manufacturer_Mapping_Fly_Manufacturer1" Association="Self.FK_Fly_Product_Manufacturer_Mapping_Fly_Manufacturer1">
+      <End Role="Fly_Manufacturer" EntitySet="Fly_Manufacturer" />
+      <End Role="Fly_Product_Manufacturer_Mapping" EntitySet="Fly_Product_Manufacturer_Mapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_Product_Manufacturer_Mapping_Fly_Product1" Association="Self.FK_Fly_Product_Manufacturer_Mapping_Fly_Product1">
+      <End Role="Fly_Product" EntitySet="Fly_Product" />
+      <End Role="Fly_Product_Manufacturer_Mapping" EntitySet="Fly_Product_Manufacturer_Mapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_ProductLocalized_Fly_Language" Association="Self.FK_Fly_ProductLocalized_Fly_Language">
+      <End Role="Fly_Language" EntitySet="Fly_Language" />
+      <End Role="Fly_ProductLocalized" EntitySet="Fly_ProductLocalized" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_ProductLocalized_Fly_Product" Association="Self.FK_Fly_ProductLocalized_Fly_Product">
+      <End Role="Fly_Product" EntitySet="Fly_Product" />
+      <End Role="Fly_ProductLocalized" EntitySet="Fly_ProductLocalized" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_ProductPicture_Fly_Picture" Association="Self.FK_Fly_ProductPicture_Fly_Picture">
+      <End Role="Fly_Picture" EntitySet="Fly_Picture" />
+      <End Role="Fly_ProductPicture" EntitySet="Fly_ProductPicture" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_ProductPicture_Fly_Product" Association="Self.FK_Fly_ProductPicture_Fly_Product">
+      <End Role="Fly_Product" EntitySet="Fly_Product" />
+      <End Role="Fly_ProductPicture" EntitySet="Fly_ProductPicture" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_ProductVariant_Discount_Mapping_Fly_Discount" Association="Self.FK_Fly_ProductVariant_Discount_Mapping_Fly_Discount">
+      <End Role="Fly_Discount" EntitySet="Fly_Discount" />
+      <End Role="Fly_ProductVariant_Discount_Mapping" EntitySet="Fly_ProductVariant_Discount_Mapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_ProductVariant_Discount_Mapping_Fly_ProductVariant" Association="Self.FK_Fly_ProductVariant_Discount_Mapping_Fly_ProductVariant">
+      <End Role="Fly_ProductVariant" EntitySet="Fly_ProductVariant" />
+      <End Role="Fly_ProductVariant_Discount_Mapping" EntitySet="Fly_ProductVariant_Discount_Mapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_ProductVariant_Fly_Product1" Association="Self.FK_Fly_ProductVariant_Fly_Product1">
+      <End Role="Fly_Product" EntitySet="Fly_Product" />
+      <End Role="Fly_ProductVariant" EntitySet="Fly_ProductVariant" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_ProductVariantLocalized_Fly_Language" Association="Self.FK_Fly_ProductVariantLocalized_Fly_Language">
+      <End Role="Fly_Language" EntitySet="Fly_Language" />
+      <End Role="Fly_ProductVariantLocalized" EntitySet="Fly_ProductVariantLocalized" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_ProductVariantLocalized_Fly_ProductVariant" Association="Self.FK_Fly_ProductVariantLocalized_Fly_ProductVariant">
+      <End Role="Fly_ProductVariant" EntitySet="Fly_ProductVariant" />
+      <End Role="Fly_ProductVariantLocalized" EntitySet="Fly_ProductVariantLocalized" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_RelatedProduct_Fly_Product" Association="Self.FK_Fly_RelatedProduct_Fly_Product">
+      <End Role="Fly_Product" EntitySet="Fly_Product" />
+      <End Role="Fly_RelatedProduct" EntitySet="Fly_RelatedProduct" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_SectionContent_Fly_PositionGallery" Association="Self.FK_Fly_SectionContent_Fly_PositionGallery">
+      <End Role="Fly_PositionGallery" EntitySet="Fly_PositionGallery" />
+      <End Role="Fly_SectionContent" EntitySet="Fly_SectionContent" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_SectionContent_Fly_Product" Association="Self.FK_Fly_SectionContent_Fly_Product">
+      <End Role="Fly_Product" EntitySet="Fly_Product" />
+      <End Role="Fly_SectionContent" EntitySet="Fly_SectionContent" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_SectionGallery_Fly_PositionGallery" Association="Self.FK_Fly_SectionGallery_Fly_PositionGallery">
+      <End Role="Fly_PositionGallery" EntitySet="Fly_PositionGallery" />
+      <End Role="Fly_SectionGallery" EntitySet="Fly_SectionGallery" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_SectionGallery_Fly_Product" Association="Self.FK_Fly_SectionGallery_Fly_Product">
+      <End Role="Fly_Product" EntitySet="Fly_Product" />
+      <End Role="Fly_SectionGallery" EntitySet="Fly_SectionGallery" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_ShippingMethod_Fly_Language" Association="Self.FK_Fly_ShippingMethod_Fly_Language">
+      <End Role="Fly_Language" EntitySet="Fly_Language" />
+      <End Role="Fly_ShippingMethod" EntitySet="Fly_ShippingMethod" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_ShoppingCart_Fly_Customer" Association="Self.FK_Fly_ShoppingCart_Fly_Customer">
+      <End Role="Fly_Customer" EntitySet="Fly_Customer" />
+      <End Role="Fly_ShoppingCartItem" EntitySet="Fly_ShoppingCartItem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_ShoppingCart_Fly_CustomerSession" Association="Self.FK_Fly_ShoppingCart_Fly_CustomerSession">
+      <End Role="Fly_CustomerSession" EntitySet="Fly_CustomerSession" />
+      <End Role="Fly_ShoppingCartItem" EntitySet="Fly_ShoppingCartItem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_ShoppingCart_Fly_ProductVariant" Association="Self.FK_Fly_ShoppingCart_Fly_ProductVariant">
+      <End Role="Fly_ProductVariant" EntitySet="Fly_ProductVariant" />
+      <End Role="Fly_ShoppingCartItem" EntitySet="Fly_ShoppingCartItem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_Videos_Fly_Customer" Association="Self.FK_Fly_Videos_Fly_Customer">
+      <End Role="Fly_Customer" EntitySet="Fly_Customer" />
+      <End Role="Fly_Videos" EntitySet="Fly_Videos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_Videos_Fly_Picture" Association="Self.FK_Fly_Videos_Fly_Picture">
+      <End Role="Fly_Picture" EntitySet="Fly_Picture" />
+      <End Role="Fly_Videos" EntitySet="Fly_Videos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_Videos_Fly_PositionGallery" Association="Self.FK_Fly_Videos_Fly_PositionGallery">
+      <End Role="Fly_PositionGallery" EntitySet="Fly_PositionGallery" />
+      <End Role="Fly_Videos" EntitySet="Fly_Videos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_Videos_Fly_Product" Association="Self.FK_Fly_Videos_Fly_Product">
+      <End Role="Fly_Product" EntitySet="Fly_Product" />
+      <End Role="Fly_Videos" EntitySet="Fly_Videos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fly_Videos_Fly_SectionContent" Association="Self.FK_Fly_Videos_Fly_SectionContent">
+      <End Role="Fly_SectionContent" EntitySet="Fly_SectionContent" />
+      <End Role="Fly_Videos" EntitySet="Fly_Videos" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

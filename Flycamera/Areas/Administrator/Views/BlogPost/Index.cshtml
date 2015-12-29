@@ -1,0 +1,65 @@
+﻿@using Flycamera.App_Start
+@model Flycamera.Areas.Administrator.ViewModel.BlogPostVm
+
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
+    var controllerName = this.ViewContext.RouteData.Values["controller"].ToString();
+
+}
+
+<div class="titlePage">
+    <div class="wrapper">
+        <h1>BlogPost</h1>
+    </div>
+</div> 
+@section bodyContent{
+    <div class="control-action">
+       
+    @Html.ActionLink("New Item", "Create",null, new { @class="button newItem" })
+</div>
+<table width="100%" cellspacing="0" cellpadding="0" class="responstable">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Short Content</th>
+            <th>Image</th>
+            <th>BlogType</th>
+            <th>Video</th>
+            <th>Times</th>
+            <th>Publish</th>
+            <th colspan="2">Control</th>
+        </tr>
+    </thead>
+    <tbody>
+    @if (Model != null && Model.ListBlogPost.Count > 0) { 
+        foreach (var item in Model.ListBlogPost)
+        {
+            <tr class="row-@item.BlogPostID">
+                <td>@item.BlogPostTitle</td>
+                <td>@item.BlogPostShortContent</td>
+
+                <td>
+                    <img src="@item.ImageUrl" alt="Alternate Text" width="180" height="80"/></td>
+                <td>@item.Fly_BlogPostType.Title</td>
+                <td>
+                    @if (@item.VideoLink != null && @item.VideoLink.Length > 0)
+                    {
+                        <a href="@item.VideoLink" title="View Clip" class="iconVideoClip fancybox">View Clip</a>
+                    }
+                </td>
+                <td title="@item.CreatedOn.GetValueOrDefault().ToString("dd/MM/yyyy")">@item.CreatedOn.GetValueOrDefault().ToString("dd/MM/yyyy")</td>
+                <td>@item.Published</td>
+                <td> @Html.ActionLink("Edit", "Edit", new {id = item.BlogPostID}, new {@class = "editIcon", @title = "Edit"})</td>
+                <td> @Html.ActionLink("Delete", null, null, new {@class = "removeItem configIcon", @title = "Configuation", @rel = item.BlogPostID, @data = "Video"})</td>
+            </tr>
+        }
+    }
+    else
+    {
+        @Html.Raw("<p>" + StaticVariable.Msg_Update + "</p>");
+    }
+    </tbody>
+</table>
+    @Html.Hidden("controllerServices", this.ViewContext.RouteData.Values["controller"].ToString(), new {@id="controllerServices" })
+}

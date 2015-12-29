@@ -1,0 +1,113 @@
+﻿@using Flycamera.App_Start
+@model Flycamera.Areas.Administrator.ViewModel.VideoVM
+
+@{
+    ViewBag.Title = "Create Event Clip";
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
+}
+
+<div class="titlePage">
+    <div class="wrapper">
+        <h1>Create Event Clip</h1>
+    </div>
+</div>
+@section bodyContent{
+
+
+    @using (Html.BeginForm())
+    {
+        <div class="control-action">
+            <input type="submit" value="Submit" class="button" />
+            @Html.ActionLink("Back to List", "Index", null, new { @class = "button" })
+        </div>
+        @Html.ValidationSummary(true)
+
+        <div class="left-form">
+
+            <div class="editor-field">
+                <label>Title Event</label>
+                @Html.TextBoxFor(model => model.Video.VideosTitle, new { @placeholder = PlaceHolder.VideoTitle_ph, @class = "k-textbox", @required = true, @validationMessage = "Enter {0}" })
+                @Html.ValidationMessageFor(model => model.Video.VideosTitle)
+            </div>
+
+            <div class="editor-field">
+                <label>Short Description</label>
+                @Html.TextAreaFor(model => model.Video.VideosShortContent, new { @placeholder = PlaceHolder.ShortContent_ph, @class = "k-textbox", @required = true, @validationMessage = "Enter {0}" })
+                @Html.ValidationMessageFor(model => model.Video.VideosShortContent)
+            </div>
+
+            <div class="editor-field">
+                <label>Videos Link</label>
+                @Html.TextBoxFor(model => model.Video.VideosLink, new { @placeholder = PlaceHolder.Link_ph, @class = "k-textbox", @required = true, @validationMessage = "Enter {0}" })
+                @Html.ValidationMessageFor(model => model.Video.VideosLink)
+            </div>
+
+            <div class="editor-field frm-upload--backgroundIMG">
+                <label>Upload Image :</label>
+                <ul class="frame-tabheader">
+                    <li>
+                        <a href="#frame-tab--url" class="button active" title="URL">URL</a>
+                    </li>
+                </ul>
+
+                <div id="frame-tab--url" class="frame-tab active">
+                    @Html.TextBoxFor(model => model.Video.PictureID, new { @class = "imgLink SyncURLImageLink k-textbox", @oninput = "onChangeTextboxImage(this,1)", @required = true, @validationMessage = "Enter {0}" })
+                    <input type="button" class="btn-chose button btn-upload-img" value="Upload" onclick="BrowseServer();" />
+                    @Html.ValidationMessageFor(model => model.Video.PictureID)
+                </div>
+            </div>
+        </div>
+        <div class="right-form">
+            <div class="editor-field">
+                <label>Review</label>
+                <img src="http://www.placehold.it/210x300" class="preview" width="210" height="300" />
+            </div>
+
+            <div class="editor-field">
+                <label class="boolean-label">Published</label>
+                @Html.CheckBoxFor(m => m.isPublish, Model.isPublish)
+                @Html.ValidationMessageFor(model => model.Video.Published)
+            </div>
+
+            <div class="editor-field">
+                <label class="boolean-label">Deleted</label>
+                @Html.CheckBoxFor(model => model.isDeleted, Model.isDeleted)
+                @Html.ValidationMessageFor(model => model.Video.Deleted)
+            </div>
+
+            <div class="editor-field">
+                <label class="boolean-label">Show HomePage</label>
+                @Html.CheckBoxFor(model => model.isHome, Model.isHome)
+                @Html.ValidationMessageFor(model => model.Video.isShowHome)
+            </div>
+
+            <div class="editor-field">
+                <label>Order</label>
+                @Html.TextBoxFor(model => model.Video.DisplayOrder, new { @placeholder = PlaceHolder.Order_ph })
+                @Html.ValidationMessageFor(model => model.Video.DisplayOrder)
+            </div>
+        </div>
+        <div class="editor-field">
+            <label>Description</label>
+            <ul class="frame-tabheader">
+                <li><a href="#frame-tab--vi" class="button active" title="Tiếng Việt">Tiếng Việt</a></li>
+                <li><a href="#frame-tab--en" class="button" title="English">English</a></li>
+            </ul>
+            <div class="frame-tab--content">
+                <div id="frame-tab--vi" class="frame-tab active">
+                    @Html.TextAreaFor(model => model.SectionContents.FullDescription, new { @id = "editor" })
+                </div>
+                <div id="frame-tab--en" class="frame-tab">
+                    @Html.TextAreaFor(model => model.SectionContents.FullDescription_EN, new { @id = "editor1" })
+                </div>
+            </div>
+        </div>
+
+    }
+
+
+}
+@section Scripts {
+    @{Html.RenderPartial(@StaticVariableAdministrator._popupChooseProducts);}
+
+}

@@ -1,0 +1,379 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{15629526-631E-4880-A59C-343CF7517047}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FlyEntity</RootNamespace>
+    <AssemblyName>FlyEntity</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataAccess\BannerDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataAccess\BannerTypeDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataAccess\BlogPostDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataAccess\BlogPostTypeDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataAccess\CategoryDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataAccess\CategoryLocalizedDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataAccess\Category_Discount_MappingDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataAccess\CountryDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataAccess\CustomerActionDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataAccess\CustomerAttributeDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataAccess\CustomerDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataAccess\CustomerMappingRoleDAO.cs" />
+    <Compile Include="DataAccess\CustomerRoleDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataAccess\CustomerSessionDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataAccess\DiscountDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataAccess\LanguageDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataAccess\ManufacturerDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataAccess\ManufacturerLocalizedDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataAccess\NavigationDao.cs" />
+    <Compile Include="DataAccess\OrderDao.cs" />
+    <Compile Include="DataAccess\OrderNodeDao.cs" />
+    <Compile Include="DataAccess\OrderProductVariantDao.cs" />
+    <Compile Include="DataAccess\PartnershipDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataAccess\PaymentMethodDao.cs" />
+    <Compile Include="DataAccess\PictureDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataAccess\PositionGalleryDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataAccess\ProductDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataAccess\ProductLocalizedDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataAccess\ProductPictureDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataAccess\ProductVariantDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataAccess\ProductVariantLocalizedDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataAccess\ProductVariant_Discount_MappingDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataAccess\Product_Category_MappingDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataAccess\Product_Manufacturer_MappingDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataAccess\RelatedProductDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataAccess\SectionContentDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataAccess\SectionGalleryDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataAccess\ShippingMethodDao.cs" />
+    <Compile Include="DataAccess\TeamDao.cs" />
+    <Compile Include="DataAccess\VideosDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FlycamDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FlycamDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FlycamDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FlycamDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FlycamDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FlycamDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Fly_Banner.cs">
+      <DependentUpon>FlycamDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Fly_BannerType.cs">
+      <DependentUpon>FlycamDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Fly_BlogPost.cs">
+      <DependentUpon>FlycamDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Fly_BlogPostType.cs">
+      <DependentUpon>FlycamDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Fly_Category.cs">
+      <DependentUpon>FlycamDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Fly_CategoryLocalized.cs">
+      <DependentUpon>FlycamDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Fly_Category_Discount_Mapping.cs">
+      <DependentUpon>FlycamDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Fly_Country.cs">
+      <DependentUpon>FlycamDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Fly_Customer.cs">
+      <DependentUpon>FlycamDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Fly_CustomerAction.cs">
+      <DependentUpon>FlycamDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Fly_CustomerAttribute.cs">
+      <DependentUpon>FlycamDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Fly_CustomerRole.cs">
+      <DependentUpon>FlycamDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Fly_CustomerRole_Discount_Mapping.cs">
+      <DependentUpon>FlycamDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Fly_CustomerRole_ProductPrice.cs">
+      <DependentUpon>FlycamDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Fly_CustomerSession.cs">
+      <DependentUpon>FlycamDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Fly_Customer_CustomerRole_Mapping.cs">
+      <DependentUpon>FlycamDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Fly_Discount.cs">
+      <DependentUpon>FlycamDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Fly_DiscountUsageHistory.cs">
+      <DependentUpon>FlycamDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Fly_Language.cs">
+      <DependentUpon>FlycamDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Fly_Manufacturer.cs">
+      <DependentUpon>FlycamDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Fly_ManufacturerLocalized.cs">
+      <DependentUpon>FlycamDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Fly_Navigation.cs">
+      <DependentUpon>FlycamDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Fly_Order.cs">
+      <DependentUpon>FlycamDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Fly_OrderNote.cs">
+      <DependentUpon>FlycamDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Fly_OrderProductVariant.cs">
+      <DependentUpon>FlycamDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Fly_Partnership.cs">
+      <DependentUpon>FlycamDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Fly_PaymentMethod.cs">
+      <DependentUpon>FlycamDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Fly_Picture.cs">
+      <DependentUpon>FlycamDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Fly_PositionGallery.cs">
+      <DependentUpon>FlycamDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Fly_Product.cs">
+      <DependentUpon>FlycamDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Fly_ProductLocalized.cs">
+      <DependentUpon>FlycamDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Fly_ProductPicture.cs">
+      <DependentUpon>FlycamDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Fly_ProductTemplate.cs">
+      <DependentUpon>FlycamDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Fly_ProductVariant.cs">
+      <DependentUpon>FlycamDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Fly_ProductVariantLocalized.cs">
+      <DependentUpon>FlycamDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Fly_ProductVariant_Discount_Mapping.cs">
+      <DependentUpon>FlycamDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Fly_Product_Category_Mapping.cs">
+      <DependentUpon>FlycamDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Fly_Product_Manufacturer_Mapping.cs">
+      <DependentUpon>FlycamDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Fly_RelatedProduct.cs">
+      <DependentUpon>FlycamDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Fly_SectionContent.cs">
+      <DependentUpon>FlycamDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Fly_SectionGallery.cs">
+      <DependentUpon>FlycamDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Fly_ShippingMethod.cs">
+      <DependentUpon>FlycamDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Fly_ShippingStatus.cs">
+      <DependentUpon>FlycamDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Fly_ShoppingCartItem.cs">
+      <DependentUpon>FlycamDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Fly_Team.cs">
+      <DependentUpon>FlycamDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Fly_Videos.cs">
+      <DependentUpon>FlycamDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositry\IRepositryBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Repositry\IRepositryCustomers.cs" />
+    <Compile Include="Repositry\IRepositryMappingRole.cs" />
+    <Compile Include="Repositry\IRepositryOrder.cs" />
+    <Compile Include="Repositry\IRepositryOrderProductVariant.cs" />
+    <Compile Include="Repositry\IRepositryPicture.cs" />
+    <Compile Include="Repositry\IRepositryPositionGallery.cs" />
+    <Compile Include="Repositry\IRepositryProducts.cs" />
+    <Compile Include="Repositry\IRepositryRelateProducts.cs" />
+    <Compile Include="Repositry\IRepositryRelation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Repositry\IRepositrySectionContent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Repositry\IRepositrySectionGallery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Repositry\IRepositryVideos.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Utilities\Encryption.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Utilities\MethodUtilities.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Utilities\UpdateEntities.cs" />
+    <Compile Include="Utilities\Variables.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="FlycamDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>FlycamDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="FlycamDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FlycamDB.edmx</DependentUpon>
+      <LastGenOutput>FlycamDB.Context.cs</LastGenOutput>
+    </None>
+    <None Include="FlycamDB.edmx.diagram">
+      <DependentUpon>FlycamDB.edmx</DependentUpon>
+    </None>
+    <None Include="FlycamDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FlycamDB.edmx</DependentUpon>
+      <LastGenOutput>FlycamDB.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

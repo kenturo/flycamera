@@ -1,0 +1,29 @@
+﻿<div id="footer">
+    <div class="wrapper">
+        <div class="copyright-content">
+            <p>
+                Copyright © 2014 Quay Phim Trên Không Flycam , Helicam , Multicopter Pro. All rights reserved.
+            </p>
+            @if (Request.IsAuthenticated)
+            {
+                <div class="frm-signout">
+                    <strong>@Html.Encode(User.Identity.Name)</strong>
+                @Html.ActionLink("Sign Out", "Logout", "User")
+                </div>
+            }
+            else
+            {
+                <a href="#" class="login-bottom fm-login">Login / Register</a>
+            }
+            
+        </div>
+        <div class="frm-flowus">
+            <div class="flow-right">
+                <span>Follow us</span>
+                <a href="#" title="youtube" class="flow flow-ytb">youtube</a>
+                <a href="#" title="facebook" class="flow flow-fb">facebook</a>
+                <a href="#" title="twitter" class="flow flow-twt">twitter</a>
+            </div>
+        </div>
+    </div>
+</div>

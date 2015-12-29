@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d93cea33927b4aaa84be1e75f5817984" Name="Diagram1">
+        <EntityTypeShape EntityType="flycameraModel.Fly_Banner" Width="1.5" PointX="7.5" PointY="36.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="flycameraModel.Fly_BannerType" Width="1.5" PointX="5.25" PointY="37.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="flycameraModel.Fly_BlogPost" Width="1.5" PointX="5.25" PointY="41.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="flycameraModel.Fly_BlogPostType" Width="1.5" PointX="3" PointY="53.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="flycameraModel.Fly_Category" Width="1.5" PointX="3" PointY="33.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="flycameraModel.Fly_Category_Discount_Mapping" Width="1.5" PointX="5.25" PointY="34" IsExpanded="true" />
+        <EntityTypeShape EntityType="flycameraModel.Fly_CategoryLocalized" Width="1.5" PointX="5.25" PointY="30.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="flycameraModel.Fly_Country" Width="1.5" PointX="11" PointY="31.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="flycameraModel.Fly_Customer" Width="1.5" PointX="3" PointY="37.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="flycameraModel.Fly_Customer_CustomerRole_Mapping" Width="1.5" PointX="8.25" PointY="41.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="flycameraModel.Fly_CustomerAction" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="flycameraModel.Fly_CustomerAttribute" Width="1.5" PointX="10.25" PointY="37.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="flycameraModel.Fly_CustomerRole" Width="1.5" PointX="6" PointY="26.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="flycameraModel.Fly_CustomerRole_Discount_Mapping" Width="1.5" PointX="8.25" PointY="29.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="flycameraModel.Fly_CustomerRole_ProductPrice" Width="1.5" PointX="18.5" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="flycameraModel.Fly_CustomerSession" Width="1.5" PointX="5.25" PointY="52.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="flycameraModel.Fly_Discount" Width="1.5" PointX="3" PointY="49.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="flycameraModel.Fly_DiscountUsageHistory" Width="1.5" PointX="11.25" PointY="41.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="flycameraModel.Fly_Language" Width="1.5" PointX="3" PointY="19.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="flycameraModel.Fly_Manufacturer" Width="1.5" PointX="3" PointY="44.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="flycameraModel.Fly_ManufacturerLocalized" Width="1.5" PointX="5.25" PointY="47" IsExpanded="true" />
+        <EntityTypeShape EntityType="flycameraModel.Fly_Navigation" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="flycameraModel.Fly_Order" Width="1.5" PointX="13.25" PointY="31.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="flycameraModel.Fly_OrderNote" Width="1.5" PointX="15.5" PointY="34.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="flycameraModel.Fly_OrderProductVariant" Width="1.5" PointX="18.5" PointY="34.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="flycameraModel.Fly_Partnership" Width="1.5" PointX="10.25" PointY="45.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="flycameraModel.Fly_PaymentMethod" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="flycameraModel.Fly_Picture" Width="1.5" PointX="0.75" PointY="34" IsExpanded="true" />
+        <EntityTypeShape EntityType="flycameraModel.Fly_PositionGallery" Width="1.5" PointX="12" PointY="52.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="flycameraModel.Fly_Product" Width="1.5" PointX="0.75" PointY="28.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="flycameraModel.Fly_Product_Category_Mapping" Width="1.5" PointX="8.25" PointY="32.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="flycameraModel.Fly_Product_Manufacturer_Mapping" Width="1.5" PointX="8.25" PointY="50" IsExpanded="true" />
+        <EntityTypeShape EntityType="flycameraModel.Fly_ProductLocalized" Width="1.5" PointX="5.25" PointY="23.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="flycameraModel.Fly_ProductPicture" Width="1.5" PointX="3" PointY="29.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="flycameraModel.Fly_ProductTemplate" Width="1.5" PointX="1.5" PointY="24.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="flycameraModel.Fly_ProductVariant" Width="1.5" PointX="16.25" PointY="24.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="flycameraModel.Fly_ProductVariant_Discount_Mapping" Width="1.5" PointX="19.5" PointY="38.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="flycameraModel.Fly_ProductVariantLocalized" Width="1.5" PointX="18.5" PointY="25.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="flycameraModel.Fly_RelatedProduct" Width="1.5" PointX="3" PointY="16.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="flycameraModel.Fly_SectionContent" Width="1.5" PointX="12" PointY="56.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="flycameraModel.Fly_SectionGallery" Width="1.5" PointX="17.25" PointY="40.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="flycameraModel.Fly_ShippingMethod" Width="1.5" PointX="11" PointY="28.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="flycameraModel.Fly_ShippingStatus" Width="1.5" PointX="11" PointY="50.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="flycameraModel.Fly_ShoppingCartItem" Width="1.5" PointX="7.5" PointY="44.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="flycameraModel.Fly_Videos" Width="1.5" PointX="14.25" PointY="41.375" IsExpanded="true" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_Banner_Fly_BannerType" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_Banner_Fly_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_Banner_Fly_Picture" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_BannerType_Fly_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_BlogPost_Fly_BlogPostType" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_BlogPost_Fly_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_BlogPost_Fly_Language" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_Category_Discount_Mapping_Fly_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_Category_Fly_Picture" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_CategoryLocalized_Fly_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_Product_Category_Mapping_Fly_Category1" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_Category_Discount_Mapping_Fly_Discount" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_CategoryLocalized_Fly_Language" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_CustomerAttribute_Fly_Country" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_Order_Fly_Country" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_Customer_CustomerRole_Mapping_Fly_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_Customer_Fly_Picture" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_CustomerAttribute_Fly_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_CustomerSession_Fly_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_DiscountUsageHistory_Fly_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_Order_Fly_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_Order_Fly_Customer_Approve" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_Partnership_Fly_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_ShoppingCart_Fly_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_Videos_Fly_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_Customer_CustomerRole_Mapping_Fly_CustomerRole" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_CustomerRole_Discount_Mapping_Fly_CustomerRole" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_CustomerRole_ProductPrice_Fly_CustomerRole" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_CustomerRole_Discount_Mapping_Fly_Discount" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_CustomerRole_ProductPrice_Fly_ProductVariant" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_ShoppingCart_Fly_CustomerSession" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_DiscountUsageHistory_Fly_Discount" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_ProductVariant_Discount_Mapping_Fly_Discount" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_DiscountUsageHistory_Fly_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_ManufacturerLocalized_Fly_Language" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_ProductLocalized_Fly_Language" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_ProductVariantLocalized_Fly_Language" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_ShippingMethod_Fly_Language" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_Manufacturer_Fly_Picture" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_ManufacturerLocalized_Fly_Manufacturer" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_Product_Manufacturer_Mapping_Fly_Manufacturer1" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_Navigation_Fly_Navigation" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_Order_Fly_ShippingMethod" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_Order_Fly_ShippingStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_OrderNote_Fly_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_OrderProductVariant_Fly_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_OrderProductVariant_Fly_ProductVariant" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_Partnership_Fly_Picture" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_ProductPicture_Fly_Picture" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_Videos_Fly_Picture" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_SectionContent_Fly_PositionGallery" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_SectionGallery_Fly_PositionGallery" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_Videos_Fly_PositionGallery" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_Product_Category_Mapping_Fly_Product1" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_Product_Fly_ProductTemplate" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_Product_Manufacturer_Mapping_Fly_Product1" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_ProductLocalized_Fly_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_ProductPicture_Fly_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_ProductVariant_Fly_Product1" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_RelatedProduct_Fly_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_SectionContent_Fly_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_SectionGallery_Fly_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_Videos_Fly_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_ProductVariant_Discount_Mapping_Fly_ProductVariant" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_ProductVariantLocalized_Fly_ProductVariant" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_ShoppingCart_Fly_ProductVariant" ManuallyRouted="false" />
+        <AssociationConnector Association="flycameraModel.FK_Fly_Videos_Fly_SectionContent" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="flycameraModel.Fly_Team" Width="1.5" PointX="5.375" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

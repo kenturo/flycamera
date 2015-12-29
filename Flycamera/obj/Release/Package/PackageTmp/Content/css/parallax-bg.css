@@ -1,0 +1,35 @@
+/* background setup */
+.background {
+  background-repeat: no-repeat;
+  /* custom background-position */
+  background-position: center 50%;
+  /* ie8- graceful degradation */
+  background-position: center 50%\9 !important;
+}
+
+html, body {
+height: 100%;
+}
+
+.fullscreen,
+.parallax-wrapper {
+  width: 100%;
+  min-height: 100%;
+}
+.not-fullscreen,
+.not-fullscreen .parallax-wrapper,
+.fullscreen.not-overflow,
+.fullscreen.not-overflow .parallax-wrapper {
+  height: 100%;
+  overflow: hidden;
+}
+/* content centering styles */
+.parallax-wrapper {
+  display: table;
+}
+.parallax-outer {
+  display: table-cell;
+  position: relative;
+  vertical-align: middle;
+  text-align: center;
+}

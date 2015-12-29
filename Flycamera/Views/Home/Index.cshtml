@@ -1,0 +1,24 @@
+﻿@using Flycamera.App_Start
+@{
+    ViewBag.Title = "Index";
+}
+
+@section bodyContent{
+    <div id="body-content">
+        <div class="wrapper">
+            @{Html.RenderPartial(@StaticVariable._BannerTemplate, ViewData[StaticVariable.BannerHome]);}
+            @{Html.RenderPartial(@StaticVariable._VideoHome, ViewData[StaticVariable.VideoHome]);}
+            @*@{Html.RenderPartial(@StaticVariable._Content);}*@
+            @{Html.RenderPartial(@StaticVariable._ServiceStatic);}
+        </div>
+            @{Html.RenderPartial(@StaticVariable._PartnerShipHome, ViewData[StaticVariable.PartnerShip]);}
+    </div>
+
+}
+
+@section contactBlock{
+    @Html.Partial("_Contact")
+}
+
+@section Scripts {
+}

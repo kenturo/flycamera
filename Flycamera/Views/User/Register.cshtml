@@ -1,0 +1,24 @@
+﻿@using Flycamera.App_Start
+@model Flycamera.ViewModel.UserVM
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section bodyContent{
+    <div id="body-content">
+        <div class="wrapper">
+           
+           		
+
+        </div>
+        @*@{Html.RenderPartial(@StaticVariable._PartnerShipHome, ViewData[StaticVariable.PartnerShip]);}>*@
+    </div>
+}
+
+@section contactBlock{
+    @Html.Partial("_Contact")
+}
+
+@section Scripts {
+}

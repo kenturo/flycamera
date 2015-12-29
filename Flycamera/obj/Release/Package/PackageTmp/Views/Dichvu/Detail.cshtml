@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_LayoutAngular.cshtml";
+}
+
+
+@section bodyContent
+{
+    <section class="wrapper__banner wrapper__banner--gallery">
+        <!-- <div class="wrapper"> -->
+        <div class="wrapper__banner--container">
+
+            <div class="wrapper__banner--list ">
+                <ul ng-controller="bannerServices-ctrl">
+                    <li ng-repeat="item in resultBanner" ng-repeat-end-watch="initBannerList">
+                        <img src="{{item.imglink}}" alt="{{item.title}}">
+                    </li>
+                </ul>
+            </div>
+            <p class="jcarousel-pagination"></p>
+        </div>
+        <!-- </div> -->
+    </section>
+
+    <section class="wrapper__Quotation">
+        <div class="wrapper">
+
+        </div>
+    </section>
+
+    <section class="wrapper__news" ng-controller="DetailBlogPostController">
+    <div class="wrapper">
+        <div class="wrapper__news--left">
+            <div class="header">
+                <h1 class="wrapper__news--title">{{resultDetailBlogPost.title}}</h1>
+                <p class="wrapper__news--Date">
+                    {{resultDetailBlogPost.date}}
+                    <!-- <span class="wrapper__news--ico"></span> -->
+                </p>
+            </div>
+            <div class="content-main">
+                <div ng-bind-html="resultDetailBlogPost.description | rawHtml"></div>
+            </div>
+        </div>
+    </div>
+</section>
+}

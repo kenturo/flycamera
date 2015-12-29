@@ -1,0 +1,73 @@
+﻿@using System.Web.Mvc.Html
+@using FlyEntity.Utilities
+@model Flycamera.Areas.Administrator.ViewModel.OrderVm
+
+@{
+    ViewBag.Title = "List Order";
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
+}
+<div class="titlePage">
+    <div class="wrapper">
+        <h1>List Order</h1>
+    </div>
+</div>
+@section bodyContent{
+
+    <div class="control-action dropboxSelectOrderStatus">
+    <label>Order Status: </label>
+    @Html.DropDownList("Select Order Status", new List<SelectListItem>()
+        {
+            new SelectListItem() {Text = OrderStatus.NotYetApprove, Value = OrderStatus.NotYetApprove},
+            new SelectListItem() {Text = OrderStatus.Processing, Value = OrderStatus.Processing},
+            new SelectListItem() {Text = OrderStatus.Complete, Value = OrderStatus.Complete},
+            new SelectListItem() {Text = OrderStatus.Cancelled, Value = OrderStatus.Cancelled}
+        }, new { @class = "k-textbox" })
+        <input type="submit" value="Search" class="button" onclick="handleClick.SearchResultOrderStatus(this,'.dropboxSelectOrderStatus select')" data-bind=".responstable tbody" />
+</div>
+    <table width="100%" cellspacing="0" cellpadding="0" class="responstable">
+        <thead>
+            <tr>
+                <th width="5%">OrderID</th>
+                <th width="5%">Order Total</th>
+                <th width="5%">Order Status</th>
+                <th width="13%">Payment Method</th>
+                <th width="15%">Shipping Method</th>
+                <th width="7%">Shipping Status</th>
+                <th width="8%">Customer</th>
+                <th width="3%">Created on</th>
+                <th width="3%">Control</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null)
+            {
+                if (Model.ListOrders.Count > 0)
+                {
+                    foreach (var item in Model.ListOrders)
+                    {
+                        <tr class="row-@item.OrderID">
+                            <td width="5%">@item.OrderID</td>
+                            <td class="currency-data">@item.OrderTotal</td>
+                            <td>@item.OrderStatus</td>
+                            <td>@item.PaymentMethodName</td>
+                            <td>@item.Fly_ShippingMethod.Name</td>
+                            <td>
+                                @item.Fly_ShippingStatus.Name
+                            </td>
+                            <td>@item.Fly_Customer.Email</td>
+                            <td width="3%">@item.CreatedOn.GetValueOrDefault().ToString("dd/MM/yyyy")</td>
+                            <td width="3%">@Html.ActionLink("View", "Detail", new {id = item.OrderID}, new {@class = "button", @title = "Edit"})</td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr><td colspan='9'>Không Tìm Thấy Dữ Liệu</td></tr>
+                }
+            }
+        </tbody>
+    </table>
+    @*@Html.Hidden("controllerServices", this.ViewContext.RouteData.Values["controller"].ToString(), new { @id = "controllerServices" })*@
+}
+@section Scripts {
+}
